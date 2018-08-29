@@ -114,12 +114,12 @@ const particleSettings = {
 };
 
 const Container = styled.div`
-  position: absolute;
-  height: 100vh;
+  position: relative;
+  background-color: ${props => props.theme.primary.main};
+  background-size: cover;
   width: 100vw;
-  background-color: #131116;
-  top: 0;
-  left: 0;
+  height: 100vh;
+  z-index: -1;
 `;
 
 const Background = () => (
