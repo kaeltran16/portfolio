@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Background from './components/Background';
 import Navigation from './components/Navigation';
 import Header from './components/Header';
+import NextPageButton from './components/NextPageButton';
 
 const Container = styled.div`
   max-height: 100vh;
@@ -15,6 +16,7 @@ const LandingPage = () => (
         <Background/>
         <Navigation/>
         <Header/>
+        <NextPageButton/>
     </Container>
 );
 

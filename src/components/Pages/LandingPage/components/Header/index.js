@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import {withContext} from 'appContext';
-import ViewMoreButton from './ViewMoreButton';
+
+import TextScrambler from 'components/commons/TextScrambler';
 
 const Container = styled.div`
   width: 100%;
@@ -30,9 +31,12 @@ const TextPrimarySub = styled.h2`
 
 const Header = ({LandingPage}) => (
     <Container>
-        <TextPrimary>{LandingPage.welcomeText}</TextPrimary>
-        <TextPrimarySub>{LandingPage.headline}</TextPrimarySub>
-        <ViewMoreButton/>
+        <TextPrimary>
+            <TextScrambler delay={100} text={LandingPage.welcomeText}/>
+        </TextPrimary>
+        <TextPrimarySub>
+            <TextScrambler delay={2000} text={LandingPage.headline}/>
+        </TextPrimarySub>
     </Container>
 );
 

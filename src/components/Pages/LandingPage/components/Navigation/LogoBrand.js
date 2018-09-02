@@ -10,6 +10,11 @@ const Image = styled.svg`
   height: 5rem;
   width: 5rem;
   fill: ${props => props.theme.secondary.main};
+  &:hover {
+      transform: rotate(180deg);
+      transition: all 1s;
+      backface-visibility: hidden;
+  }
 `;
 
 const LogoBrand = () => (
