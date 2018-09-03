@@ -1,7 +1,7 @@
 const store = {
     LandingPage: {
-        welcomeText: `Hi, I'm Khang`,
-        headline: 'Lorem ipsum dolor sit amet'
+        primaryHeader: `Hi, I'm Khang`,
+        subHeader: 'Lorem ipsum dolor sit amet'
     },
     About: {
         welcomeText: 'About'
