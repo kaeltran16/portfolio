@@ -1,6 +1,7 @@
-// @flow
 import React from 'react';
 import styled from 'styled-components';
+
+import {withDataContext} from 'appContext';
 
 import TextScrambler from 'components/commons/TextScrambler';
 
@@ -27,15 +28,15 @@ const TextPrimarySub = styled.h2`
 	font-weight: 700;
 `;
 
-const Header = ({ primaryHeader, subHeader }) => (
-	<Container>
-		<TextPrimary>
-			<TextScrambler delay={100} />
-		</TextPrimary>
-		<TextPrimarySub>
-			<TextScrambler delay={2000} text={subHeader} />
-		</TextPrimarySub>
-	</Container>
+const Header = ({primaryHeader, subHeader}) => (
+    <Container>
+        <TextPrimary>
+            <TextScrambler delay={100} text={primaryHeader}/>
+        </TextPrimary>
+        <TextPrimarySub>
+            <TextScrambler delay={2000} text={subHeader}/>
+        </TextPrimarySub>
+    </Container>
 );
 
-export default Header;
+export default withDataContext(Header, 'LandingPage');

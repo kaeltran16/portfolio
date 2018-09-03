@@ -6,10 +6,6 @@ const Image = styled.svg`
   height: 5rem;
   width: 5rem;
   fill: ${props => props.theme.secondary.main};
-  
-  
-  
-  
 `;
 
 const NavigationButton = () => (
