@@ -1,28 +1,61 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
 
 
-const Image = styled.svg`
-  height: 5rem;
-  width: 5rem;
-  fill: ${props => props.theme.secondary.main};
+
+const Bar = styled.div`
+  background-color: ${props => props.theme.secondary.main}
+   width: 4rem;
+    height: .6rem;
+    &:not(:first-child) {
+    margin-top: .6rem;
+    }
+    transition: all 0.4s;
 `;
 
-const NavigationButton = () => (
-    <div>
-        <Image xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'>
-            <path
-                d='M17.5 6h-15c-0.276 0-0.5-0.224-0.5-0.5s0.224-0.5 0.5-0.5h15c0.276 0 0.5 0.224 0.5 0.5s-0.224 0.5-0.5 0.5z'
-            />
-            <path
-                d='M17.5 11h-15c-0.276 0-0.5-0.224-0.5-0.5s0.224-0.5 0.5-0.5h15c0.276 0 0.5 0.224 0.5 0.5s-0.224 0.5-0.5 0.5z'
-            />
-            <path
-                d='M17.5 16h-15c-0.276 0-0.5-0.224-0.5-0.5s0.224-0.5 0.5-0.5h15c0.276 0 0.5 0.224 0.5 0.5s-0.224 0.5-0.5 0.5z'
-            />
-        </Image>
 
-    </div>
-);
+const Container = styled.div`
+    cursor: pointer;
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  
+    ${props => props.active && css`
+      ${Bar} {
+        &:nth-child(1) {
+          transform: rotate(-45deg) translate(-.9rem, .6rem);
+        }
+    
+        &:nth-child(2) {
+          opacity: 0;
+        }
+    
+        &:nth-child(3) {
+          transform: rotate(45deg) translate(-1rem, -.8rem);
+        }
+  `}
+  
+`;
+
+
+class NavigationButton extends React.Component {
+    state = {active: false};
+    toggle = () => {
+        this.setState({active: !this.state.active});
+    };
+
+    render(){
+        return(
+            <Container onClick={() => this.toggle()} active={this.state.active}>
+                <Bar/>
+                <Bar/>
+                <Bar/>
+            </Container>
+        );
+    }
+}
 
 export default NavigationButton;
