@@ -7,12 +7,12 @@ import Heading from 'components/commons/Heading';
 import MainContent from "./MainContent";
 
 const Container = styled.div`
-  height: 100vh;
-  width: 100vw;
-  background-color: ${props => props.theme.secondary.main};
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr .75fr 4fr .75fr;
+    height: 100vh;
+    width: 100vw;
+    background-color: ${props => props.theme.secondary.main};
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr .75fr 4fr .75fr;
 `;
 
 const AboutPage = () => (
@@ -20,7 +20,7 @@ const AboutPage = () => (
         <Navigation color='dark' size={5}/>
         <Heading/>
         <MainContent/>
-        <NextPageButton color='dark' size={2}/>
+        <NextPageButton align='flex-end' color='dark' size={2}/>
     </Container>
 );
 

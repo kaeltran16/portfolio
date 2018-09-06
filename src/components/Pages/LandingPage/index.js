@@ -22,7 +22,7 @@ const LandingPage = () => (
         <Container>
             <Navigation color='light' size={5}/>
             <Header/>
-            <NextPageButton color='light' size={5}/>
+            <NextPageButton align='center' color='light' size={5}/>
         </Container>
     </div>
 

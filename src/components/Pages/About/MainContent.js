@@ -24,21 +24,21 @@ const Text = styled.div`
     }
 `;
 
-const MainContent = ({contents}) => (
-    <Container>
-        <Text>
-            <TextScrambler text={contents[0]} delay={500}/>
-        </Text>
-        <Text>
-            <TextScrambler text={contents[1]} delay={1000}/>
-        </Text>
-        <Text>
-            <TextScrambler text={contents[2]} delay={1200}/>
-        </Text>
-        <Text>
-            <TextScrambler text={contents[3]} delay={1500}/>
-        </Text>
-    </Container>
-);
+const MainContent = ({contents}) => {
+    const renderTexts = paragraphs => {
+        let delay = 1500;
+        return paragraphs.map((paragraph, i) =>
+            <Text key={i}>
+                <TextScrambler text={paragraph} delay={delay + 300}/>
+            </Text>
+        );
+    };
+    return (
+        <Container>
+            {renderTexts(contents)}
+        </Container>
+
+    );
+};
 
 export default withDataContext(MainContent, 'About');
