@@ -4,25 +4,32 @@ import styled, {css} from 'styled-components';
 
 
 const Bar = styled.div`
-  background-color: ${props => props.theme.secondary.main}
-   width: 4rem;
-    height: .6rem;
     &:not(:first-child) {
-    margin-top: .6rem;
+      margin-top: .6rem;
     }
     transition: all 0.4s;
+    width: 100%;
+    height: 12.5%;
+              
+       
 `;
 
 
 const Container = styled.div`
     cursor: pointer;
-    width: 5rem;
-    height: 5rem;
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
-  
+    width: ${props => `${props.size}rem`};
+    height: ${props => `${props.size}rem`};
+    
+    ${Bar} {
+      background-color: ${props => props.color === 'dark'
+    ? props.theme.primary.main
+    : props.theme.secondary.main };;
+    }
+    
     ${props => props.active && css`
       ${Bar} {
         &:nth-child(1) {
@@ -37,6 +44,7 @@ const Container = styled.div`
           transform: rotate(45deg) translate(-1rem, -.8rem);
         }
   `}
+   
   
 `;
 
@@ -48,8 +56,9 @@ class NavigationButton extends React.Component {
     };
 
     render(){
+        const {color, size} = this.props;
         return(
-            <Container onClick={() => this.toggle()} active={this.state.active}>
+            <Container color={color} size={size} onClick={() => this.toggle()} active={this.state.active}>
                 <Bar/>
                 <Bar/>
                 <Bar/>

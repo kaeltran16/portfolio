@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Navigation from './components/Navigation';
-import NextPageButton from './components/NextPageButton';
-import Header from './components/Header';
-import MainContent from "./components/MainContent";
+import Navigation from '../../commons/Navigation';
+import NextPageButton from '../../commons/NextPageButton';
+import Heading from 'components/commons/Heading';
+import MainContent from "./MainContent";
 
 const Container = styled.div`
   height: 100vh;
@@ -12,16 +12,16 @@ const Container = styled.div`
   background-color: ${props => props.theme.secondary.main};
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr .75fr 4fr .25fr;
+  grid-template-rows: 1fr .75fr 4fr .75fr;
 `;
 
 const AboutPage = () => (
     <Container>
-        <Navigation/>
-        <Header/>
+        <Navigation color='dark' size={5}/>
+        <Heading/>
         <MainContent/>
-        <NextPageButton/>
+        <NextPageButton color='dark' size={2}/>
     </Container>
 );
 
-export default AboutPage;
+export {AboutPage};

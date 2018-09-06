@@ -9,9 +9,9 @@ const Container = styled.div`
 `;
 
 
-const NavigationButton = () => (
+const NavigationButton = (props) => (
     <Container>
-        <NavigationIcon/>
+        <NavigationIcon {...props}/>
     </Container>
 );
 

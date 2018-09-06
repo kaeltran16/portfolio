@@ -6,16 +6,16 @@ import NavigationButton from './NavigationButton';
 
 const Container = styled.div`
   width: 100%;
-  position: absolute; 
   display: flex; 
   top: 0;
+  align-items: center;
   justify-content: space-between;
 `;
 
-const Navigation = () => (
+const Navigation = (props) => (
     <Container>
-        <LogoBrand/>
-        <NavigationButton/>
+        <LogoBrand {...props}/>
+        <NavigationButton {...props}/>
     </Container>
 );
 
