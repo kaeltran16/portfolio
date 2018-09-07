@@ -13,7 +13,27 @@ const store = {
         ]
     },
     Skill: {
-        welcomeText: 'Skill'
+        header: 'what i capable of',
+        details: [
+            {
+                iconName: 'embed2',
+                heading: 'I started with C and C++, migrated to C# soon later and now really interested in JavaScript.',
+                subHeading: 'Languages I know',
+                skillNames: ['C#', 'C++', 'Java', 'JavaScript', 'HTML/CSS']
+            },
+            {
+                iconName: 'tree',
+                heading: 'I started with WPF in Desktop application but now working mostly in Web Development.',
+                subHeading: 'Frameworks/libraries I has worked with',
+                skillNames: ['ASP.NET/ASP.NET Core', 'React', 'Angular', 'Express', 'React Native', 'SQL Server', 'MongoDB', 'GraphQL']
+            },
+            {
+                iconName: 'wrench',
+                heading: 'I also know about tools and utilities to make development process easier.',
+                subHeading: 'Tools I use',
+                skillNames: ['Visual Studio', 'Intellij IDEA', 'Webpack', 'Terminal/Powershell', 'Git']
+            }
+        ]
     },
     Project: {
         welcomeText: 'Project'

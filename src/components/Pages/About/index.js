@@ -5,6 +5,7 @@ import Navigation from '../../commons/Navigation';
 import NextPageButton from '../../commons/NextPageButton';
 import Heading from 'components/commons/Heading';
 import MainContent from "./MainContent";
+import {withDataContext} from "../../../appContext";
 
 const Container = styled.div`
     height: 100vh;
@@ -15,13 +16,13 @@ const Container = styled.div`
     grid-template-rows: 1fr .75fr 4fr .75fr;
 `;
 
-const AboutPage = () => (
+const About = ({header}) => (
     <Container>
         <Navigation color='dark' size={5}/>
-        <Heading/>
+        <Heading heading={header}/>
         <MainContent/>
         <NextPageButton align='flex-end' color='dark' size={2}/>
     </Container>
 );
 
-export {AboutPage};
+export const AboutPage = withDataContext(About, 'About');

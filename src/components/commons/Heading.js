@@ -1,8 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import {withDataContext} from 'appContext';
-
 import TextScrambler from 'components/commons/TextScrambler';
 
 const Container = styled.div`
@@ -24,12 +22,12 @@ const TextHeader = styled.h2`
 `;
 
 
-const Header = ({header}) => (
+const Heading = ({heading}) => (
     <Container>
         <TextHeader>
-            <TextScrambler delay={100} text={header}/>
+            <TextScrambler delay={100} text={heading}/>
         </TextHeader>
     </Container>
 );
 
-export default withDataContext(Header, 'About');
+export default Heading;
