@@ -5,14 +5,14 @@ import {theme} from 'theme/globalStyle';
 import store from 'store';
 
 import {HashRouter, Route, Switch} from 'react-router-dom'
-import {AboutPage, SkillPage} from "../Pages";
+import {AboutPage, ProjectPage} from "../Pages";
 
 const MainContainer = () => (
     <AppDataProvider value={store}>
         <ThemeProvider theme={theme}>
             <HashRouter>
                 <Switch>
-                    <Route exact path='/' component={SkillPage}/>
+                    <Route exact path='/' component={ProjectPage}/>
                     <Route exact path='/about' component={AboutPage}/>
                 </Switch>
             </HashRouter>

@@ -36,7 +36,7 @@ const store = {
         ]
     },
     Project: {
-        welcomeText: 'Project'
+        header: 'what i did'
     },
     Contact: {
         welcomeText: 'Contact'
