@@ -7,13 +7,15 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
 `;
-const Footer = () => (
-    <Container>
-        <SocialButton/>
-        <SocialButton/>
-        <SocialButton/>
-        <SocialButton/>
-    </Container>
-);
+const Footer = ({socialIcons}) => {
+    const renderSocialButtons = () =>
+        socialIcons.map(icon =>
+            <SocialButton key={icon.name} iconName={icon.icon} text={icon.name} url={icon.url}/>);
+    return (
+        <Container>
+            {renderSocialButtons()}
+        </Container>
+    );
+}
 
 export default Footer;

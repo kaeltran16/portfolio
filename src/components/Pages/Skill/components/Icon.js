@@ -10,7 +10,7 @@ const Icon = styled.svg`
 
 const SkillIcon = ({iconName}) => (
     <Icon>
-        <use xlinkHref={`${process.env.PUBLIC_URL}/assets/sprite.svg#icon-${iconName}`}/>
+        <use xlinkHref={`${process.env.PUBLIC_URL}/assets/sprites.svg#icon-${iconName}`}/>
     </Icon>
 );
 

@@ -12,15 +12,15 @@ const Container = styled.div`
     background-color: ${props => props.theme.primary.main};
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr .75fr 4fr 1fr;
+    grid-template-rows: 1fr .75fr 3fr 1fr;
 `;
 
-const Contact = () => (
+const Contact = ({header, socialIcons}) => (
     <Container>
         <Navigation color='light' size={5}/>
-        <Heading heading={'Get in touch'}/>
+        <Heading heading={header}/>
         <ContactDetail/>
-        <Footer/>
+        <Footer socialIcons={socialIcons}/>
     </Container>
 );
 

@@ -16,13 +16,13 @@ const store = {
         header: 'what i capable of',
         details: [
             {
-                iconName: 'embed2',
+                iconName: 'code',
                 heading: 'I started with C and C++, migrated to C# soon later and now really interested in JavaScript.',
                 subHeading: 'Languages I know',
                 skillNames: ['C#', 'C++', 'Java', 'JavaScript', 'HTML/CSS']
             },
             {
-                iconName: 'tree',
+                iconName: 'usb',
                 heading: 'I started with WPF in Desktop application but now working mostly in Web Development.',
                 subHeading: 'Frameworks/libraries I has worked with',
                 skillNames: ['ASP.NET/ASP.NET Core', 'React', 'Angular', 'Express', 'React Native', 'SQL Server', 'MongoDB', 'GraphQL']
@@ -39,7 +39,14 @@ const store = {
         header: 'what i did'
     },
     Contact: {
-        welcomeText: 'Contact'
+        header: 'get in touch',
+        socialIcons: [
+            {icon: 'linkedin', name: 'Linkedin', url: 'https://linkedin.com'},
+            {icon: 'github', name: 'Github', url: 'https://github.com'},
+            {icon: 'facebook', name: 'Facebook', url: 'https://facebook.com'},
+            {icon: 'twitter', name: 'Twitter', url: 'https://twitter.com'},
+            {icon: 'google-plus', name: 'Google', url: 'https://google.com'},
+        ]
     }
 };
 
