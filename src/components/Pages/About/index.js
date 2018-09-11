@@ -19,7 +19,7 @@ const Container = styled.div`
 const About = ({header}) => (
     <Container>
         <Navigation color='dark' size={5}/>
-        <Heading heading={header}/>
+        <Heading color='dark' heading={header}/>
         <MainContent/>
         <NextPageButton align='flex-end' color='dark' size={2}/>
     </Container>

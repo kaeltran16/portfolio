@@ -5,16 +5,18 @@ import {theme} from 'theme/globalStyle';
 import store from 'store';
 
 import {HashRouter, Route, Switch} from 'react-router-dom'
-import {AboutPage} from "../Pages";
-import {ContactPage} from "../Pages/Contact";
+import {AboutPage, ContactPage, LandingPage, ProjectPage, SkillPage} from "../Pages";
 
 const MainContainer = () => (
     <AppDataProvider value={store}>
         <ThemeProvider theme={theme}>
             <HashRouter>
                 <Switch>
-                    <Route exact path='/' component={ContactPage}/>
+                    <Route exact path='/' component={LandingPage}/>
                     <Route exact path='/about' component={AboutPage}/>
+                    <Route exact path='/skill' component={SkillPage}/>
+                    <Route exact path='/work' component={ProjectPage}/>
+                    <Route exact path='/contact' component={ContactPage}/>
                 </Switch>
             </HashRouter>
         </ThemeProvider>
