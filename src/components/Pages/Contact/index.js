@@ -18,7 +18,7 @@ const Container = styled.div`
 const Contact = ({header, socialIcons}) => (
     <Container>
         <Navigation color='light' size={5}/>
-        <Heading heading={header}/>
+        <Heading color='light' heading={header}/>
         <ContactDetail/>
         <Footer socialIcons={socialIcons}/>
     </Container>

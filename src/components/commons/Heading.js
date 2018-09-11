@@ -18,13 +18,15 @@ const TextHeader = styled.h2`
   font-size: 3rem;
   letter-spacing: .33rem;
   cursor: auto;
-  color: ${props => props.theme.primary.light};
+  color: ${props => props.color === 'dark'
+    ? props.theme.primary.light
+    : props.theme.secondary.light };
 `;
 
 
-const Heading = ({heading}) => (
+const Heading = ({heading, color}) => (
     <Container>
-        <TextHeader>
+        <TextHeader color={color}>
             <TextScrambler delay={100} text={heading}/>
         </TextHeader>
     </Container>

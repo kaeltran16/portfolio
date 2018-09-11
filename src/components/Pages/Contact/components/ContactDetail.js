@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import TextScrambler from "../../../commons/TextScrambler";
 
 const Container = styled.div`
   display: flex;
@@ -45,10 +46,13 @@ const Text = styled.h4`
 const PhoneNumber = styled.h4``;
 const ContactDetail = () => (
     <Container>
-        <PrimaryHeader href='#'>cktran16x2@gmail.com</PrimaryHeader>
+        <PrimaryHeader href='#'>
+            <TextScrambler delay={1000} text={'cktran16x2@gmail.com'}/>
+
+        </PrimaryHeader>
         <SubHeader>
-            <Text>Phone Number</Text>
-            <PhoneNumber>(+1) 416-998-7489</PhoneNumber>
+            <Text><TextScrambler text={'Phone Number'} delay={1500}/></Text>
+            <PhoneNumber><TextScrambler text={'(+1) 416-998-7489'} delay={1700}/></PhoneNumber>
         </SubHeader>
     </Container>
 );
