@@ -4,7 +4,7 @@ import ProjectDetail from "./Detail";
 import AttentionButton from "./AttentionButton";
 
 const Container = styled.div`
-  width: 100%;
+  width: 90%;
   height: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;

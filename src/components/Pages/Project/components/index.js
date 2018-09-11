@@ -1,20 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
-import Slider from "./Slider";
+import ProjectCard from "./Card";
 
 const Container = styled.div`
-  width: 100%;
-  height: 100%;
-  display: grid;
-  justify-content: center;
-  grid-template-rows: 10fr 1fr;
-  grid-template-columns: 1fr;
+  width: 80%;
+  height: 80%;
+  display: flex;
+  justify-self: center;
+  align-self: center;
 `;
 
 const ProjectContainer = () => (
     <Container>
-        <Slider/>
-        <div>Icon</div>
+        <ProjectCard/>
     </Container>
 );
 

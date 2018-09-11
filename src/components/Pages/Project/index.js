@@ -13,7 +13,7 @@ const Container = styled.div`
     background-color: ${props => props.theme.secondary.main};
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1.25fr 3fr .75fr;
+    grid-template-rows: 1fr 1fr 4fr .75fr;
 `;
 
 const Project = ({header}) => (
