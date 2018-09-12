@@ -1,6 +1,14 @@
 import React from 'react';
-import styled, {css} from 'styled-components';
+import styled, {css, keyframes} from 'styled-components';
 
+const fadeIn = keyframes`
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+`;
 
 
 const Bar = styled.div`
@@ -44,6 +52,8 @@ const Container = styled.div`
           transform: rotate(45deg) translate(-1rem, -.8rem);
         }
   `}
+    
+   animation: ${fadeIn} 2s;
    
   
 `;
@@ -55,9 +65,9 @@ class NavigationButton extends React.Component {
         this.setState({active: !this.state.active});
     };
 
-    render(){
+    render() {
         const {color, size} = this.props;
-        return(
+        return (
             <Container color={color} size={size} onClick={() => this.toggle()} active={this.state.active}>
                 <Bar/>
                 <Bar/>

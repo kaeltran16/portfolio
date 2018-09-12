@@ -19,12 +19,22 @@ const move = keyframes`
     }
 `;
 
+const zoomIn = keyframes`
+  from {
+    transform: scale(0);
+  }
+  
+  to {
+    transform: scale(1);
+  }
+`;
+
 const Icon = styled.svg`
     position: absolute;
     opacity: 0;
     transform: scale3d(0.5, 0.5, 0.5);
     animation: ${move} 3s ease-out infinite;
-  
+    animation: ${zoomIn} 2s;
     
 	&:first-child {
 	  animation: ${move} 3s ease-out 1s infinite;

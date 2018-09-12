@@ -5,6 +5,7 @@ import Navigation from "../../commons/Navigation";
 import Heading from "../../commons/Heading";
 import Footer from "./components/Footer";
 import ContactDetail from "./components/ContactDetail";
+import withScroll from "../../../HOCs/withScroll";
 
 const Container = styled.div`
     height: 100vh;
@@ -24,4 +25,4 @@ const Contact = ({header, socialIcons}) => (
     </Container>
 );
 
-export const ContactPage = withDataContext(Contact, 'Contact');
+export const ContactPage = withScroll(withDataContext(Contact, 'Contact'), null, '/work');

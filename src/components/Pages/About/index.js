@@ -6,6 +6,7 @@ import NextPageButton from '../../commons/NextPageButton';
 import Heading from 'components/commons/Heading';
 import MainContent from "./MainContent";
 import {withDataContext} from "../../../appContext";
+import withScroll from "../../../HOCs/withScroll";
 
 const Container = styled.div`
     height: 100vh;
@@ -25,4 +26,4 @@ const About = ({header}) => (
     </Container>
 );
 
-export const AboutPage = withDataContext(About, 'About');
+export const AboutPage = withScroll(withDataContext(About, 'About'), '/skill', '/');

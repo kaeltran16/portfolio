@@ -5,6 +5,7 @@ import Heading from "components/commons/Heading";
 import {withDataContext} from "appContext";
 import NextPageButton from "components/commons/NextPageButton";
 import SkillContainer from "./components";
+import withScroll from "../../../HOCs/withScroll";
 
 const Container = styled.div`
   height: 100vh;
@@ -22,4 +23,4 @@ const Skill = ({header, details}) => (
     </Container>
 );
 
-export const SkillPage = withDataContext(Skill, 'Skill');
+export const SkillPage = withScroll(withDataContext(Skill, 'Skill'), '/work', '/about');
