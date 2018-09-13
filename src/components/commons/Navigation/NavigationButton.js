@@ -4,15 +4,21 @@ import styled from 'styled-components';
 import NavigationIcon from './NavigationIcon';
 
 const Container = styled.div`
-   z-index: 1;
    padding: 3.5rem;
+   display: flex;
+   justify-content: center;
+   cursor: pointer;
+   position: relative;
+   z-index: 10;
 `;
 
 
-const NavigationButton = (props) => (
-    <Container>
-        <NavigationIcon {...props}/>
-    </Container>
-);
+const NavigationButton = ({active, color, size, toggle}) => {
+    return (
+        <Container onClick={() => toggle()}>
+            <NavigationIcon color={color} size={size} active={active}/>
+        </Container>
+    );
+}
 
 export default NavigationButton;

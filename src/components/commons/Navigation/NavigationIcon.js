@@ -24,6 +24,8 @@ const Bar = styled.div`
 
 
 const Container = styled.div`
+    position: relative;
+    z-index: 10;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -31,6 +33,8 @@ const Container = styled.div`
     justify-content: center;
     width: ${props => `${props.size}rem`};
     height: ${props => `${props.size}rem`};
+       animation: ${fadeIn} 2s;
+
     
     ${Bar} {
       background-color: ${props => props.color === 'dark'
@@ -51,30 +55,26 @@ const Container = styled.div`
         &:nth-child(3) {
           transform: rotate(45deg) translate(-1rem, -.8rem);
         }
+        
+       }
+       
+    
+		z-index: 500;
+		transition: transform 0.4s cubic-bezier(0.86, 0, 0.07, 1);
+
   `}
     
-   animation: ${fadeIn} 2s;
    
   
 `;
 
 
-class NavigationButton extends React.Component {
-    state = {active: false};
-    toggle = () => {
-        this.setState({active: !this.state.active});
-    };
-
-    render() {
-        const {color, size} = this.props;
-        return (
-            <Container color={color} size={size} onClick={() => this.toggle()} active={this.state.active}>
-                <Bar/>
-                <Bar/>
-                <Bar/>
-            </Container>
-        );
-    }
-}
+const NavigationButton = ({color, size, active}) => (
+    <Container color={color} size={size} active={active}>
+        <Bar/>
+        <Bar/>
+        <Bar/>
+    </Container>
+);
 
 export default NavigationButton;

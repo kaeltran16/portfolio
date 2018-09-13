@@ -30,6 +30,6 @@ export const theme = {
     accent: {
         main: '#3FCFFF',
         light: '#99E5FF',
-        dark: '#4FD3FF'
+        dark: '#30c2ff'
     }
 };
