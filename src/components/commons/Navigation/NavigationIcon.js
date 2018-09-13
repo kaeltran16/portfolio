@@ -35,7 +35,7 @@ const Container = styled.div`
     height: ${props => `${props.size}rem`};
        animation: ${fadeIn} 2s;
 
-    
+
     ${Bar} {
       background-color: ${props => props.color === 'dark'
     ? props.theme.primary.main

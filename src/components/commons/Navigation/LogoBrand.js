@@ -16,6 +16,7 @@ const fadeIn = keyframes`
     }
 `;
 
+
 const Image = styled.svg`
   margin-left: 3.5rem;
   height: ${props => `${props.size}rem`}
@@ -30,6 +31,7 @@ const Image = styled.svg`
       transition: all 1s;
       backface-visibility: hidden;
   }
+  
 `;
 
 const LogoBrand = ({color, size}) => {
