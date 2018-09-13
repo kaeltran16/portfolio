@@ -2,11 +2,17 @@ import React from 'react';
 import styled, {keyframes} from 'styled-components';
 
 const fadeIn = keyframes`
-    from {
+    0% {
         opacity: 0;
+        transform: rotate(0deg);
     }
-    to {
+    50% {
+      opacity: .5;
+        transform: rotate(180deg);
+    }
+    100% {
         opacity: 1;
+         transform: rotate(-360deg);
     }
 `;
 

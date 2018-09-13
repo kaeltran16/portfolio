@@ -22,7 +22,7 @@ const TextPrimary = styled.h1`
 `;
 const TextPrimarySub = styled.h2`
 	color: ${props => props.theme.secondary.main};
-	font-size: 4rem;
+	font-size: 3rem;
 	font-weight: 700;
 `;
 
