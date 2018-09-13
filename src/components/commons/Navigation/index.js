@@ -18,7 +18,8 @@ const NavigationBackground = styled.div`
 		width: 6rem;
 		border-radius: 50%;
 		position: fixed;
-		
+		right: 0;
+		margin: 2rem;
 		z-index: 1;
 		transition: transform 0.4s cubic-bezier(0.86, 0, 0.07, 1);
 		
