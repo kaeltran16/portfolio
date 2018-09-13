@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
+import TextScrambler from "../../../commons/TextScrambler";
 
 
 const Text = styled.h4`
@@ -13,7 +14,7 @@ const Text = styled.h4`
 const ItemHeading = ({heading}) => (
 
     <Text>
-        {heading}
+        <TextScrambler text={heading} delay={1500}/>
     </Text>
 );
 

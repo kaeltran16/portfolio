@@ -1,6 +1,17 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, {keyframes} from 'styled-components';
 import DetailContainer from "./DetailContainer";
+import natours from 'assets/img/natours.png';
+
+const zoomIn = keyframes`
+    0% {
+        transform:scale(0);
+}
+    100% {
+        transform:scale(1);
+}
+`;
+
 
 const Container = styled.div`
   width: 100%;
@@ -11,18 +22,29 @@ const Container = styled.div`
   align-items: center;
   justify-self: center;
   align-self: center;
-`;
+  
+   transform:scale(0);
+   animation: ${zoomIn} .5s .8s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+    `;
 
-const Image = styled.div`
-  background-color: orangered;
-  width: 100%;
-  height: 100%;
-`;
+const Image = styled.img
+
+
+    `
+    width: 100%;
+    height: 100%;
+    background-image: url("assets/img/natours.png");
+    background-size: cover;
+    `
+
+
+;
+
 
 const ProjectCard = () => (
     <Container>
         <DetailContainer/>
-        <Image/>
+        <Image src={natours}/>
     </Container>
 );
 

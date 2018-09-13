@@ -9,18 +9,20 @@ const Container = styled.div`
 	align-items: center;
 	justify-content: center;
 	align-self: center;
+	backface-visibility: hidden;
+
 	display: flex;
 	flex-direction: column;
 `;
 
 const Text = styled.div`
-    width: 80%;
+    width: 70%;
     font-size: 2.5rem;
     font-weight: normal;
     color: ${props => props.theme.primary.dark}
     letter-spacing: .2rem;
     &:not(:first-child) {
-      margin-top: 2rem;
+      margin-top: 5rem;
     }
 `;
 

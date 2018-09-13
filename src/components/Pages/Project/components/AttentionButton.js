@@ -1,6 +1,15 @@
 import React from 'react';
 import styled, {keyframes} from "styled-components";
 
+const zoomIn = keyframes`
+    0% {
+        transform:scale(0);
+}
+    100% {
+        transform:scale(1);
+}
+`;
+
 const top = distance => keyframes`
     from{
         transform: translate(0rem, 0);
@@ -43,6 +52,8 @@ const Button = styled.a`
   position: relative;
   z-index: 3;
   transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.15s;
+     animation: ${zoomIn} .5s .8s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+
   }
   
   &::after,
