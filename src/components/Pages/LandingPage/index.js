@@ -20,12 +20,12 @@ const Container = styled.div`
 class Landing extends React.Component {
     render() {
         return (
-            <div ref='container'>
+            <div>
                 <Background/>
                 <Container>
                     <Navigation color='light' size={5}/>
                     <Header/>
-                    <NextPageButton align='center' color='light' size={5}/>
+                    <NextPageButton align='center' color='light' size={5} nextPageUrl='/about'/>
                 </Container>
             </div>
         );
