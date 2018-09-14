@@ -1,0 +1,19 @@
+import React from 'react';
+import Loading from "../components/commons/Loading";
+
+const withPreload = Component =>
+    class PreloadComponent extends React.Component {
+        state = {isLoading: true};
+
+        componentDidMount = () => {
+            setTimeout(() => this.setState({isLoading: false}), 1000);
+        };
+
+        render() {
+            return (
+                this.state.isLoading ? <Loading/> : <Component {...this.props}/>
+            );
+        }
+    };
+
+export default withPreload;

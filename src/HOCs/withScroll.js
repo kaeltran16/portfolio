@@ -41,7 +41,7 @@ const withScroll = (Component) =>
 
         constructor(props) {
             super(props);
-            this.handleScroll = _.debounce(this.handleScroll, 1000);
+            this.handleScroll = _.debounce(this.handleScroll, 200);
         }
 
         render() {
