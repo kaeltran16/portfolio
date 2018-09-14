@@ -40,7 +40,7 @@ const withScroll = (Component, nextRoute, prevRoute) =>
 
         render() {
             return (
-                <Component/>
+                <Component {...this.props}/>
             );
         }
     };

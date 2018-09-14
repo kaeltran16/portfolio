@@ -27,10 +27,7 @@ const Container = styled.div`
    animation: ${zoomIn} .5s .8s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
     `;
 
-const Image = styled.img
-
-
-    `
+const Image = styled.img`
     width: 100%;
     height: 100%;
     background-image: url("assets/img/natours.png");

@@ -5,7 +5,7 @@ import {theme} from 'theme/globalStyle';
 import store from 'store';
 
 import {HashRouter, Route, Switch} from 'react-router-dom'
-import {AboutPage, ContactPage, LandingPage, ProjectPage, SkillPage} from "../Pages";
+import {AboutPage, ContactPage, LandingPage, Projects, SkillPage} from "../Pages";
 
 const MainContainer = () => (
     <AppDataProvider value={store}>
@@ -15,7 +15,7 @@ const MainContainer = () => (
                     <Route exact path='/' component={LandingPage}/>
                     <Route exact path='/about' component={AboutPage}/>
                     <Route exact path='/skill' component={SkillPage}/>
-                    <Route exact path='/work' component={ProjectPage}/>
+                    <Route path='/work' component={Projects}/>
                     <Route exact path='/contact' component={ContactPage}/>
                 </Switch>
             </HashRouter>

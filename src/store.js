@@ -35,7 +35,12 @@ const store = {
         ]
     },
     Project: {
-        header: 'what i did'
+        header: 'what i did',
+        details: [{
+            name: 'project',
+            subHeading: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores at consectetur dolores exercitationem ipsam itaque iusto laborum quia? Facilis fugiat laudantium magnam mollitia nam recusandae repellendus sed similique ullam velit.',
+            intro: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
+        }],
     },
     Contact: {
         header: 'get in touch',

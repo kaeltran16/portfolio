@@ -1,40 +1,31 @@
 import React from 'react';
-import styled, {keyframes} from 'styled-components';
-import ProjectCard from "./Card";
+import styled from 'styled-components';
 
-const unfoldIn = keyframes`
-    0% {
-        transform:scaleX(.005) scaleY(0);
-        background-color: black;
-}
-    50% {
-        transform:scaleX(.005) scaleY(1);
-
-        background-color: black;
-
-}
-    100% {
-        transform:scaleX(1) scaleY(1);
-        background-color: transparent;
-}
-`;
+import Navigation from 'components/commons/Navigation';
+import NextPageButton from 'components/commons/NextPageButton';
+import Heading from 'components/commons/Heading';
+import {withDataContext} from "appContext";
+import withScroll from "HOCs/withScroll";
+import CardContainer from "./CardContainer";
 
 const Container = styled.div`
-  width: 90%;
-  height: 80%;
-  display: flex;
-  justify-self: center;
-  align-self: center;
-    transform:scale(0);
-    animation:${unfoldIn} 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
-    animation-delay: 1s;
+    height: 100vh;
+    width: 100vw;
+    background-color: ${props => props.theme.secondary.main};
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 4fr .75fr;
 `;
 
-const ProjectContainer = () => (
-    <Container>
-        <ProjectCard/>
-    </Container>
-);
+const Project = ({match, header}) => {
+    return (
+        <Container>
+            <Navigation color='dark' size={5}/>
+            <Heading heading={header}/>
+            <CardContainer/>
+            <NextPageButton align='flex-end' color='dark' size={2}/>
+        </Container>
+    );
+}
 
-
-export default ProjectContainer;
+export const ProjectPage = withScroll(withDataContext(Project, 'Project'), '/contact', '/skill');
