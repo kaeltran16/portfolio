@@ -36,11 +36,23 @@ const store = {
     },
     Project: {
         header: 'what i did',
-        details: [{
-            name: 'project',
-            subHeading: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores at consectetur dolores exercitationem ipsam itaque iusto laborum quia? Facilis fugiat laudantium magnam mollitia nam recusandae repellendus sed similique ullam velit.',
-            intro: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
-        }],
+        details: [
+            {
+                name: 'project1',
+                subHeading: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores at consectetur dolores exercitationem ipsam itaque iusto laborum quia? Facilis fugiat laudantium magnam mollitia nam recusandae repellendus sed similique ullam velit.',
+                intro: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
+            },
+            {
+                name: 'project2',
+                subHeading: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores at consectetur dolores exercitationem ipsam itaque iusto laborum quia? Facilis fugiat laudantium magnam mollitia nam recusandae repellendus sed similique ullam velit.',
+                intro: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
+            },
+            {
+                name: 'project3',
+                subHeading: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores at consectetur dolores exercitationem ipsam itaque iusto laborum quia? Facilis fugiat laudantium magnam mollitia nam recusandae repellendus sed similique ullam velit.',
+                intro: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
+            }
+        ],
     },
     Contact: {
         header: 'get in touch',

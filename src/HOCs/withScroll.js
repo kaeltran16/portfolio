@@ -1,22 +1,28 @@
 import React from 'react';
 import _ from "lodash";
 
-const withScroll = (Component, nextRoute, prevRoute) =>
+
+const links = ['/', '/about', '/skill', '/work/project1', '/work/project2', '/work/project3', '/contact'];
+
+const withScroll = (Component) =>
     class ScrollableComponent extends React.Component {
         scrollUp = () => {
+            const {history, match} = this.props;
 
-            const {history} = this.props;
-            if (prevRoute) {
-                if (history.location.pathname !== prevRoute)
-                    history.push(prevRoute)
+            const currentPageIndex = links.findIndex(i => i === match.path);
+            if (currentPageIndex !== 0) {
+                const prevRoute = links[currentPageIndex - 1];
+                if (history.location.pathname !== prevRoute) {
+                    history.push(prevRoute);
+                }
             }
-        }
+        };
         scrollDown = () => {
-            const {history} = this.props;
-            console.log(history)
-            if (nextRoute) {
-                if (history.location.pathname !== nextRoute)
-                    history.push(nextRoute)
+            const {history, match} = this.props;
+            const currentPageIndex = links.findIndex(i => i === match.url);
+            const nextRoute = links[currentPageIndex + 1];
+            if (history.location.pathname !== nextRoute) {
+                history.push(nextRoute);
             }
         }
         handleScroll = event => {
@@ -43,6 +49,7 @@ const withScroll = (Component, nextRoute, prevRoute) =>
                 <Component {...this.props}/>
             );
         }
-    };
+    }
+;
 export default withScroll;
 

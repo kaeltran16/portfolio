@@ -31,15 +31,13 @@ const IntroText = styled.h4`
   font-weight: 300;
 `;
 
-const ProjectDetail = () => (
+const ProjectDetail = ({detail}) => (
     <Container>
-        <Heading>Project Name</Heading>
+        <Heading>{detail.name}</Heading>
         <SubHeading>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores at consectetur dolores exercitationem
-            ipsam itaque iusto laborum quia? Facilis fugiat laudantium magnam mollitia nam recusandae repellendus sed
-            similique ullam velit.
+            {detail.subHeading}
         </SubHeading>
-        <IntroText>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </IntroText>
+        <IntroText>{detail.intro}</IntroText>
     </Container>
 );
 export default ProjectDetail;
