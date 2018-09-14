@@ -11,10 +11,10 @@ const Text = styled.h4`
   align-items: center;
   text-align: center;
 `;
-const ItemHeading = ({heading}) => (
+const ItemHeading = ({heading, delay}) => (
 
     <Text>
-        <TextScrambler text={heading} delay={1500}/>
+        <TextScrambler text={heading} delay={delay * 1000 + 1000}/>
     </Text>
 );
 

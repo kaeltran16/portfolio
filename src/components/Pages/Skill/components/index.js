@@ -16,7 +16,7 @@ const Container = styled.div`
 
 const SkillContainer = ({details}) => {
     const renderSkillItems = (details) => {
-        return details.map((detail, index) => <SkillItem detail={detail} key={index}/>);
+        return details.map((detail, index) => <SkillItem delay={index * 4} detail={detail} key={index}/>);
     };
     return (
         <Container>

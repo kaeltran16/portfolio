@@ -39,15 +39,16 @@ const SkillName = styled.p`
     font-weight: bolder;
     color: ${props => props.theme.primary.dark};
       animation: ${fadeInUp} cubic-bezier(1,-0.26,.88,.7) 5s;
+       animation-delay: ${props => props.delay}s;
 
 
 `;
-const SkillDetail = ({subHeading, skillNames}) => {
+const SkillDetail = ({subHeading, skillNames, delay}) => {
     const renderSkillNames = skillNames =>
-        skillNames.map((name, index) => <SkillName key={index}>{name}</SkillName>);
+        skillNames.map((name, index) => <SkillName delay={delay - 1} key={index}>{name}</SkillName>);
     return (
         <Container>
-            <TextHeading><TextScrambler text={subHeading} delay={2000}/></TextHeading>
+            <TextHeading><TextScrambler text={subHeading} delay={delay * 1000}/></TextHeading>
             <SkillItem>
                 {renderSkillNames(skillNames)}
             </SkillItem>

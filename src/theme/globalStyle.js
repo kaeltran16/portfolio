@@ -5,6 +5,8 @@ injectGlobal`
     box-sizing: border-box;
     font-size: 62.5%;
     font-family: 'M PLUS Rounded 1c', sans-serif; 
+    overflow-x: hidden;
+    overflow-y: hidden;
   }
   *, 
   *::after,
