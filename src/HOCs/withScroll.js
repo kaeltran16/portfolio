@@ -9,7 +9,7 @@ const withScroll = (Component) =>
         scrollUp = () => {
             const {history, match} = this.props;
 
-            const currentPageIndex = links.findIndex(i => i === match.path);
+            const currentPageIndex = links.findIndex(i => i === match.url);
             if (currentPageIndex !== 0) {
                 const prevRoute = links[currentPageIndex - 1];
                 if (history.location.pathname !== prevRoute) {
