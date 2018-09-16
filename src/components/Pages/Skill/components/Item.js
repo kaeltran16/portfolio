@@ -4,17 +4,15 @@ import SkillIcon from "./Icon";
 import ItemHeading from "./ItemHeading";
 import SkillDetail from "./Detail";
 
-const modalFadeIn = keyframes`
+const fadeInUp = keyframes`
     0% {
-    display: none;
-    transform: perspective(400px);
-    animation-timing-function: ease-in;
-  }
-
-  100% {
-    transform: perspective(400px);
-        opacity: 1;
-  } 
+    opacity:0;
+transform:  translate(0px,40px)  ;
+}
+100% {
+    opacity:1;
+transform:  translate(0px,0px)  ;
+}
 `;
 
 const Container = styled.div`
@@ -23,8 +21,11 @@ const Container = styled.div`
   grid-template-columns: 1fr;
   width: 90%;
   opacity: 0;
-   animation: ${modalFadeIn} .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+   animation: ${fadeInUp} .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
    animation-delay: ${props => props.delay}s;
+   &:hover {
+    transform: translateY(5rem);
+   }
 `;
 
 const SkillItem = ({detail, delay}) => {
@@ -32,8 +33,8 @@ const SkillItem = ({detail, delay}) => {
     return (
         <Container delay={delay}>
             <SkillIcon iconName={iconName}/>
-            <ItemHeading delay={delay} heading={heading}/>
-            <SkillDetail delay={delay} subHeading={subHeading} skillNames={skillNames}/>
+            <ItemHeading heading={heading}/>
+            <SkillDetail subHeading={subHeading} skillNames={skillNames}/>
         </Container>
     );
 };

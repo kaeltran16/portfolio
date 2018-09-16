@@ -4,22 +4,22 @@ import natours from 'assets/img/natours.png';
 import ProjectDetail from "./Detail";
 import AttentionButton from "./AttentionButton";
 
-const unfoldIn = keyframes`
+const bounceInUp = keyframes`
     0% {
-        transform:scaleX(.005) scaleY(0);
-        background-color: black;
+        opacity: 0;
+    transform: translateY(2000px);
 }
-    50% {
-        transform:scaleX(.005) scaleY(1);
-
-        background-color: black;
-
+    60% {
+        opacity: 1;
+    transform: translateY(-30px);
+}
+    80% {
+        transform: translateY(10px);
 }
     100% {
-        transform:scaleX(1) scaleY(1);
-        background-color: transparent;
+        transform: translateY(0);
 }
-`;
+`
 
 const Container = styled.div`
   width: 90%;
@@ -28,17 +28,8 @@ const Container = styled.div`
   justify-self: center;
   align-self: center;
     transform:scale(0);
-    animation:${unfoldIn} 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
-    animation-delay: 1s;
-`;
-
-const zoomIn = keyframes`
-    0% {
-        transform:scale(0);
-}
-    100% {
-        transform:scale(1);
-}
+    animation:${bounceInUp} 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+    animation-delay: .5s;
 `;
 
 
@@ -52,8 +43,6 @@ const CardContainer = styled.div`
   justify-self: center;
   align-self: center;
   
-   transform:scale(0);
-   animation: ${zoomIn} .5s .8s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
     `;
 
 const Image = styled.img`
@@ -78,8 +67,8 @@ const ProjectCard = ({detail}) => (
         <CardContainer>
             <DetailContainer>
                 <ProjectDetail detail={detail}/>
-                <AttentionButton url='http://github.com' position='left'>Live demo</AttentionButton>
-                <AttentionButton url='http://github.com' position='right'>View source</AttentionButton>
+                <AttentionButton delay={0} url='http://github.com' position='left'>Live demo</AttentionButton>
+                <AttentionButton delay={1} url='http://github.com' position='right'>View source</AttentionButton>
             </DetailContainer>
             <Image src={natours}/>
         </CardContainer>

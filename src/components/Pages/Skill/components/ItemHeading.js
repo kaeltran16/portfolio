@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from "styled-components";
-import TextScrambler from "../../../commons/TextScrambler";
 
 
 const Text = styled.h4`
@@ -11,10 +10,10 @@ const Text = styled.h4`
   align-items: center;
   text-align: center;
 `;
-const ItemHeading = ({heading, delay}) => (
+const ItemHeading = ({heading}) => (
 
     <Text>
-        <TextScrambler text={heading} delay={delay * 1000 + 1000}/>
+        {heading}
     </Text>
 );
 

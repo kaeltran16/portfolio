@@ -16,7 +16,7 @@ const Container = styled.div`
 const ProjectItem = ({header, detail}) => (
     <Container>
         <Navigation color='dark' size={5}/>
-        <Heading heading={header}/>
+        <Heading color='dark' heading={header}/>
         <ProjectCard detail={detail}/>
         <NextPageButton align='flex-end' color='dark' size={2}/>
     </Container>
