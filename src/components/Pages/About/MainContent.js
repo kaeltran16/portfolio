@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, {keyframes} from "styled-components";
 import {withDataContext} from "../../../appContext";
+import {device} from "../../../responsive";
 
 const fadeInOut = keyframes`
     0% {
@@ -38,6 +39,20 @@ const Text = styled.div`
     opacity: 0;
     animation: ${fadeInOut} 1.5s ease-in forwards;
     animation-delay: 1.5s;
+         @media ${device.mobileS} {
+          width: 90%;
+          font-size: 3.5rem;
+    }
+      @media ${device.mobileM} {
+          width: 90%;
+          font-size: 3rem;
+    }
+     @media ${device.mobileL} {
+          width: 85%;
+          font-size: 3rem;
+    }
+    
+  
     
  `;
 

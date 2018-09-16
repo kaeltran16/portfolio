@@ -20,7 +20,7 @@ const TextHeader = styled.h2`
   cursor: auto;
   color: ${props => props.color === 'dark'
     ? props.theme.primary.light
-    : props.theme.secondary.light };
+    : props.theme.secondary.light }; 
 `;
 
 
