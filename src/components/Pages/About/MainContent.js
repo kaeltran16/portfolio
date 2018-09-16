@@ -1,8 +1,18 @@
 import React from 'react';
-import styled from "styled-components";
-import TextScrambler from "../../commons/TextScrambler";
+import styled, {keyframes} from "styled-components";
 import {withDataContext} from "../../../appContext";
 
+const fadeInOut = keyframes`
+    0% {
+        opacity: 0;
+}
+
+    50% {opacity: .5}
+
+    100% {
+        opacity: 1;
+}
+`
 const Container = styled.div`
 	width: 100%;
 	height: 100%;
@@ -15,6 +25,7 @@ const Container = styled.div`
 	flex-direction: column;
 `;
 
+
 const Text = styled.div`
     width: 70%;
     font-size: 2.5rem;
@@ -24,14 +35,17 @@ const Text = styled.div`
     &:not(:first-child) {
       margin-top: 5rem;
     }
-`;
+    opacity: 0;
+    animation: ${fadeInOut} 1.5s ease-in forwards;
+    animation-delay: 1.5s;
+    
+ `;
 
 const MainContent = ({contents}) => {
     const renderTexts = paragraphs => {
-        let delay = 1500;
         return paragraphs.map((paragraph, i) =>
             <Text key={i}>
-                <TextScrambler text={paragraph} delay={delay + 300}/>
+                {paragraph}
             </Text>
         );
     };

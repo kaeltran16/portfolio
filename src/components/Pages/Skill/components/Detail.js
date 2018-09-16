@@ -1,22 +1,12 @@
 import React from 'react';
-import styled, {keyframes} from "styled-components";
-import TextScrambler from "../../../commons/TextScrambler";
+import styled from "styled-components";
 
 const Container = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 `;
-const fadeInUp = keyframes`
-    0% {
-    opacity:0;
-transform:  translate(0px,40px)  ;
-}
-100% {
-    opacity:1;
-transform:  translate(0px,0px)  ;
-}
-`;
+
 
 const TextHeading = styled.h4`
   font-size: 1.75rem;
@@ -38,8 +28,6 @@ const SkillName = styled.p`
     font-size: 2rem;
     font-weight: bolder;
     color: ${props => props.theme.primary.dark};
-      animation: ${fadeInUp} cubic-bezier(1,-0.26,.88,.7) 5s;
-       animation-delay: ${props => props.delay}s;
 
 
 `;
@@ -48,7 +36,9 @@ const SkillDetail = ({subHeading, skillNames, delay}) => {
         skillNames.map((name, index) => <SkillName delay={delay - 1} key={index}>{name}</SkillName>);
     return (
         <Container>
-            <TextHeading><TextScrambler text={subHeading} delay={delay * 1000}/></TextHeading>
+            <TextHeading>{subHeading}
+
+            </TextHeading>
             <SkillItem>
                 {renderSkillNames(skillNames)}
             </SkillItem>

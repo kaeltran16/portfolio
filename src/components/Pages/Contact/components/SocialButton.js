@@ -1,9 +1,29 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, {keyframes} from 'styled-components';
 
+const lightSpeedIn = keyframes`
+    0% {
+        transform: translateY(100%) skewX(-0deg);
+    opacity: 0;
+}
+    60% {
+        transform: translateY(-10%) skewX(-20deg);
+    opacity: 1;
+}
+    80% {
+        transform: translateY(0%) skewX(10deg);
+    opacity: 1;
+}
+    100% {
+        transform: translateY(0%) skewX(0deg);
+    opacity: 1;
+}
+`
 const Container = styled.div`
   color: #fff;
   height: 100%;
+  
+  animation: ${lightSpeedIn} 2s ease-out forwards;
 `;
 
 

@@ -1,6 +1,27 @@
 import React from 'react';
 import styled, {keyframes} from "styled-components";
 
+const jackInTheBox = keyframes`
+    from {
+        opacity: 0;
+        transform: scale(0.1) rotate(30deg);
+        transform-origin: center bottom;
+    }
+
+    50% {
+        transform: rotate(-10deg);
+}
+
+    70% {
+        transform: rotate(3deg);
+}
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+`;
+
 const zoomIn = keyframes`
     0% {
         transform:scale(0);
@@ -37,6 +58,10 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   text-align: center;
+  
+  animation: ${jackInTheBox} 1.5s ease-in forwards;
+  animation-delay: ${props => props.delay + 1.5}s;
+  opacity: 0;
 `;
 
 const Button = styled.a`
@@ -103,8 +128,8 @@ const Button = styled.a`
 			}
 		}
 `;
-const AttentionButton = ({url, children, position}) => (
-    <Container>
+const AttentionButton = ({url, children, position, delay}) => (
+    <Container delay={delay}>
         <Button href={url} target='_blank' position={position}>{children}</Button>
     </Container>
 );
