@@ -1,13 +1,36 @@
 import {injectGlobal} from 'styled-components';
+import {device} from "../responsive";
 
 injectGlobal`
   html {
     box-sizing: border-box;
-    font-size: 62.5%;
-    font-family: 'M PLUS Rounded 1c', sans-serif; 
+   
+  
+    
+    
+    
+       @media ${device.mobileS} {
+        font-size: 25%;
+      }
+        @media ${device.mobileM} {
+        font-size: 30%;
+      }
+        @media ${device.mobileL} {
+        font-size: 35%;
+      }
+
+  @media ${device.tablet} {
+        font-size: 50%;
+      }
+         @media ${device.laptopL}, ${device.laptop}
+      {font-size: 62.5%;}
+        @media ${device.desktop} {font-size: 100%;}
+            @media ${device.desktopL} {font-size: 120%;}
+
+    font-family: 'M PLUS Rounded 1c', sans-serif;
     overflow-x: hidden;
     overflow-y: hidden;
-  }
+    }
   *, 
   *::after,
   *::before {
