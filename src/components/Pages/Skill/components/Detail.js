@@ -15,8 +15,9 @@ const TextHeading = styled.h4`
   width: 100%;
   justify-content: center;
   display: flex;
-  color: ${props => props.theme.primary.light}
+  color: ${props => props.theme.accent.dark}
   text-align: center;
+  
 `;
 
 const SkillItem = styled.div`

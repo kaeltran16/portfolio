@@ -40,7 +40,7 @@ const load = keyframes`
 const Container = styled.div`
   width: 100vw;
   height: 100vh;
-  background-image: radial-gradient(${props => props.theme.primary.light}, ${props => props.theme.primary.dark});
+  background-image: radial-gradient(circle, ${props => props.theme.accent.dark}, ${props => props.theme.accent.light});
   background-size: cover;
   
   display: flex;

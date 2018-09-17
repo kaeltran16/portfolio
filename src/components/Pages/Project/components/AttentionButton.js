@@ -92,7 +92,7 @@ const Button = styled.a`
 			border-radius: 50%;		
 		}
 		&::before {
-			background-color: ${props => props.theme.accent.main};
+			background-color: ${props => props.theme.accent.dark};
 			animation: ${top(3)} 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.25s infinite alternate;
 			${props => props.position === 'left' && `
 			    left: 5%;
@@ -102,11 +102,15 @@ const Button = styled.a`
 			`};
     }
 		&::after {
-			background-color: ${props => props.theme.accent.dark};;
+			background-color: ${props => props.theme.accent.main};;
 			animation: ${props => props.position === 'left' ? bottom(-15) : bottom(15)} 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.5s infinite alternate;
 			top: 90%;
-			left: ${props => props.position === 'right' ? '7%' : '93%'};
-			right: ${props => props.position === 'left' ? '7%' : '93%'};
+			${props => props.position === 'left' && `
+			    right: 20%;
+			`};
+			${props => props.position === 'right' && `
+			    left: 20%;
+			`};
 		}
 		&:hover {
 			color: white;

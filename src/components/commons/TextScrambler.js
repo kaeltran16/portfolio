@@ -2,87 +2,94 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 class TextScrambler extends React.Component {
-	static propTypes = {
-		text: PropTypes.string.isRequired,
-		delay: PropTypes.number
-	};
+    static propTypes = {
+        text: PropTypes.string.isRequired,
+        delay: PropTypes.number
+    };
 
-	static defaultProps = {
-		text: '',
-		delay: 0
-	};
+    static defaultProps = {
+        text: '',
+        delay: 0
+    };
 
-	constructor(props) {
-		super(props);
-		this.chars = '!<>-_\\/[]{}—=+*^?#________';
-		this.state = { text: '' };
-		this.update = this.update.bind(this);
-	}
+    constructor(props) {
+        super(props);
+        this.chars = '!<>-_\\/[]{}—=+*^?#________';
+        this.state = {text: ''};
+        this.isUmounted = false;
+        this.update = this.update.bind(this);
+    }
 
-	setText(newText) {
-		const oldText = this.state.text;
-		const length = Math.max(oldText.length, newText.length);
-		const promise = new Promise(resolve => (this.resolve = resolve));
-		this.queue = [];
-		for (let i = 0; i < length; i++) {
-			const from = oldText[i] || '';
-			const to = newText[i] || '';
-			const start = Math.floor(Math.random() * 40);
-			const end = start + Math.floor(Math.random() * 40);
-			this.queue.push({ from, to, start, end });
-		}
-		window.cancelAnimationFrame(this.frameRequest);
-		this.frame = 0;
-		this.update();
-		return promise;
-	}
+    componentWillUnmount() {
+        this.isUmounted = true;
+    }
 
-	update() {
-		let output = '';
-		let complete = 0;
-		for (let i = 0, n = this.queue.length; i < n; i++) {
-			let { from, to, start, end, char } = this.queue[i];
-			if (this.frame >= end) {
-				complete++;
-				output += to;
-			} else if (this.frame >= start) {
-				if (!char || Math.random() < 0.28) {
-					char = this.randomChar();
-					this.queue[i].char = char;
-				}
-				output += char;
-			} else {
-				output += from;
-			}
-		}
-		this.setState({ text: output });
-		if (complete === this.queue.length) {
-			this.resolve();
-		} else {
-			this.frameRequest = window.requestAnimationFrame(this.update);
-			this.frame++;
-		}
-	}
+    setText(newText) {
+        const oldText = this.state.text;
+        const length = Math.max(oldText.length, newText.length);
+        const promise = new Promise(resolve => (this.resolve = resolve));
+        this.queue = [];
+        for (let i = 0; i < length; i++) {
+            const from = oldText[i] || '';
+            const to = newText[i] || '';
+            const start = Math.floor(Math.random() * 40);
+            const end = start + Math.floor(Math.random() * 40);
+            this.queue.push({from, to, start, end});
+        }
+        window.cancelAnimationFrame(this.frameRequest);
+        this.frame = 0;
+        this.update();
+        return promise;
+    }
 
-	randomChar() {
-		return this.chars[Math.floor(Math.random() * this.chars.length)];
-	}
+    update() {
+        let output = '';
+        let complete = 0;
+        for (let i = 0, n = this.queue.length; i < n; i++) {
+            let {from, to, start, end, char} = this.queue[i];
+            if (this.frame >= end) {
+                complete++;
+                output += to;
+            } else if (this.frame >= start) {
+                if (!char || Math.random() < 0.28) {
+                    char = this.randomChar();
+                    this.queue[i].char = char;
+                }
+                output += char;
+            } else {
+                output += from;
+            }
+        }
 
-	componentWillMount() {
-		const { text } = this.props;
+        if (!this.isUmounted)
+            this.setState({text: output});
+        if (complete === this.queue.length) {
+            this.resolve();
+        } else {
+            this.frameRequest = window.requestAnimationFrame(this.update);
+            this.frame++;
+        }
+    }
 
-		setTimeout(() => {
-			this.setText(text);
-		}, this.props.delay);
-	}
+    randomChar() {
+        return this.chars[Math.floor(Math.random() * this.chars.length)];
+    }
 
-	render() {
-		return (
-			<div>
-				<div>{this.state.text}</div>
-			</div>
-		);
-	}
+    componentWillMount() {
+        const {text} = this.props;
+
+        setTimeout(() => {
+            this.setText(text);
+        }, this.props.delay);
+    }
+
+    render() {
+        return (
+            <div>
+                <div>{this.state.text}</div>
+            </div>
+        );
+    }
 }
 
 export default TextScrambler;

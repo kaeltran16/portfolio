@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import {withRouter} from 'react-router-dom';
 import Navigation from 'components/commons/Navigation';
 import Header from './components/Header';
 import NextPageButton from 'components/commons/NextPageButton';
@@ -18,18 +17,21 @@ const Container = styled.div`
 `;
 
 class Landing extends React.Component {
+    static defaultProps = {nextRoute: '/'};
+
     render() {
+        const {nextRoute} = this.props;
         return (
             <div>
                 <Background/>
                 <Container>
                     <Navigation color='light' size={5}/>
                     <Header/>
-                    <NextPageButton align='center' color='light' size={5} nextPageUrl='/about'/>
+                    <NextPageButton align='center' color='light' size={5} nextRoute={nextRoute}/>
                 </Container>
             </div>
         );
     }
 }
 
-export const LandingPage = withScroll(withRouter(Landing), '/about', null);
+export const LandingPage = withScroll(Landing);

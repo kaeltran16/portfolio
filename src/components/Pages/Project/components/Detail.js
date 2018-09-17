@@ -16,6 +16,8 @@ const Heading = styled.h1`
   text-transform: uppercase;
   letter-spacing: .75rem;
   font-weight: bold;
+    color: ${props => props.theme.accent.dark};
+
 `;
 
 const SubHeading = styled.h3`

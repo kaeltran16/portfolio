@@ -6,6 +6,7 @@ const Icon = styled.svg`
   width: 100%;
   display: flex;
   justify-content: center;
+  fill: ${props => props.theme.accent.dark};
 `;
 
 const SkillIcon = ({iconName}) => (

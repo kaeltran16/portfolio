@@ -87,9 +87,9 @@ const Container = styled.div`
 `;
 
 
-const NextPageButton = ({align, color, size, horizontal, nextPageUrl, history}) => {
+const NextPageButton = ({align, color, size, horizontal, nextRoute, history}) => {
     const gotoNextPage = () => {
-        history.push(nextPageUrl);
+        history.push(nextRoute);
     };
     return (
         <Container align={align} color={color} size={size} horizontal={horizontal} onClick={() => gotoNextPage()}>

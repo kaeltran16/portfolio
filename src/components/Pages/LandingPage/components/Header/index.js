@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import {withDataContext} from 'appContext';
+import {DataType, withDataContext} from 'appContext';
 
 import TextScrambler from 'components/commons/TextScrambler';
 
@@ -14,14 +14,16 @@ const Container = styled.div`
 	flex-direction: column;
 `;
 
-const TextPrimary = styled.h1`
-	color: ${props => props.theme.secondary.main};
+const Text = styled.h3`
+    color: ${props => props.theme.secondary.main};
+`;
+
+const TextPrimary = Text.extend`
 	font-size: 6rem;
 	font-weight: 400;
 	letter-spacing: 1rem;
 `;
-const TextPrimarySub = styled.h2`
-	color: ${props => props.theme.secondary.main};
+const TextPrimarySub = Text.extend`
 	font-size: 3rem;
 	font-weight: 700;
 `;
@@ -37,4 +39,4 @@ const Header = ({primaryHeader, subHeader}) => (
     </Container>
 );
 
-export default withDataContext(Header, 'LandingPage');
+export default withDataContext(Header, DataType.LandingPage);

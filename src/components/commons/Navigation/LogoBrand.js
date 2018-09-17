@@ -1,5 +1,6 @@
 import React from 'react';
 import styled, {keyframes} from 'styled-components';
+import {withRouter} from 'react-router-dom';
 
 const fadeIn = keyframes`
     0% {
@@ -25,19 +26,23 @@ const Image = styled.svg`
     ? props.theme.primary.main
     : props.theme.secondary.main };
   animation: ${fadeIn} 2s;
-
+  cursor: pointer;
   &:hover {
       transform: rotate(180deg);
       transition: all 1s;
       backface-visibility: hidden;
   }
+  position: relative;
+  		z-index: 500;
+
   
 `;
 
-const LogoBrand = ({color, size}) => {
+const LogoBrand = ({color, size, history}) => {
+    const onClick = () => history.push('/');
     return (
         <Image color={color} size={size} version='1' xmlns='http://www.w3.org/2000/svg'
-               viewBox='0 0 799.000000 799.000000'>
+               viewBox='0 0 799.000000 799.000000' onClick={() => onClick()}>
             <path
                 d='M3780 7939 c-1814 -96 -3335 -1432 -3664 -3219 -49 -266 -60 -404 -60 -720 0 -305 10 -442 54 -695 19 -107 70 -328 91 -392 l11 -33 195 0 c166 0 194 2 190 14 -18 46 -81 289 -101 391 -203 1001 28 2034 636 2847 499 665 1206 1137 2000 1333 327 81 610 111 958 102 246 -6 397 -22 622 -68 451 -91 898 -280 1288 -543 349 -236 714 -599 944 -938 l60 -88 219 0 219 0 -27 48 c-52 90 -197 305 -273 406 -171 226 -429 494 -647 671 -585 477 -1270 768 -2035 864 -89 11 -439 32 -500 29 -19 0 -100 -4 -180 -9z'
                 transform='matrix(.1 0 0 -.1 0 799)'/>
@@ -51,4 +56,4 @@ const LogoBrand = ({color, size}) => {
     )
 };
 
-export default LogoBrand;
+export default withRouter(LogoBrand);

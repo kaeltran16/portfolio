@@ -6,37 +6,31 @@ const links = ['/', '/about', '/skill', '/work/project1', '/work/project2', '/wo
 
 const withScroll = (Component) =>
     class ScrollableComponent extends React.Component {
+        state = {nextRoute: '', preRoute: ''};
         scrollUp = () => {
             const {history, match} = this.props;
 
             const currentPageIndex = links.findIndex(i => i === match.url);
             if (currentPageIndex !== 0) {
-                const prevRoute = links[currentPageIndex - 1];
-                if (history.location.pathname !== prevRoute) {
-                    history.push(prevRoute);
+                this.setState({prevRoute: links[currentPageIndex - 1]});
+                if (history.location.pathname !== this.state.prevRoute) {
+                    history.push(this.state.preRoute);
                 }
             }
         };
         scrollDown = () => {
             const {history, match} = this.props;
             const currentPageIndex = links.findIndex(i => i === match.url);
-            const nextRoute = links[currentPageIndex + 1];
-            if (history.location.pathname !== nextRoute) {
-                history.push(nextRoute);
+            this.setState({nextRoute: links[currentPageIndex + 1]});
+            if (history.location.pathname !== this.state.nextRoute) {
+                history.push(this.state.nextRoute);
             }
-        }
+        };
         handleScroll = event => {
             event.preventDefault();
             if (event.deltaY < 0)
                 this.scrollUp();
             else this.scrollDown();
-        };
-        componentDidMount = () => {
-
-            window.addEventListener('wheel', this.handleScroll, false);
-        }
-        componentWillUnmount = () => {
-            window.removeEventListener('wheel', this.handleScroll, false)
         };
 
         constructor(props) {
@@ -44,9 +38,19 @@ const withScroll = (Component) =>
             this.handleScroll = _.debounce(this.handleScroll, 200);
         }
 
+        componentDidMount() {
+
+            window.addEventListener('wheel', this.handleScroll, false);
+        };
+
+        componentWillUnmount() {
+            window.removeEventListener('wheel', this.handleScroll, false)
+        };
+
         render() {
+            const {nextRoute, prevRoute} = this.state;
             return (
-                <Component {...this.props}/>
+                <Component {...this.props} nextRoute={nextRoute} prevRoute={prevRoute}/>
             );
         }
     }
