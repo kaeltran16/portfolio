@@ -9,6 +9,8 @@ const Text = styled.h4`
   justify-content: center; 
   align-items: center;
   text-align: center;
+  
+  
 `;
 const ItemHeading = ({heading}) => (
 

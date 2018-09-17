@@ -25,7 +25,7 @@ injectGlobal`
              @media ${device.laptop} {font-size: 62.5%}
 
          @media ${device.laptopL}
-      {font-size: 75%;}
+      {font-size: 62.5%;}
         @media ${device.desktop} {font-size: 100%;}
             @media ${device.desktopL} {font-size: 120%;}
 

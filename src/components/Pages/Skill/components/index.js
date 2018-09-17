@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import SkillItem from "./Item";
+import {device} from "../../../../responsive";
 
 const Container = styled.div`
   width: 80%;
@@ -11,6 +12,10 @@ const Container = styled.div`
   justify-self: center;
   flex-direction: column;
   align-self: center;
+  
+  @media ${device.mobileS} {
+        column-count: 1;
+  }
 `;
 
 

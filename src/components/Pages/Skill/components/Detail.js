@@ -5,6 +5,8 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    
+    
 `;
 
 
@@ -14,6 +16,7 @@ const TextHeading = styled.h4`
   justify-content: center;
   display: flex;
   color: ${props => props.theme.primary.light}
+  text-align: center;
 `;
 
 const SkillItem = styled.div`

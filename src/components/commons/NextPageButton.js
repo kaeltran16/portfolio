@@ -72,7 +72,7 @@ const Container = styled.div`
     cursor: pointer;
     display: flex;
     justify-self: ${props => props.align}
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
  
     ${Icon} {
