@@ -1,12 +1,13 @@
 import React from 'react';
 import withScroll from "HOCs/withScroll";
 import ProjectItem from "./ProjectItem";
-import {withDataContext} from "../../../../appContext";
+import {DataType, withDataContext} from "../../../../appContext";
 
 const Project = ({match, details, header}) => {
 
     const renderProjectOnRoute = () => {
         // TODO: refactor this
+        console.log(match);
         switch (match.params.projectId) {
             case details[0].name:
                 return <ProjectItem key={details[0].name} detail={details[0]} header={header}/>;
@@ -28,4 +29,4 @@ const Project = ({match, details, header}) => {
     );
 };
 
-export const ProjectPage = withScroll(withDataContext(Project, 'Project'));
+export const ProjectPage = withScroll(withDataContext(Project, DataType.WorkPage));

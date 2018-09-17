@@ -1,20 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 import SkillItem from "./Item";
-import {device} from "../../../../responsive";
+import {withDataContext} from "../../../../appContext";
 
 const Container = styled.div`
   width: 80%;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
   grid-template-rows: 1fr;
   justify-self: center;
   flex-direction: column;
   align-self: flex-start;
-  
-  @media ${device.mobileS} {
-        column-count: 1;
-  }
 `;
 
 
@@ -30,4 +26,4 @@ const SkillContainer = ({details}) => {
         ;
 }
 
-export default SkillContainer;
+export default withDataContext(SkillContainer);
