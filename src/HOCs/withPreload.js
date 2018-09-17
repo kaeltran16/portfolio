@@ -1,5 +1,5 @@
 import React from 'react';
-import Loading from "../components/commons/Loading";
+import Loading from "../commons/components/Loading";
 
 const withPreload = Component =>
     class PreloadComponent extends React.Component {

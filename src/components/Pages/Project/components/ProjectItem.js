@@ -1,8 +1,8 @@
 import React from 'react';
-import Navigation from "../../../commons/Navigation";
-import Heading from "../../../commons/Heading";
+import Navigation from "../../../../commons/components/Navigation";
+import Heading from "../../../../commons/components/Heading";
 import ProjectCard from "./Card";
-import NextPageButton from "../../../commons/NextPageButton";
+import NextPageButton from "../../../../commons/components/NextPageButton";
 import styled from "styled-components";
 
 const Container = styled.div`

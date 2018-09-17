@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Navigation from '../../commons/Navigation';
-import NextPageButton from '../../commons/NextPageButton';
-import Heading from 'components/commons/Heading';
-import MainContent from "./MainContent";
-import {withDataContext} from "../../../appContext";
+import Navigation from '../../../commons/components/Navigation';
+import NextPageButton from '../../../commons/components/NextPageButton';
+import Heading from 'commons/components/Heading';
+import {DataType, withDataContext} from "../../../appContext";
 import withScroll from "../../../HOCs/withScroll";
+import Paragraphs from './Paragraphs';
 
 const Container = styled.div`
     height: 100vh;
@@ -21,9 +21,9 @@ const About = ({header}) => (
     <Container>
         <Navigation color='dark' size={5}/>
         <Heading color='dark' heading={header}/>
-        <MainContent/>
+        <Paragraphs/>
         <NextPageButton align='flex-end' color='dark' size={2}/>
     </Container>
 );
 
-export const AboutPage = withScroll(withDataContext(About, 'About'), '/skill', '/');
+export const AboutPage = withScroll(withDataContext(About, DataType.AboutPage));

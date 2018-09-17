@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import {DataType, withDataContext} from 'appContext';
 
-import TextScrambler from 'components/commons/TextScrambler';
+import TextScrambler from 'commons/components/TextScrambler';
 
 const Container = styled.div`
 	width: 100%;

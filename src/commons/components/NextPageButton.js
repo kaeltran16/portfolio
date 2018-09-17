@@ -33,6 +33,7 @@ const zoomIn = keyframes`
 const Icon = styled.svg`
     position: absolute;
     opacity: 0;
+    
     transform: scale3d(0.5, 0.5, 0.5);
     animation: ${move} 3s ease-out infinite;
     
@@ -74,7 +75,6 @@ const Container = styled.div`
     justify-self: ${props => props.align}
     align-items: center;
     justify-content: center;
- 
     ${Icon} {
         height: ${props => `${props.size}rem`}
         width: ${props => `${props.size}rem`}

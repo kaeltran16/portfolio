@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import TextScrambler from 'components/commons/TextScrambler';
+import TextScrambler from './TextScrambler';
 
 const Container = styled.div`
 	width: 100%;

@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import Navigation from 'components/commons/Navigation'
-import Heading from "components/commons/Heading";
+import Navigation from 'commons/components/Navigation'
+import Heading from "commons/components/Heading";
 import {withDataContext} from "appContext";
-import NextPageButton from "components/commons/NextPageButton";
+import NextPageButton from "commons/components/NextPageButton";
 import SkillContainer from "./components";
 import withScroll from "../../../HOCs/withScroll";
 

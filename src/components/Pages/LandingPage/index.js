@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import Navigation from 'components/commons/Navigation';
+import Navigation from 'commons/components/Navigation';
 import Header from './components/Header';
-import NextPageButton from 'components/commons/NextPageButton';
+import NextPageButton from 'commons/components/NextPageButton';
 import Background from "./components/Background";
 import withScroll from "../../../HOCs/withScroll";
 
