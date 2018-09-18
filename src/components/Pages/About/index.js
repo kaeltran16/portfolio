@@ -14,7 +14,10 @@ const Container = styled.div`
     background-color: ${props => props.theme.secondary.main};
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr .75fr 4fr .75fr;
+    grid-template-rows: min-content(minmax(10rem,1fr)) 
+    min-content(minmax(7.5rem,.75fr))  
+    min-content(minmax(40rem,4fr))  
+    min-content(minmax(7.5rem,.5fr)) 
 `;
 
 const About = ({header}) => (

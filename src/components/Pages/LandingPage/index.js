@@ -14,6 +14,7 @@ const Container = styled.div`
   grid-template-columns: 1fr;
   position: absolute;
   top: 0;
+
 `;
 
 class Landing extends React.Component {

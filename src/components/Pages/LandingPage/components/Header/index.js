@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import {DataType, withDataContext} from 'appContext';
 
 import TextScrambler from 'commons/components/TextScrambler';
+import {device} from "../../../../../responsive";
 
 const Container = styled.div`
 	width: 100%;
@@ -22,10 +23,19 @@ const TextPrimary = Text.extend`
 	font-size: 6rem;
 	font-weight: 400;
 	letter-spacing: 1rem;
+	
+	 @media ${device.mobileS} {
+      font-size: 4rem;
+  }
 `;
 const TextPrimarySub = Text.extend`
 	font-size: 3rem;
 	font-weight: 700;
+	
+	 @media ${device.mobileS} {
+      font-size: 2rem;
+  }
+
 `;
 
 const Header = ({primaryHeader, subHeader}) => (

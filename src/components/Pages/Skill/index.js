@@ -13,6 +13,8 @@ const Container = styled.div`
   display: grid;
   grid-template-rows: 1fr .75fr 3.75fr 1.5fr;
   grid-template-columns: 1fr;
+  
+  
 `;
 const Skill = ({header}) => (
     <Container>

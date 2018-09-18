@@ -10,7 +10,7 @@ injectGlobal`
     
     
        @media ${device.mobileS} {
-        font-size: 25%;
+        font-size: 40%;
       }
         @media ${device.mobileM} {
         font-size: 30%;

@@ -3,6 +3,7 @@ import styled, {keyframes} from 'styled-components';
 import SkillIcon from "./Icon";
 import ItemHeading from "./ItemHeading";
 import SkillDetail from "./Detail";
+import {device} from "../../../../responsive";
 
 const fadeInUp = keyframes`
     0% {
@@ -26,6 +27,11 @@ const Container = styled.div`
    &:hover {
     transform: translateY(5rem);
    }
+   
+      @media ${device.mobileS} {
+        margin-top: 5rem;
+      } 
+  }
 `;
 
 const SkillItem = ({detail, delay}) => {

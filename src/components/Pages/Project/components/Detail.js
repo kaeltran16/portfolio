@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import {device} from "../../../../responsive";
 
 const Container = styled.div`
   width: 100%;
@@ -9,6 +10,8 @@ const Container = styled.div`
   justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
+  
+  
 `;
 
 const Heading = styled.h1`
@@ -17,6 +20,10 @@ const Heading = styled.h1`
   letter-spacing: .75rem;
   font-weight: bold;
     color: ${props => props.theme.accent.dark};
+    
+       @media ${device.mobileS} {
+      font-size: 3rem;
+  }
 
 `;
 
@@ -25,6 +32,9 @@ const SubHeading = styled.h3`
   text-align: left;
   font-weight: 500;
   line-height: 2.5rem;
+     @media ${device.mobileS} {
+      font-size: 1.5rem;   
+  }
 `;
 
 const IntroText = styled.h4`

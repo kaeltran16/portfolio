@@ -37,8 +37,8 @@ const CardContainer = styled.div`
   width: 100%;
   height: 100%;
   display: grid;
-  grid-template-rows: 1fr;
-  grid-template-columns: 1.5fr 1fr;
+  grid-template-columns: repeat(auto-fit,minmax(50rem, 1.5fr));
+  grid-template-rows: repeat(auto-fit,minmax(30rem, 1.5fr));
   align-items: center;
   justify-self: center;
   align-self: center;

@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import SkillItem from "./Item";
 import {withDataContext} from "../../../../appContext";
+import {device} from "../../../../responsive";
 
 const Container = styled.div`
   width: 80%;
@@ -11,6 +12,11 @@ const Container = styled.div`
   justify-self: center;
   flex-direction: column;
   align-self: flex-start;
+  
+   @media ${device.mobileS} {
+      font-size: 10rem;   
+  }
+
 `;
 
 

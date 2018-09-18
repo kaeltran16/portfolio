@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 import {DataType, withDataContext} from "../../../appContext";
 import {fadeInSlowly} from "../../../commons/keyframes";
+import {device} from "../../../responsive";
 
 const Container = styled.div`
 	width: 100%;
@@ -13,6 +14,8 @@ const Container = styled.div`
 	backface-visibility: hidden;
 	display: flex;
 	flex-direction: column;
+	
+
 `;
 
 
@@ -30,6 +33,12 @@ const Text = styled.div`
     opacity: 0;
     animation: ${fadeInSlowly} 1.5s ease-in forwards;
     animation-delay: 1.5s;
+    
+    	  
+  @media ${device.mobileS} {
+      font-size: 2.5rem;
+      width: 90%;
+  }
 `;
 
 const Paragraphs = ({contents}) => {
