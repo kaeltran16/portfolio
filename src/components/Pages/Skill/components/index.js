@@ -1,8 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import SkillItem from "./Item";
-import {withDataContext} from "../../../../appContext";
-import {device} from "../../../../responsive";
 
 const Container = styled.div`
   width: 80%;
@@ -13,9 +11,7 @@ const Container = styled.div`
   flex-direction: column;
   align-self: flex-start;
   
-   @media ${device.mobileS} {
-      font-size: 10rem;   
-  }
+ 
 
 `;
 
@@ -29,7 +25,7 @@ const SkillContainer = ({details}) => {
             {renderSkillItems(details)}
         </Container>
     )
-        ;
-}
 
-export default withDataContext(SkillContainer);
+};
+
+export default SkillContainer;

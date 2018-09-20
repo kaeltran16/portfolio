@@ -25,7 +25,7 @@ const TextPrimary = Text.extend`
 	letter-spacing: 1rem;
 	
 	 @media ${device.mobileS} {
-      font-size: 4rem;
+      font-size: 4.5rem;
   }
 `;
 const TextPrimarySub = Text.extend`

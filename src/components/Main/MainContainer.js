@@ -7,6 +7,7 @@ import store from 'store';
 import {HashRouter, Route, Switch} from 'react-router-dom'
 import {AboutPage, ContactPage, LandingPage, Projects, SkillPage} from "../Pages";
 import withPreload from "../../HOCs/withPreload";
+import NotFound from "../../commons/components/NotFound";
 
 const MainContainer = () => (
     <AppDataProvider value={store}>
@@ -18,6 +19,7 @@ const MainContainer = () => (
                     <Route exact path='/skill' component={withPreload(SkillPage)}/>
                     <Route path='/work' component={withPreload(Projects)}/>
                     <Route exact path='/contact' component={withPreload(ContactPage)}/>
+                    <Route path='*' component={NotFound}/>
                 </Switch>
             </HashRouter>
         </ThemeProvider>

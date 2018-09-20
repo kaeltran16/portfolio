@@ -1,5 +1,6 @@
 import React from 'react';
 import styled, {keyframes} from "styled-components";
+import {device} from "../../../../responsive";
 
 const jackInTheBox = keyframes`
     from {
@@ -62,6 +63,7 @@ const Container = styled.div`
   animation: ${jackInTheBox} 1.5s ease-in forwards;
   animation-delay: ${props => props.delay + 1.5}s;
   opacity: 0;
+  
 `;
 
 const Button = styled.a`
@@ -116,6 +118,24 @@ const Button = styled.a`
 			color: white;
 			font-weight: bold;
 			&::before,
+			&::after {
+				top: 0;
+				height: 100%;
+				width: 100%;
+				border-radius: 0;
+				animation: none;
+			}
+			&::after {
+				left: 5%;
+			}
+			&::before {
+				top: .75rem;
+				left: .2rem;
+			}
+		}
+		
+		@media ${device.mobileS} {
+		  &::before,
 			&::after {
 				top: 0;
 				height: 100%;

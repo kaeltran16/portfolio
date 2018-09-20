@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, {keyframes} from 'styled-components';
 import {withRouter} from 'react-router-dom';
+import {device} from "../../responsive";
 
 const move = keyframes`
     25% {
@@ -83,6 +84,10 @@ const Container = styled.div`
     : props.theme.secondary.main };
     }
         animation: ${zoomIn} 2s;
+        
+    @media ${device.mobileS} {
+      align-self: flex-start;
+    }
 
 `;
 

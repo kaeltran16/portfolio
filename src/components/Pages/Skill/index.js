@@ -6,6 +6,7 @@ import {DataType, withDataContext} from "appContext";
 import NextPageButton from "commons/components/NextPageButton";
 import SkillContainer from "./components";
 import withScroll from "../../../HOCs/withScroll";
+import {device} from "../../../responsive";
 
 const Container = styled.div`
   height: 100vh;
@@ -14,13 +15,15 @@ const Container = styled.div`
   grid-template-rows: 1fr .75fr 3.75fr 1.5fr;
   grid-template-columns: 1fr;
   
-  
+    @media ${device.mobileS} {
+      overflow-y: scroll; 
+  }
 `;
-const Skill = ({header}) => (
+const Skill = ({header, details}) => (
     <Container>
         <Navigation color='dark' size={5}/>
         <Heading color='dark' heading={header}/>
-        <SkillContainer/>
+        <SkillContainer details={details}/>
         <NextPageButton align='flex-end' color='dark' size={2}/>
     </Container>
 );

@@ -27,7 +27,7 @@ const Text = styled.div`
     letter-spacing: .2rem;
     
     &:not(:first-child) {
-      margin-top: 3rem;
+      margin-top: 4rem;
     }
     
     opacity: 0;

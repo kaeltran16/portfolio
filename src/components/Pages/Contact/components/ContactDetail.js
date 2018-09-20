@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import TextScrambler from "../../../../commons/components/TextScrambler";
+import {device} from "../../../../responsive";
 
 const Container = styled.div`
   display: flex;
@@ -33,9 +34,14 @@ const PrimaryHeader = styled.a`
   visibility: visible;
   transform: scaleX(1);
 }
+
+
+@media ${device.mobileS} {
+  font-size: 4rem;
+}
 `;
 const SubHeader = styled.div`
-  color: #fff;
+  color: ${props => props.theme.secondary.main}
   text-align: center;
   font-size: 2rem;
   font-weight: lighter;
@@ -43,16 +49,19 @@ const SubHeader = styled.div`
 const Text = styled.h4`
   
 `;
-const PhoneNumber = styled.h4``;
+const PhoneNumber = styled.a`
+   text-decoration: none;
+     color: ${props => props.theme.secondary.main}
+ 
+`;
 const ContactDetail = () => (
     <Container>
-        <PrimaryHeader href='#'>
+        <PrimaryHeader href='mailto:cktran16x2@gmail.com'>
             <TextScrambler delay={1000} text={'cktran16x2@gmail.com'}/>
-
         </PrimaryHeader>
         <SubHeader>
             <Text><TextScrambler text={'Phone Number'} delay={1500}/></Text>
-            <PhoneNumber><TextScrambler text={'(+1) 416-998-7489'} delay={1700}/></PhoneNumber>
+            <PhoneNumber href='tell:+14169987489'><TextScrambler text={'(+1) 416-998-7489'} delay={1700}/></PhoneNumber>
         </SubHeader>
     </Container>
 );

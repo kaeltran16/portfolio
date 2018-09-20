@@ -22,7 +22,7 @@ const Heading = styled.h1`
     color: ${props => props.theme.accent.dark};
     
        @media ${device.mobileS} {
-      font-size: 3rem;
+      font-size: 4rem;
   }
 
 `;
@@ -33,14 +33,23 @@ const SubHeading = styled.h3`
   font-weight: 500;
   line-height: 2.5rem;
      @media ${device.mobileS} {
-      font-size: 1.5rem;   
+      font-size: 2rem;   
   }
 `;
 
 const IntroText = styled.h4`
+  
   font-size: 1.75rem;
   width: 100%;
-  font-weight: 300;
+  font-weight: bold;
+    @media ${device.mobileS} {
+      font-size: 2rem;
+  }
+`;
+
+const ToolText = styled.span`
+  color: ${props => props.theme.accent.main};
+  font-weight: bold;
 `;
 
 const ProjectDetail = ({detail}) => (
@@ -49,7 +58,10 @@ const ProjectDetail = ({detail}) => (
         <SubHeading>
             {detail.subHeading}
         </SubHeading>
-        <IntroText>{detail.intro}</IntroText>
+        <IntroText>
+            <ToolText>Build tools: </ToolText>
+            {detail.intro}
+        </IntroText>
     </Container>
 );
 export default ProjectDetail;

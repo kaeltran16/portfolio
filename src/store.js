@@ -38,30 +38,36 @@ const store = {
         header: 'what i did',
         details: [
             {
-                name: 'project1',
-                subHeading: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores at consectetur dolores exercitationem ipsam itaque iusto laborum quia? Facilis fugiat laudantium magnam mollitia nam recusandae repellendus sed similique ullam velit.',
-                intro: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
+                name: 'natours',
+                subHeading: `Portfolio site for an imagine company in tours business. It is the result of 'Advanced CSS course' I took to improve my existing CSS and Sass skill. `,
+                intro: 'HTML/SCSS',
+                demoUrl: `http://khangtran.ca/natours`,
+                srcUrl: `https://github.com/Khang-Tran/natours`
             },
             {
-                name: 'project2',
-                subHeading: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores at consectetur dolores exercitationem ipsam itaque iusto laborum quia? Facilis fugiat laudantium magnam mollitia nam recusandae repellendus sed similique ullam velit.',
-                intro: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
+                name: 'devpals',
+                subHeading: `A social network site for developers to connect, sharing their thought and coding activities. It also allows users to add friends and comment on friends's posts.`,
+                intro: 'MongoDB, Express, React, Nodejs, Redux',
+                demoUrl: `https://devpals.herokuapp.com`,
+                srcUrl: `https://github.com/Khang-Tran/devpals`
             },
             {
-                name: 'project3',
-                subHeading: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores at consectetur dolores exercitationem ipsam itaque iusto laborum quia? Facilis fugiat laudantium magnam mollitia nam recusandae repellendus sed similique ullam velit.',
-                intro: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
+                name: 'ishop',
+                subHeading: 'API for developing online shopping site. The API provides authentications and authorization, allows managers to add products with categories and users to order and receive invoices.',
+                intro: 'ASP.NET Core Web API, EF Core, JWT',
+                demoUrl: `https://ishop-api.azurewebsites.net/api/swagger/index.html`,
+                srcUrl: `https://github.com/Khang-Tran/iShop_v.02`
             }
         ],
     },
     Contact: {
         header: 'get in touch',
         socialIcons: [
-            {icon: 'linkedin', name: 'Linkedin', url: 'https://linkedin.com'},
-            {icon: 'github', name: 'Github', url: 'https://github.com'},
-            {icon: 'facebook', name: 'Facebook', url: 'https://facebook.com'},
-            {icon: 'twitter', name: 'Twitter', url: 'https://twitter.com'},
-            {icon: 'google-plus', name: 'Google', url: 'https://google.com'},
+            {icon: 'linkedin', name: 'Linkedin', url: 'https://www.linkedin.com/in/khangtranx'},
+            {icon: 'github', name: 'Github', url: 'https://github.com/Khang-Tran'},
+            {icon: 'facebook', name: 'Facebook', url: 'https://www.facebook.com/khangishere'},
+            {icon: 'twitter', name: 'Twitter', url: 'https://twitter.com/KhangCaoTran'},
+            {icon: 'google-plus', name: 'Google', url: 'https://plus.google.com/105861925169691513017'},
         ]
     }
 };

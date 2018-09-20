@@ -20,7 +20,8 @@ const lightSpeedIn = keyframes`
 }
 `
 const Container = styled.div`
-  color: #fff;
+  color: ${props => props.theme.secondary.main}
+
   height: 100%;
   
   animation: ${lightSpeedIn} 2s ease-out forwards;
@@ -35,7 +36,8 @@ const Link = styled.a`
   align-items: center;
   height: 90%;
   text-decoration: none;
-  color: #fff;
+    color: ${props => props.theme.secondary.main};
+
   
   &:active, 
   &:visited {
@@ -58,7 +60,8 @@ const Text = styled.p`
 const Icon = styled.svg`
   width: 5rem;
   height: 5rem;
-  fill: #fff;
+    fill: ${props => props.theme.secondary.main}
+
 `;
 
 const SocialButton = ({text, iconName, url}) => (

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
+import {device} from "../../../../responsive";
 
 
 const Text = styled.h4`
@@ -9,7 +10,9 @@ const Text = styled.h4`
   justify-content: center; 
   align-items: center;
   text-align: center;
-  
+    @media ${device.mobileS} {
+      font-size: 1.75rem;
+  }
   
 `;
 const ItemHeading = ({heading}) => (

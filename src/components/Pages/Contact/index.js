@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
-import {withDataContext} from "../../../appContext";
+import {DataType, withDataContext} from "../../../appContext";
 import Navigation from "../../../commons/components/Navigation";
 import Heading from "../../../commons/components/Heading";
 import Footer from "./components/Footer";
@@ -14,6 +14,8 @@ const Container = styled.div`
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr .75fr 3fr 1fr;
+    justify-content: center;
+    
 `;
 
 const Contact = ({header, socialIcons}) => (
@@ -25,4 +27,4 @@ const Contact = ({header, socialIcons}) => (
     </Container>
 );
 
-export const ContactPage = withScroll(withDataContext(Contact, 'Contact'), null, '/work');
+export const ContactPage = withScroll(withDataContext(Contact, DataType.ContactPage));
