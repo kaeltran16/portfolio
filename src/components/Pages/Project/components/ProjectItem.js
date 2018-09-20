@@ -4,6 +4,7 @@ import Heading from "../../../../commons/components/Heading";
 import ProjectCard from "./Card";
 import NextPageButton from "../../../../commons/components/NextPageButton";
 import styled from "styled-components";
+import {device} from "../../../../responsive";
 
 const Container = styled.div`
     height: 100vh;
@@ -13,6 +14,9 @@ const Container = styled.div`
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 4fr .75fr;
     
+    @media ${device.mobileS} {
+          grid-template-rows: 1fr .25fr 4fr .75fr;
+    }
     
 `;
 const ProjectItem = ({header, detail}) => (

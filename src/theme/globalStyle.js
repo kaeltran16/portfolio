@@ -13,7 +13,7 @@ injectGlobal`
         font-size: 35%;
       }
         @media ${device.mobileM} {
-        font-size: 30%;
+        font-size: 40%;
       }
         @media ${device.mobileL} {
         font-size: 35%;

@@ -19,7 +19,7 @@ const Text = styled.h3`
     color: ${props => props.theme.secondary.main};
 `;
 
-const TextPrimary = Text.extend`
+const TextPrimary = styled(Text)`
 	font-size: 6rem;
 	font-weight: 400;
 	letter-spacing: 1rem;
@@ -28,12 +28,15 @@ const TextPrimary = Text.extend`
       font-size: 4.5rem;
   }
 `;
-const TextPrimarySub = Text.extend`
+const TextPrimarySub = styled(Text)`
 	font-size: 3rem;
 	font-weight: 700;
 	
 	 @media ${device.mobileS} {
       font-size: 2rem;
+  }
+  @media ${device.mobileM} {
+      font-size: 2.5rem;
   }
 
 `;
