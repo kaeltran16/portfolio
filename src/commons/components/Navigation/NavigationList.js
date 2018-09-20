@@ -31,7 +31,7 @@ const NavigationList = ({active}) => {
                 {name: 'Landing', url: '/'},
                 {name: 'About', url: '/about'},
                 {name: 'Skill', url: '/skill'},
-                {name: 'Work', url: '/work'},
+                {name: 'Work', url: '/work/natours'},
                 {name: 'Contact', url: '/contact'}
             ];
             return items.map((item, index) => <NavigationItem key={item.name} active={active} itemNo={index + 1}
