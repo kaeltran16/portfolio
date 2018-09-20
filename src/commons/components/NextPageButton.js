@@ -74,7 +74,7 @@ const Container = styled.div`
     cursor: pointer;
     display: flex;
     justify-self: ${props => props.align}
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     ${Icon} {
         height: ${props => `${props.size}rem`}
@@ -86,7 +86,7 @@ const Container = styled.div`
         animation: ${zoomIn} 2s;
         
     @media ${device.mobileS} {
-      align-self: flex-start;
+      align-items: center;
     }
 
 `;

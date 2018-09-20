@@ -11,6 +11,7 @@ const Container = styled.div`
   align-items: center;
   flex-direction: column;
   
+
   
 `;
 
@@ -24,6 +25,7 @@ const Heading = styled.h1`
        @media ${device.mobileS} {
       font-size: 4rem;
   }
+
 
 `;
 

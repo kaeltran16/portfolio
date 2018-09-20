@@ -59,7 +59,6 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   text-align: center;
-  
   animation: ${jackInTheBox} 1.5s ease-in forwards;
   animation-delay: ${props => props.delay + 1.5}s;
   opacity: 0;
@@ -80,9 +79,20 @@ const Button = styled.a`
   z-index: 3;
   transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.15s;
      animation: ${zoomIn} .5s .8s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
-
+			  @media ${device.tablet} {
+  	font-size: 2.2rem;
   }
   
+  @media ${device.laptop} {
+  	font-size: 2.2rem;
+  	&:after {
+  				animation: ${props => props.position === 'left' ? bottom(-10) : bottom(10)} 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.5s infinite alternate;
+
+  	}
+  }
+  }
+  
+		  
   &::after,
   &::before {
 			content: "";
@@ -133,8 +143,9 @@ const Button = styled.a`
 				left: .2rem;
 			}
 		}
+		}
 		
-		@media ${device.mobileS} {
+		@media ${device.mobileS}, ${device.tablet} {
 		  &::before,
 			&::after {
 				top: 0;
@@ -150,7 +161,9 @@ const Button = styled.a`
 				top: 0.5rem;
 				left: 0.35rem;
 			}
-		}
+		
+		
+	
 `;
 const AttentionButton = ({url, children, position, delay}) => (
     <Container delay={delay}>

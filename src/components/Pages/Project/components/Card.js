@@ -52,7 +52,8 @@ const CardContainer = styled.div`
     `;
 
 const Image = styled.img`
-    max-width: 80%; 
+    max-width: 90%; 
+    max-height: 80%;
     height: auto;
     background-image: url("../../../../../public/assets/img/natours.png");
     background-size: cover;
@@ -60,7 +61,8 @@ const Image = styled.img`
     justify-self: center;
     
       @media ${device.mobileS} {
-      margin-top: 15rem;
+      margin-top: 5rem;
+      
   }
     `;
 
@@ -71,6 +73,10 @@ const DetailContainer = styled.div`
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 5fr 1fr;
   justify-self: center;
+  
+      @media ${device.mobileS} {
+        grid-template-rows: 4fr 1fr;
+  }
 `;
 
 
