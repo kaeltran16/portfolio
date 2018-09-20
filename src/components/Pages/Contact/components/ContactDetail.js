@@ -45,6 +45,9 @@ const SubHeader = styled.div`
   text-align: center;
   font-size: 2rem;
   font-weight: lighter;
+  @media ${device.mobileS} {
+    font-size: 3rem;
+  }
 `;
 const Text = styled.h4`
   
