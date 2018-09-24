@@ -5,6 +5,7 @@ import Header from './components/Header';
 import NextPageButton from 'commons/components/NextPageButton';
 import Background from "./components/Background";
 import withScroll from "../../../HOCs/withScroll";
+import {device} from "../../../responsive";
 
 const Container = styled.div`
   height: 100vh;
@@ -14,6 +15,11 @@ const Container = styled.div`
   grid-template-columns: 1fr;
   position: absolute;
   top: 0;
+  
+  @media ${device.mobileS} {
+      grid-template-rows: 1fr 6fr 1.25fr;
+
+  }
 
 `;
 

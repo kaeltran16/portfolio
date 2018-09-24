@@ -44,10 +44,12 @@ const withScroll = (Component) =>
         componentDidMount() {
 
             window.addEventListener('wheel', this.handleScroll, false);
+            window.addEventListener('scroll', this.handleScroll, false);
         };
 
         componentWillUnmount() {
-            window.removeEventListener('wheel', this.handleScroll, false)
+            window.removeEventListener('wheel', this.handleScroll, false);
+            window.removeEventListener('scroll', this.handleScroll, false);
         };
 
         render() {

@@ -11,12 +11,13 @@ injectGlobal`
     
        @media ${device.mobileS} {
         font-size: 35%;
+        overflow-y: scroll;
       }
         @media ${device.mobileM} {
         font-size: 40%;
       }
         @media ${device.mobileL} {
-        font-size: 45%;
+        font-size: 40%;
       }
 
   @media ${device.tablet} {

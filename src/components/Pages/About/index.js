@@ -7,6 +7,7 @@ import Heading from 'commons/components/Heading';
 import {DataType, withDataContext} from "../../../appContext";
 import withScroll from "../../../HOCs/withScroll";
 import Paragraphs from './Paragraphs';
+import {device} from "../../../responsive";
 
 const Container = styled.div`
     height: 100vh;
@@ -14,10 +15,11 @@ const Container = styled.div`
     background-color: ${props => props.theme.secondary.main};
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: min-content(minmax(10rem,1fr)) 
-    min-content(minmax(7.5rem,.75fr))  
-    min-content(minmax(40rem,4fr))  
-    min-content(minmax(7.5rem,.5fr)) 
+    grid-template-rows: 1fr .75fr 4fr .5fr;
+    
+    @media ${device.mobileS} {
+      grid-template-rows: 1fr .75fr 4fr 1fr;
+    }
 `;
 
 const About = ({header}) => (

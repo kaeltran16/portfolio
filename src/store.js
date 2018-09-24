@@ -24,7 +24,7 @@ const store = {
                 iconName: 'usb',
                 heading: 'I started with WPF in Desktop application but now working mostly in Web Development.',
                 subHeading: 'Frameworks/libraries I has worked with',
-                skillNames: ['ASP.NET/ASP.NET Core', 'React/Angular', 'Express', 'React Native', 'SQL Server/MongoDB', 'GraphQL']
+                skillNames: ['ASP.NET/ASP.NET Core', 'React/Angular', 'Redux', 'Express', 'React Native', 'SQL Server/MongoDB', 'GraphQL']
             },
             {
                 iconName: 'wrench',
