@@ -21,12 +21,12 @@ const NavigationBackground = styled.div`
 		right: 0;
 		margin: 2rem;
 		z-index: 1;
-		transition: transform 0.4s cubic-bezier(0.86, 0, 0.07, 1);
+		transform: ${props => props.active ? 'scale(80)' : 'scale(0)'};
+				transition: all 0.4s ease-in;
+
+	    background-image:  ${props => props.active ? `radial-gradient(${props.theme.accent.light}, ${props.theme.accent.dark})` : 'none'};
+      
 		
-		${({active, theme}) => active && `
-		    transform: scale(80);
-		        background-image: radial-gradient(${theme.accent.light}, ${theme.accent.dark});
-		`};
 `;
 
 class Navigation extends React.Component {

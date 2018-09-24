@@ -4,26 +4,24 @@ import {device} from "../responsive";
 injectGlobal`
   html {
     box-sizing: border-box;
-   
-  
-    
-    
-    
        @media ${device.mobileS} {
-        font-size: 35%;
-        overflow-y: scroll;
-      }
+          font-size: 35%;
+          overflow-y: scroll;
+        }
+        
         @media ${device.mobileM} {
-        font-size: 40%;
-      }
+          font-size: 40%;
+        }
+        
         @media ${device.mobileL} {
-        font-size: 40%;
-      }
+          font-size: 40%;
+        }
 
-  @media ${device.tablet} {
-        font-size: 50%;
-      }
-             @media ${device.laptop} {font-size: 62.5%}
+        @media ${device.tablet} {
+          font-size: 50%;
+        }
+        
+        @media ${device.laptop} {font-size: 62.5%}
 
          @media ${device.laptopL}
       {font-size: 62.5%;}

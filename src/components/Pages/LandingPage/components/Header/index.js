@@ -24,20 +24,21 @@ const TextPrimary = styled(Text)`
 	font-weight: 400;
 	letter-spacing: 1rem;
 	
-	 @media ${device.mobileS} {
+	@media ${device.mobileS} {
       font-size: 4.5rem;
-  }
+    }
 `;
 const TextPrimarySub = styled(Text)`
 	font-size: 3rem;
 	font-weight: 700;
 	
-	 @media ${device.mobileS} {
+	@media ${device.mobileS} {
       font-size: 2rem;
-  }
-  @media ${device.mobileM} {
+    }
+    
+    @media ${device.mobileM} {
       font-size: 2.5rem;
-  }
+     }
 
 `;
 

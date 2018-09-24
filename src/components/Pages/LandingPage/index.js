@@ -18,7 +18,6 @@ const Container = styled.div`
   
   @media ${device.mobileS} {
       grid-template-rows: 1fr 6fr 1.25fr;
-
   }
 
 `;
