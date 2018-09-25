@@ -1,20 +1,10 @@
 import React from 'react';
-import styled, {keyframes} from 'styled-components';
+import styled from 'styled-components';
 import SkillIcon from "./Icon";
-import ItemHeading from "./ItemHeading";
 import SkillDetail from "./Detail";
 import {device} from "../../../../responsive";
+import {fadeInUp} from "../../../../commons/animations/keyframes";
 
-const fadeInUp = keyframes`
-    0% {
-    opacity:0;
-transform:  translate(0px,40px)  ;
-}
-100% {
-    opacity:1;
-transform:  translate(0px,0px)  ;
-}
-`;
 
 const Container = styled.div`
   display: grid;
@@ -22,15 +12,26 @@ const Container = styled.div`
   grid-template-columns: 1fr;
   width: 90%;
   opacity: 0;
-   animation: ${fadeInUp} .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
-   animation-delay: ${props => props.delay}s;
-   &:hover {
+  animation: ${fadeInUp} .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+  animation-delay: ${props => props.delay}s;
+  &:hover {
     transform: translateY(5rem);
-   }
-   
-      @media ${device.mobileS} {
-        margin-top: 5rem;
-      } 
+  }
+  
+  @media ${device.mobileS} {
+    margin-top: 5rem;
+  } 
+`;
+
+const ItemHeading = styled.h4`
+  font-size: 1.5rem;
+  font-weight: normal;
+  display: flex;
+  justify-self: center; 
+  align-self: center;
+  
+  @media ${device.mobileS} {
+    font-size: 1.75rem;
   }
 `;
 
@@ -39,7 +40,7 @@ const SkillItem = ({detail, delay}) => {
     return (
         <Container delay={delay}>
             <SkillIcon iconName={iconName}/>
-            <ItemHeading heading={heading}/>
+            <ItemHeading>{heading}</ItemHeading>
             <SkillDetail subHeading={subHeading} skillNames={skillNames}/>
         </Container>
     );

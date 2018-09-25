@@ -14,19 +14,16 @@ const Container = styled.div`
 `;
 
 const NavigationBackground = styled.div`
-  	height: 6rem;
-		width: 6rem;
-		border-radius: 50%;
-		position: fixed;
-		right: 0;
-		margin: 2rem;
-		z-index: 1;
-		transform: ${props => props.active ? 'scale(80)' : 'scale(0)'};
-				transition: all 0.4s ease-in;
-
-	    background-image:  ${props => props.active ? `radial-gradient(${props.theme.accent.light}, ${props.theme.accent.dark})` : 'none'};
-      
-		
+  height: 6rem;
+  width: 6rem;
+  border-radius: 50%;
+  position: fixed;
+  right: 0;
+  margin: 2rem;
+  z-index: 1;
+  transform: ${props => props.active ? 'scale(80)' : 'scale(0)'};
+  transition: all 0.4s ease-in;
+  background-image:  ${props => props.active ? `radial-gradient(${props.theme.accent.light}, ${props.theme.accent.dark})` : 'none'};
 `;
 
 class Navigation extends React.Component {

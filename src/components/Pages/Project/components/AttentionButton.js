@@ -1,53 +1,7 @@
 import React from 'react';
-import styled, {keyframes} from "styled-components";
+import styled from "styled-components";
 import {device} from "../../../../responsive";
-
-const jackInTheBox = keyframes`
-    from {
-        opacity: 0;
-        transform: scale(0.1) rotate(30deg);
-        transform-origin: center bottom;
-    }
-
-    50% {
-        transform: rotate(-10deg);
-}
-
-    70% {
-        transform: rotate(3deg);
-}
-
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-`;
-
-const zoomIn = keyframes`
-    0% {
-        transform:scale(0);
-}
-    100% {
-        transform:scale(1);
-}
-`;
-
-const top = distance => keyframes`
-    from{
-        transform: translate(0rem, 0);
-    }
-    to {
-        transform: translate(0rem, ${distance}rem);
-    }
-`;
-const bottom = distance => keyframes`
-    from{
-        transform: translate(${distance}rem, 0);
-    }
-    to{
-        transform: translate(0rem, 0);
-    }
-`;
+import {jackInTheBox, moveAround, moveUpAndDown, zoomIn} from "../../../../commons/animations/keyframes";
 
 
 const Container = styled.div`
@@ -78,19 +32,19 @@ const Button = styled.a`
   position: relative;
   z-index: 3;
   transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.15s;
-     animation: ${zoomIn} .5s .8s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
-			  @media ${device.tablet} {
+  animation: ${zoomIn} .5s .8s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+  
+  @media ${device.tablet} {
   	font-size: 2.2rem;
   }
   
   @media ${device.laptop} {
   	font-size: 2.2rem;
   	&:after {
-  				animation: ${props => props.position === 'left' ? bottom(-10) : bottom(10)} 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.5s infinite alternate;
-
+  		animation: ${props => props.position === 'left' ? moveAround(-10) : moveAround(10)} 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.5s infinite alternate;
   	}
   }
-  }
+}
   
 		  
   &::after,
@@ -105,7 +59,7 @@ const Button = styled.a`
 		}
 		&::before {
 			background-color: ${props => props.theme.accent.dark};
-			animation: ${top(3)} 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.25s infinite alternate;
+			animation: ${moveUpAndDown(3)} 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.25s infinite alternate;
 			${props => props.position === 'left' && `
 			    left: 5%;
 			`};
@@ -115,7 +69,7 @@ const Button = styled.a`
     }
 		&::after {
 			background-color: ${props => props.theme.accent.main};;
-			animation: ${props => props.position === 'left' ? bottom(-15) : bottom(15)} 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.5s infinite alternate;
+			animation: ${props => props.position === 'left' ? moveAround(-15) : moveAround(15)} 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.5s infinite alternate;
 			top: 90%;
 			${props => props.position === 'left' && `
 			    right: 20%;

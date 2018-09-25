@@ -5,9 +5,7 @@ import {device} from "../../../../responsive";
 const Container = styled.div`
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    
-    
+    justify-content: space-between;  
 `;
 
 
@@ -19,8 +17,8 @@ const TextHeading = styled.h4`
   color: ${props => props.theme.accent.dark}
   text-align: center;
   
-    @media ${device.mobileS} {
-      font-size: 2.5rem;
+  @media ${device.mobileS} {
+    font-size: 2.5rem;
   } 
 `;
 
@@ -37,17 +35,17 @@ const SkillName = styled.p`
     font-weight: bolder;
     color: ${props => props.theme.primary.dark};
 
-      @media ${device.mobileS} {
-          font-size: 2.5rem;
-  }
+    @media ${device.mobileS} {
+      font-size: 2.5rem;
+    }
 `;
 const SkillDetail = ({subHeading, skillNames, delay}) => {
     const renderSkillNames = skillNames =>
         skillNames.map((name, index) => <SkillName delay={delay - 1} key={index}>{name}</SkillName>);
     return (
         <Container>
-            <TextHeading>{subHeading}
-
+            <TextHeading>
+                {subHeading}
             </TextHeading>
             <SkillItem>
                 {renderSkillNames(skillNames)}

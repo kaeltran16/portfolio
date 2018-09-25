@@ -1,49 +1,23 @@
 import React from 'react';
-import styled, {keyframes} from 'styled-components';
+import styled from 'styled-components';
 import {withRouter} from 'react-router-dom';
 import {device} from "../../responsive";
+import {moveDown, zoomIn} from "../animations/keyframes";
 
-const move = keyframes`
-    25% {
-          opacity: 1;
-    }
-    33% {
-          opacity: 1;
-          transform: translateY(30px);
-    }
-    67% {
-          opacity: 1;
-          transform: translateY(40px);
-    }
-    100% {
-        opacity: 0;
-        transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
-    }
-`;
-
-const zoomIn = keyframes`
-  from {
-    transform: scale(0);
-  }
-  
-  to {
-    transform: scale(1);
-  }
-`;
 
 const Icon = styled.svg`
     position: absolute;
     opacity: 0;
     
     transform: scale3d(0.5, 0.5, 0.5);
-    animation: ${move} 3s ease-out infinite;
+    animation: ${moveDown} 3s ease-out infinite;
     
 	&:first-child {
-	  animation: ${move} 3s ease-out 1s infinite;
+	  animation: ${moveDown} 3s ease-out 1s infinite;
     }
 			
 	&:nth-child(2) {
-      animation: ${move} 3s ease-out 2s infinite;
+      animation: ${moveDown} 3s ease-out 2s infinite;
     }
 
     &:before,
@@ -83,10 +57,11 @@ const Container = styled.div`
     ? props.theme.primary.main
     : props.theme.secondary.main };
     }
-        animation: ${zoomIn} 2s;
+    animation: ${zoomIn} 2s;
         
     @media ${device.mobileS} {
       align-items: center;
+      
     }
 
 `;

@@ -1,24 +1,8 @@
 import React from 'react';
-import styled, {keyframes} from 'styled-components';
+import styled from 'styled-components';
+import {lightSpeedIn} from "../../../../commons/animations/keyframes";
 
-const lightSpeedIn = keyframes`
-    0% {
-        transform: translateY(100%) skewX(-0deg);
-    opacity: 0;
-}
-    60% {
-        transform: translateY(-10%) skewX(-20deg);
-    opacity: 1;
-}
-    80% {
-        transform: translateY(0%) skewX(10deg);
-    opacity: 1;
-}
-    100% {
-        transform: translateY(0%) skewX(0deg);
-    opacity: 1;
-}
-`
+
 const Container = styled.div`
   color: ${props => props.theme.secondary.main}
 
@@ -36,13 +20,7 @@ const Link = styled.a`
   align-items: center;
   height: 90%;
   text-decoration: none;
-    color: ${props => props.theme.secondary.main};
-
-  
-  &:active, 
-  &:visited {
-    
-  }
+  color: ${props => props.theme.secondary.main};
 `;
 
 const Text = styled.p`
@@ -60,8 +38,7 @@ const Text = styled.p`
 const Icon = styled.svg`
   width: 5rem;
   height: 5rem;
-    fill: ${props => props.theme.secondary.main}
-
+  fill: ${props => props.theme.secondary.main}
 `;
 
 const SocialButton = ({text, iconName, url}) => (

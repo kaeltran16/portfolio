@@ -2,7 +2,7 @@ import React from 'react';
 import styled from "styled-components";
 
 import {DataType, withDataContext} from "../../../appContext";
-import {fadeInSlowly} from "../../../commons/keyframes";
+import {fadeInSlowly} from "../../../commons/animations/keyframes";
 import {device} from "../../../responsive";
 
 const Container = styled.div`
@@ -14,8 +14,6 @@ const Container = styled.div`
 	backface-visibility: hidden;
 	display: flex;
 	flex-direction: column;
-	
-
 `;
 
 
@@ -38,6 +36,9 @@ const Text = styled.div`
   @media ${device.mobileS} {
       font-size: 2.5rem;
       width: 90%;
+       &:not(:first-child) {
+      margin-top: 2rem;
+    }
   }
 `;
 

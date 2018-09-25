@@ -6,19 +6,17 @@ const Container = styled.nav`
   height: 100%;
   width: 100%;
   position: fixed;
-      opacity: 0;
-      display: none;
-		z-index: 9;
-		
-		
-		transition: all 0.4s;
-		
-		${({active}) => active && css`
-		    	opacity: 1;
-		    	display: flex;
-		    	justify-content: center;
-		    	align-items: center;
-		`};
+  opacity: 0;
+  display: none;
+  z-index: 9;
+  transition: all 0.4s;
+  
+  ${({active}) => active && css`
+	opacity: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  `};
 `;
 const NavList = styled.ul`
 		list-style: none;

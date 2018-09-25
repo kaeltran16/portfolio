@@ -10,9 +10,6 @@ const Container = styled.div`
   justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
-  
-
-  
 `;
 
 const Heading = styled.h1`
@@ -20,13 +17,11 @@ const Heading = styled.h1`
   text-transform: uppercase;
   letter-spacing: .75rem;
   font-weight: bold;
-    color: ${props => props.theme.accent.dark};
-    
-       @media ${device.mobileS} {
+  color: ${props => props.theme.accent.dark};
+  
+  @media ${device.mobileS} {
       font-size: 4rem;
   }
-
-
 `;
 
 const SubHeading = styled.h3`
@@ -34,8 +29,9 @@ const SubHeading = styled.h3`
   text-align: left;
   font-weight: 500;
   line-height: 2.5rem;
-     @media ${device.mobileS} {
-      font-size: 2rem;   
+  
+  @media ${device.mobileS} {
+    font-size: 2rem;   
   }
 `;
 
@@ -44,8 +40,8 @@ const IntroText = styled.h4`
   font-size: 1.75rem;
   width: 100%;
   font-weight: bold;
-    @media ${device.mobileS} {
-      font-size: 2rem;
+  @media ${device.mobileS} {
+    font-size: 2rem;
   }
 `;
 

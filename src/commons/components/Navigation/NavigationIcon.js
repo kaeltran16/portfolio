@@ -1,25 +1,16 @@
 import React from 'react';
-import styled, {css, keyframes} from 'styled-components';
-
-const fadeIn = keyframes`
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-`;
+import styled, {css} from 'styled-components';
+import {fadeInSlowly} from "../../animations/keyframes";
 
 
 const Bar = styled.div`
     &:not(:first-child) {
       margin-top: .6rem;
     }
+    
     transition: all 0.4s;
     width: 100%;
-    height: 12.5%;
-              
-       
+    height: 12.5%;  
 `;
 
 
@@ -33,9 +24,7 @@ const Container = styled.div`
     justify-content: center;
     width: ${props => `${props.size}rem`};
     height: ${props => `${props.size}rem`};
-       animation: ${fadeIn} 2s;
-
-
+    animation: ${fadeInSlowly} 2s;
     ${Bar} {
       background-color: ${props => props.color === 'dark'
     ? props.theme.primary.main
@@ -54,18 +43,12 @@ const Container = styled.div`
     
         &:nth-child(3) {
           transform: rotate(45deg) translate(-1rem, -.8rem);
-        }
-        
+        }   
        }
        
-    
 		z-index: 500;
 		transition: transform 0.4s cubic-bezier(0.86, 0, 0.07, 1);
-
   `}
-    
-   
-  
 `;
 
 

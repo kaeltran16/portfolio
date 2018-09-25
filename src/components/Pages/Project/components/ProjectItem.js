@@ -1,6 +1,5 @@
 import React from 'react';
 import Navigation from "../../../../commons/components/Navigation";
-import Heading from "../../../../commons/components/Heading";
 import ProjectCard from "./Card";
 import NextPageButton from "../../../../commons/components/NextPageButton";
 import styled from "styled-components";
@@ -11,14 +10,11 @@ const Container = styled.div`
     background-color: ${props => props.theme.secondary.main};
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 4fr .75fr;
- 
-    
+    grid-template-rows: 0.5fr 5fr .75fr;
 `;
 const ProjectItem = ({header, detail}) => (
     <Container>
         <Navigation color='dark' size={5}/>
-        <Heading color='dark' heading={header}/>
         <ProjectCard detail={detail}/>
         <NextPageButton align='flex-end' color='dark' size={2}/>
     </Container>

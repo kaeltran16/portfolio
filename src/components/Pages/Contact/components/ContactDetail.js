@@ -16,7 +16,7 @@ const PrimaryHeader = styled.a`
   position: relative;
   
   &:before {
-    content: "";
+  content: "";
   position: absolute;
   width: 100%;
   height: 3px;
@@ -57,14 +57,16 @@ const PhoneNumber = styled.a`
      color: ${props => props.theme.secondary.main}
  
 `;
-const ContactDetail = () => (
+const ContactDetail = ({contactDetails}) => (
     <Container>
-        <PrimaryHeader href='mailto:cktran16x2@gmail.com'>
-            <TextScrambler delay={1000} text={'cktran16x2@gmail.com'}/>
+        <PrimaryHeader href={`mailto:${contactDetails.email}`}>
+            <TextScrambler delay={1000} text={contactDetails.email}/>
         </PrimaryHeader>
         <SubHeader>
             <Text><TextScrambler text={'Phone Number'} delay={1500}/></Text>
-            <PhoneNumber href='tell:+14169987489'><TextScrambler text={'(+1) 416-998-7489'} delay={1700}/></PhoneNumber>
+            <PhoneNumber href={`tel:1-${contactDetails.tel}`}>
+                <TextScrambler text={`(+1) ${contactDetails.tel}`} delay={1700}/>
+            </PhoneNumber>
         </SubHeader>
     </Container>
 );

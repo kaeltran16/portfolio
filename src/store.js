@@ -35,7 +35,6 @@ const store = {
         ]
     },
     Project: {
-        header: 'what i did',
         details: [
             {
                 name: 'natours',
@@ -62,6 +61,10 @@ const store = {
     },
     Contact: {
         header: 'get in touch',
+        contactDetails: {
+            email: 'cktran16x2@gmail.com',
+            tel: '4169987489'
+        },
         socialIcons: [
             {icon: 'linkedin', name: 'Linkedin', url: 'https://www.linkedin.com/in/khangtranx'},
             {icon: 'github', name: 'Github', url: 'https://github.com/Khang-Tran'},

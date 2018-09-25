@@ -1,25 +1,9 @@
 import React from 'react';
-import styled, {keyframes} from 'styled-components';
+import styled from 'styled-components';
 import ProjectDetail from "./Detail";
 import AttentionButton from "./AttentionButton";
 import {device} from "../../../../responsive";
-
-const bounceInUp = keyframes`
-    0% {
-        opacity: 0;
-    transform: translateY(2000px);
-}
-    60% {
-        opacity: 1;
-    transform: translateY(-30px);
-}
-    80% {
-        transform: translateY(10px);
-}
-    100% {
-        transform: translateY(0);
-}
-`;
+import {bounceInUp} from "../../../../commons/animations/keyframes";
 
 
 const Container = styled.div`
@@ -28,13 +12,13 @@ const Container = styled.div`
   display: flex;
   justify-self: center;
   align-self: center;
-    transform:scale(0);
-    animation:${bounceInUp} 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
-    animation-delay: .5s;
+  transform:scale(0);
+  animation:${bounceInUp} 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+  animation-delay: .5s;
     
-      @media ${device.mobileS} {
-      height: 95%;
-      width: 100%;
+  @media ${device.mobileS} {
+    height: 100%;
+    width: 100%;
   }
 `;
 
@@ -48,34 +32,34 @@ const CardContainer = styled.div`
   align-items: center;
   justify-self: center;
   align-self: center;
-  
-    `;
+`;
 
 const Image = styled.img`
     max-width: 90%; 
     max-height: 80%;
     height: auto;
-    background-image: url("../../../../../public/assets/img/natours.png");
     background-size: cover;
     display: flex;
     justify-self: center;
     
-      @media ${device.mobileS} {
-      margin-top: 5rem;
-      
-  }
-    `;
+    @media ${device.mobileS} {
+      align-self: flex-start;
+      margin-top: -5rem;
+    }
+`;
 
 const DetailContainer = styled.div`
-   width: 90%;
+  width: 90%;
   height: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 5fr 1fr;
   justify-self: center;
   
-      @media ${device.mobileS} {
-        grid-template-rows: 4fr 1fr;
+  @media ${device.mobileS} {
+    grid-template-rows: 3fr 1fr;
+    height: 80%;
+    align-self: flex-start;
   }
 `;
 

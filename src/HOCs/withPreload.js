@@ -5,7 +5,7 @@ const withPreload = Component =>
     class PreloadComponent extends React.Component {
         state = {isLoading: true};
 
-        componentDidMount = () => {
+        componentDidMount() {
             setTimeout(() => this.setState({isLoading: false}), 1000);
         };
 

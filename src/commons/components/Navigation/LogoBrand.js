@@ -1,22 +1,7 @@
 import React from 'react';
-import styled, {keyframes} from 'styled-components';
+import styled from 'styled-components';
 import {withRouter} from 'react-router-dom';
-
-const fadeIn = keyframes`
-    0% {
-        opacity: 0;
-        transform: rotate(0deg);
-    }
-    50% {
-      opacity: .5;
-        transform: rotate(180deg);
-    }
-    100% {
-        opacity: 1;
-         transform: rotate(-360deg);
-    }
-`;
-
+import {fadeInRotate} from "../../animations/keyframes";
 
 const Image = styled.svg`
   margin-left: 3.5rem;
@@ -25,17 +10,17 @@ const Image = styled.svg`
   fill: ${props => props.color === 'dark'
     ? props.theme.primary.main
     : props.theme.secondary.main };
-  animation: ${fadeIn} 2s;
+  animation: ${fadeInRotate} 2s;
   cursor: pointer;
+  
   &:hover {
       transform: rotate(180deg);
       transition: all 1s;
       backface-visibility: hidden;
   }
-  position: relative;
-  		z-index: 500;
-
   
+  position: relative;
+  z-index: 500;
 `;
 
 const LogoBrand = ({color, size, history}) => {

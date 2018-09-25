@@ -1,41 +1,7 @@
 import React from 'react';
-import styled, {keyframes} from 'styled-components';
+import styled from 'styled-components';
+import {loadProgress} from "../animations/keyframes";
 
-const load = keyframes`
-    0% {
-        width: 0;
-}
-    10% {
-        width: 5%;
-}
-    20% {
-        width: 15%;
-}
-    30% {
-        width: 25%;
-}
-    40% {
-        width: 30%;
-}
-    50% {
-        width: 44%;
-}
-    60% {
-        width: 50%;
-}
-    70% {
-        width: 72%;
-}
-    80% {
-        width: 84%;
-}
-    90% {
-        width: 92%;
-}
-    100% {
-        width: 100%;
-}
-`;
 
 const Container = styled.div`
   width: 100vw;
@@ -57,11 +23,11 @@ const Progress = styled.div`
   overflow: hidden;
   
   &:after {
-     content: '';
+  content: '';
   display: block;
   height: 4px;
   background: #fff;
-  animation: ${load} 1s linear;
+  animation: ${loadProgress} 1s linear;
   }
 `;
 
