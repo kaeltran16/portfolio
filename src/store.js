@@ -38,21 +38,30 @@ const store = {
         details: [
             {
                 name: 'natours',
-                subHeading: `Portfolio site for an imagine company in tours business. It is the result of 'Advanced CSS course' I took to improve my existing CSS and Sass skill. `,
+                subHeadings: [
+                    `Portfolio site for an imagine company in tours business. It is the result of 'Advanced CSS course' I took to improve my existing CSS and Sass skill. `,
+                    `Learned a lot about modern CSS and Sass, current css techniques such as flex and grid and how to create smooth and beautiful animations.`
+                ],
                 intro: 'HTML/SCSS',
                 demoUrl: `http://khangtran.ca/natours`,
                 srcUrl: `https://github.com/Khang-Tran/natours`
             },
             {
                 name: 'devpals',
-                subHeading: `A social network site for developers to connect, sharing their thought and coding activities. It also allows users to add friends and comment on friends's posts.`,
+                subHeadings: [
+                    `A social network site for developers to connect, sharing their thought and coding activities. It also allows users to add friends and comment on friends's posts.`,
+                    `Learned about how to create a full-stack JavaScript website, integrated MongoDB into Express in the backend and connect them to React/Redux frontend.`
+                ],
                 intro: 'MongoDB, Express, React, Nodejs, Redux',
                 demoUrl: `https://devpals.herokuapp.com`,
                 srcUrl: `https://github.com/Khang-Tran/devpals`
             },
             {
                 name: 'ishop',
-                subHeading: 'API for developing online shopping site. The API provides authentications and authorization, allows managers to add products with categories and users to order and receive invoices.',
+                subHeadings: [
+                    'API for developing online shopping site. The API provides authentications and authorization, allows managers to add products with categories and users to order and receive invoices.',
+                    'Learned about design complex relational database and design maintainable and reusable API endpoints, also how to secure endpoints and prevent common attacks.'
+                ],
                 intro: 'ASP.NET Core Web API, EF Core, JWT',
                 demoUrl: `https://ishop-api.azurewebsites.net/api/swagger/index.html`,
                 srcUrl: `https://github.com/Khang-Tran/iShop_v.02`

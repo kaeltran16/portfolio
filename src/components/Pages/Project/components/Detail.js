@@ -50,16 +50,17 @@ const ToolText = styled.span`
   font-weight: bold;
 `;
 
-const ProjectDetail = ({detail}) => (
-    <Container>
-        <Heading>{detail.name}</Heading>
-        <SubHeading>
-            {detail.subHeading}
-        </SubHeading>
-        <IntroText>
-            <ToolText>Build tools: </ToolText>
-            {detail.intro}
-        </IntroText>
-    </Container>
-);
+const ProjectDetail = ({detail}) => {
+    const renderSubHeading = () => detail.subHeadings.map((text, index) => <SubHeading key={index}>{text}</SubHeading>)
+    return (
+        <Container>
+            <Heading>{detail.name}</Heading>
+            {renderSubHeading()}
+            <IntroText>
+                <ToolText>Build tools: </ToolText>
+                {detail.intro}
+            </IntroText>
+        </Container>
+    );
+}
 export default ProjectDetail;

@@ -22,7 +22,7 @@ const NavigationBackground = styled.div`
   margin: 2rem;
   z-index: 1;
   transform: ${props => props.active ? 'scale(80)' : 'scale(0)'};
-  transition: all 0.4s ease-in;
+  transition: all 0.2s ease-in;
   background-image:  ${props => props.active ? `radial-gradient(${props.theme.accent.light}, ${props.theme.accent.dark})` : 'none'};
 `;
 
@@ -43,7 +43,6 @@ class Navigation extends React.Component {
                 </Container>
                 <NavigationList active={active}/>
                 <NavigationBackground active={active}/>
-
             </React.Fragment>
         );
     }
