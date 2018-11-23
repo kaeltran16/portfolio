@@ -1,9 +1,39 @@
 {
+  "parser": "babel-eslint",
   "extends": [
+    "google",
     "plugin:react/recommended"
   ],
-  "parser": "babel-eslint",
+  "plugins": [
+    "react",
+    "react-hooks"
+  ],
+  "env": {
+    "browser": true,
+    "node": true
+  },
   "rules": {
-    "indent": "off"
+    "indent": "off",
+    "comma-dangle": "off",
+    "object-curly-spacing": [
+      "error",
+      "always"
+    ],
+    "no-trailing-spaces": "off",
+    "linebreak-style": [
+      "warn",
+      "windows"
+    ],
+    "semi": [
+      "error",
+      "always"
+    ],
+    "arrow-parens": [
+      "error",
+      "as-needed"
+    ],
+    "require-jsdoc": "off",
+    "no-tabs": "off",
+    "react-hooks/rules-of-hooks": "error"
   }
 }
