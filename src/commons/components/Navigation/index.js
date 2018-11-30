@@ -1,53 +1,34 @@
-import React from 'react';
-import styled from 'styled-components';
-
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import { Nav } from './styles';
 import LogoBrand from './LogoBrand';
 import NavigationButton from './NavigationButton';
-import NavigationList from "./NavigationList";
+import NavigationList from './NavigationList';
+import { THEME } from 'styles/theme';
 
-const Container = styled.div`
-  width: 100%;
-  display: flex; 
-  top: 0;
-  align-items: center;
-  justify-content: space-between;
-`;
 
-const NavigationBackground = styled.div`
-  height: 6rem;
-  width: 6rem;
-  border-radius: 50%;
-  position: fixed;
-  right: 0;
-  margin: 2rem;
-  z-index: 1;
-  transform: ${props => props.active ? 'scale(80)' : 'scale(0)'};
-  transition: all 0.4s ease-in;
-  background-image:  ${props => props.active ? `radial-gradient(${props.theme.accent.light}, ${props.theme.accent.dark})` : 'none'};
-`;
+const Navigation = props => {
+   const [active, setActive] = useState(false);
 
-class Navigation extends React.Component {
-    state = {active: false};
-    toggle = () => {
-        this.setState({active: !this.state.active});
-    };
+   const toggle = () => {
+      setActive(!active);
+   };
 
-    render() {
-        const {active} = this.state;
-        return (
-            <React.Fragment>
+   return (
+      <React.Fragment>
+         <Nav.Container>
+            <LogoBrand {...props}/>
+            <NavigationButton {...props} active={active} toggle={toggle}/>
+         </Nav.Container>
+         <NavigationList active={active}/>
+         <Nav.Background/>
+      </React.Fragment>
+   );
+};
 
-                <Container>
-                    <LogoBrand {...this.props}/>
-                    <NavigationButton active={active} {...this.props} toggle={this.toggle}/>
-                </Container>
-                <NavigationList active={active}/>
-                <NavigationBackground active={active}/>
-
-            </React.Fragment>
-        );
-    }
-
-}
+Navigation.propTypes = {
+   size: PropTypes.number,
+   color: PropTypes.oneOf([THEME.light, THEME.dark])
+};
 
 export default Navigation;

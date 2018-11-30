@@ -1,63 +1,22 @@
 import React from 'react';
-import styled, {css} from 'styled-components';
-import {fadeInSlowly} from "../../animations/keyframes";
+import PropTypes from 'prop-types';
+import { Bar, BurgerIcon } from 'commons/components/Navigation/styles';
+import { THEME } from 'styles/theme';
 
+const NavigationButton = ({ color, size, active }) => {
+   return (
+      <BurgerIcon color={color} size={size} active={active}>
+         <Bar/>
+         <Bar/>
+         <Bar/>
+      </BurgerIcon>
+   );
+};
 
-const Bar = styled.div`
-    &:not(:first-child) {
-      margin-top: .6rem;
-    }
-    
-    transition: all 0.4s;
-    width: 100%;
-    height: 12.5%;  
-`;
-
-
-const Container = styled.div`
-    position: relative;
-    z-index: 10;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    width: ${props => `${props.size}rem`};
-    height: ${props => `${props.size}rem`};
-    animation: ${fadeInSlowly} 2s;
-    ${Bar} {
-      background-color: ${props => props.color === 'dark'
-    ? props.theme.primary.main
-    : props.theme.secondary.main };;
-    }
-    
-    ${props => props.active && css`
-      ${Bar} {
-        &:nth-child(1) {
-          transform: rotate(-45deg) translate(-.9rem, .6rem);
-        }
-    
-        &:nth-child(2) {
-          opacity: 0;
-        }
-    
-        &:nth-child(3) {
-          transform: rotate(45deg) translate(-1rem, -.8rem);
-        }   
-       }
-       
-		z-index: 500;
-		transition: transform 0.4s cubic-bezier(0.86, 0, 0.07, 1);
-  `}
-`;
-
-
-const NavigationButton = ({color, size, active}) => (
-    <Container color={color} size={size} active={active}>
-        <Bar/>
-        <Bar/>
-        <Bar/>
-    </Container>
-);
+NavigationButton.propTypes = {
+   color: PropTypes.oneOf([THEME.light, THEME.dark]).isRequire,
+   size: PropTypes.number.isRequired,
+   active: PropTypes.bool.isRequired
+};
 
 export default NavigationButton;

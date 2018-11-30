@@ -1,34 +1,13 @@
+/* eslint-disable max-len */
 import React from 'react';
-import styled from 'styled-components';
-import { withRouter } from 'react-router-dom';
-import { fadeInRotate } from '../../animations/keyframes';
+import { LogoContainer } from './styles';
+import PropTypes from 'prop-types';
 
-const Image = styled.svg`
-  margin-left: 3.5rem;
-  height: ${props => `${props.size}rem`}
-  width: ${props => `${props.size}rem`}
-  fill: ${props => props.color === 'dark'
-   ? props.theme.primary.main
-   : props.theme.secondary.main };
-  animation: ${fadeInRotate} 2s;
-  cursor: pointer;
-  
-  &:hover {
-      transform: rotate(180deg);
-      transition: all 1s;
-      backface-visibility: hidden;
-  }
-  
-  position: relative;
-  z-index: 500;
-`;
-
-const LogoBrand = ({ color, size, history }) => {
-   const onClick = () => history.push('/');
+const LogoBrand = ({ active, color }) => {
    return (
-      <Image color={color} size={size} version='1'
-             xmlns='http://www.w3.org/2000/svg'
-             viewBox='0 0 799.000000 799.000000' onClick={() => onClick()}>
+      <LogoContainer color={color} size={size} version='1'
+                     xmlns='http://www.w3.org/2000/svg'
+                     viewBox='0 0 799.000000 799.000000'>
          <path
             d='M3780 7939 c-1814 -96 -3335 -1432 -3664 -3219 -49 -266 -60 -404 -60 -720 0 -305 10 -442 54 -695 19 -107 70 -328 91 -392 l11 -33 195 0 c166 0 194 2 190 14 -18 46 -81 289 -101 391 -203 1001 28 2034 636 2847 499 665 1206 1137 2000 1333 327 81 610 111 958 102 246 -6 397 -22 622 -68 451 -91 898 -280 1288 -543 349 -236 714 -599 944 -938 l60 -88 219 0 219 0 -27 48 c-52 90 -197 305 -273 406 -171 226 -429 494 -647 671 -585 477 -1270 768 -2035 864 -89 11 -439 32 -500 29 -19 0 -100 -4 -180 -9z'
             transform='matrix(.1 0 0 -.1 0 799)'/>
@@ -38,8 +17,13 @@ const LogoBrand = ({ color, size, history }) => {
          <path
             d='M7406 5073 c36 -114 94 -358 113 -473 33 -197 41 -290 48 -505 22 -736 -183 -1450 -592 -2065 -606 -911 -1552 -1479 -2645 -1590 -156 -16 -531 -13 -701 5 -466 49 -932 193 -1334 412 -155 84 -400 248 -540 359 -142 114 -427 399 -539 539 -48 61 -119 156 -157 212 l-70 103 -215 0 c-117 0 -214 -4 -214 -9 0 -14 120 -209 195 -316 245 -351 610 -720 954 -964 1188 -843 2758 -964 4054 -314 394 197 826 518 1104 821 588 639 930 1359 1044 2197 26 191 37 628 20 830 -20 239 -69 526 -124 720 l-23 80 -196 3 -197 2 15 -47z'
             transform='matrix(.1 0 0 -.1 0 799)'/>
-      </Image>
+      </LogoContainer>
    );
 };
 
-export default withRouter(LogoBrand);
+LogoBrand.propTypes = {
+   active: PropTypes.bool.isRequired,
+   color: PropTypes.number.isRequired
+};
+
+export default LogoBrand;

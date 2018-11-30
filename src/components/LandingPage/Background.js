@@ -1,8 +1,8 @@
 import React from 'react';
 import Particles from 'react-particles-js';
-import styled from 'styled-components';
 
 import useWindowSize from 'components/LandingPage/useWindowSize';
+import { BackgroundContainer } from 'components/LandingPage/styles';
 
 const particleSettings = {
    'particles': {
@@ -115,21 +115,13 @@ const particleSettings = {
    'retina_detect': true
 };
 
-const Container = styled.div`
-  position: relative;
-  background-color: ${props => props.theme.primary.main};
-  background-size: cover;
-  width: 100vw;
-  height: 100vh;
-  z-index: -1;
-`;
 
 const Background = () => {
    const { width, height } = useWindowSize();
    return (
-      <Container>
+      <BackgroundContainer>
          <Particles height={height} width={width} params={particleSettings}/>
-      </Container>
+      </BackgroundContainer>
    );
 };
 

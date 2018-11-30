@@ -1,24 +1,24 @@
 import React from 'react';
-import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 import NavigationIcon from './NavigationIcon';
-
-const Container = styled.div`
-   padding: 3.5rem;
-   display: flex;
-   justify-content: center;
-   cursor: pointer;
-   position: relative;
-   z-index: 10;
-`;
+import { BurgerButton } from 'commons/components/Navigation/styles';
+import { THEME } from 'styles/theme';
 
 
-const NavigationButton = ({active, color, size, toggle}) => {
-    return (
-        <Container onClick={() => toggle()}>
-            <NavigationIcon color={color} size={size} active={active}/>
-        </Container>
-    );
-}
+const NavigationButton = ({ active, color, size, toggle }) => {
+   return (
+      <BurgerButton onClick={() => toggle()}>
+         <NavigationIcon color={color} size={size} active={active}/>
+      </BurgerButton>
+   );
+};
+
+NavigationButton.propTypes = {
+   active: PropTypes.bool.isRequired,
+   color: PropTypes.oneOf([THEME.light, THEME.dark]).isRequired,
+   size: PropTypes.number.isRequired,
+   toggle: PropTypes.func.isRequired
+};
 
 export default NavigationButton;
