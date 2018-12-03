@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {device} from "../../../../responsive";
+import { device } from '../../../../responsive';
 
 const Container = styled.div`
   width: 100%;
@@ -50,16 +50,19 @@ const ToolText = styled.span`
   font-weight: bold;
 `;
 
-const ProjectDetail = ({detail}) => (
-    <Container>
-        <Heading>{detail.name}</Heading>
-        <SubHeading>
-            {detail.subHeading}
-        </SubHeading>
-        <IntroText>
-            <ToolText>Build tools: </ToolText>
-            {detail.intro}
-        </IntroText>
-    </Container>
+const ProjectDetail = ({ detail }) => (
+   <Container>
+      <Heading>{detail.name}</Heading>
+      <SubHeading>
+         {detail.subHeading[0]}
+      </SubHeading>
+      <SubHeading>
+         {detail.subHeading[1]}
+      </SubHeading>
+      <IntroText>
+         <ToolText>Build tools: </ToolText>
+         {detail.intro}
+      </IntroText>
+   </Container>
 );
 export default ProjectDetail;

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {lightSpeedIn} from "../../../../commons/animations/keyframes";
+import { lightSpeedIn } from '../../../../commons/animations/keyframes';
 
 
 const Container = styled.div`
@@ -41,15 +41,16 @@ const Icon = styled.svg`
   fill: ${props => props.theme.secondary.main}
 `;
 
-const SocialButton = ({text, iconName, url}) => (
-    <Container>
-        <Link href={url}>
-            <Text>{text}</Text>
-            <Icon>
-                <use xlinkHref={`${process.env.PUBLIC_URL}/assets/sprites.svg#icon-${iconName}`}/>
-            </Icon>
-        </Link>
-    </Container>
+const SocialButton = ({ text, iconName, url }) => (
+   <Container>
+      <Link href={url} target='_blank'>
+         <Text>{text}</Text>
+         <Icon>
+            <use
+               xlinkHref={`${process.env.PUBLIC_URL}/assets/sprites.svg#icon-${iconName}`}/>
+         </Icon>
+      </Link>
+   </Container>
 );
 
 export default SocialButton;
