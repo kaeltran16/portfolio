@@ -3,7 +3,7 @@ import React from 'react';
 import { LogoContainer } from './styles';
 import PropTypes from 'prop-types';
 
-const LogoBrand = ({ active, color }) => {
+const LogoBrand = ({ active, color, size }) => {
    return (
       <LogoContainer color={color} size={size} version='1'
                      xmlns='http://www.w3.org/2000/svg'
@@ -23,7 +23,7 @@ const LogoBrand = ({ active, color }) => {
 
 LogoBrand.propTypes = {
    active: PropTypes.bool.isRequired,
-   color: PropTypes.number.isRequired
+   color: PropTypes.string.isRequired
 };
 
 export default LogoBrand;

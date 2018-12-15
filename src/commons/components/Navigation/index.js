@@ -17,11 +17,11 @@ const Navigation = props => {
    return (
       <React.Fragment>
          <Nav.Container>
-            <LogoBrand {...props}/>
+            <LogoBrand {...props} active={active}/>
             <NavigationButton {...props} active={active} toggle={toggle}/>
          </Nav.Container>
          <NavigationList active={active}/>
-         <Nav.Background/>
+         <Nav.Background pose={active ? 'active' : 'inactive'}/>
       </React.Fragment>
    );
 };

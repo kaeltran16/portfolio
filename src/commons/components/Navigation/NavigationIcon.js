@@ -14,7 +14,7 @@ const NavigationButton = ({ color, size, active }) => {
 };
 
 NavigationButton.propTypes = {
-   color: PropTypes.oneOf([THEME.light, THEME.dark]).isRequire,
+   color: PropTypes.oneOf([THEME.light, THEME.dark]).isRequired,
    size: PropTypes.number.isRequired,
    active: PropTypes.bool.isRequired
 };

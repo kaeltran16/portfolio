@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import { fadeInRotate, fadeInSlowly } from 'commons/animations/keyframes';
+import { AnimatedBackground } from 'commons/components/Navigation/animations';
 
 const NavContainer = styled.div`
   display: flex; 
@@ -7,22 +8,16 @@ const NavContainer = styled.div`
   align-items: center;
 `;
 
-const NavBackground = styled.div`
+const NavBackground = styled(AnimatedBackground)`
   height: 6rem;
   width: 6rem;
   border-radius: 50%;
   position: fixed;
   right: 0;
-  margin: 2rem;
   z-index: 1;
-  transform: ${props => props.active ? 'scale(80)' : 'scale(0)'};
-  transition: all 0.4s ease-in;
-  background-image:  ${props => props.active ?
-   `radial-gradient(${props.theme.accent.light},
-    ${props.theme.accent.dark})`
-   : `radial-gradient(${props.theme.accent.light},
-    ${props.theme.accent.dark})`};
-`;
+  margin: 2.5rem;
+  background-image: radial-gradient(${props => props.theme.accent.light},
+    ${props => props.theme.accent.dark})`;
 
 const LogoContainer = styled.svg`
   margin-left: 3.5rem;

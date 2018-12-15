@@ -29,7 +29,7 @@
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "eslint-config-google": "^0.9.1",
     "eslint-plugin-react": "^7.11.1",
-    "gh-pages": "^1.2.0"
+    "gh-pages": "^1.2.~0"
   },
   "browserslist": [
     ">0.2%",
