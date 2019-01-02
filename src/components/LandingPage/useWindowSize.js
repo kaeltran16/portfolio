@@ -1,6 +1,5 @@
-// TODO: splashing after resize
-// eslint-disable-next-line no-unused-vars
-import React, { useEffect, useState } from 'react';
+// TODO: splashing after resizing
+import { useEffect, useState } from 'react';
 import throttle from 'lodash.throttle';
 
 const useWindowSize = () => {

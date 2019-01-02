@@ -21,11 +21,6 @@ const TextSecondary = styled(TextBase)`
 	font-weight: 700;
 `;
 
-const Text = {
-   Container: TextContainer,
-   Primary: TextPrimary,
-   Secondary: TextSecondary
-};
 
 const HomeContainer = styled.div`
   height: 100vh;
@@ -46,5 +41,10 @@ const BackgroundContainer = styled.div`
   z-index: -1;
 `;
 
+const Text = {
+   Container: TextContainer,
+   Primary: TextPrimary,
+   Secondary: TextSecondary
+};
 
 export { Text, BackgroundContainer, HomeContainer };

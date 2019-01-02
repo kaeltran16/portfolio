@@ -5,6 +5,7 @@ import React from 'react';
 import useNavigation from 'commons/utils/useNavigation';
 import WelcomeText from 'components/LandingPage/Header';
 import { HomeContainer } from 'components/LandingPage/styles';
+import { THEME } from '../../styles/theme';
 
 
 const Landing = () => {
@@ -15,7 +16,7 @@ const Landing = () => {
          <HomeContainer>
             <Navigation color='light' size={5}/>
             <WelcomeText/>
-            <NextPageButton align='center' color='light' size={5}
+            <NextPageButton align='center' color={THEME.light} size={5}
                             nextRoute={nextRoute}/>
          </HomeContainer>
       </div>
