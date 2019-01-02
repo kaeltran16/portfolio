@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import { fadeInRotate, fadeInSlowly } from 'commons/animations/keyframes';
-import { AnimatedBackground } from 'commons/components/Navigation/animations';
+import { animated } from 'react-spring/hooks';
 import { Link } from 'react-router-dom';
 
 const NavContainer = styled.div`
@@ -9,7 +9,7 @@ const NavContainer = styled.div`
   align-items: center;
 `;
 
-const NavBackground = styled(AnimatedBackground)`
+const NavBackground = styled(animated.div)`
   height: 6rem;
   width: 6rem;
   border-radius: 50%;
@@ -35,7 +35,6 @@ const LogoContainer = styled.svg`
       transition: all 1s;
       backface-visibility: hidden;
   }
-  
   position: relative;
   z-index: 500;
 `;
@@ -52,8 +51,7 @@ const BurgerButton = styled.div`
 const Bar = styled.div`
     &:not(:first-child) {
       margin-top: .6rem;
-    }
-    
+    } 
     transition: all 0.4s;
     width: 100%;
     height: 12.5%;  
@@ -74,7 +72,7 @@ const BurgerIcon = styled.div`
     ${Bar} {
       background-color: ${props => props.color === 'dark'
    ? props.theme.primary.main
-   : props.theme.secondary.main};;
+   : props.theme.secondary.main};
     }
     
     ${props => props.active && css`

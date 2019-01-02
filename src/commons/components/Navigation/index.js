@@ -5,7 +5,7 @@ import LogoBrand from './LogoBrand';
 import NavigationButton from './NavigationButton';
 import NavigationList from './NavigationList';
 import { THEME } from 'styles/theme';
-
+import { useSpring } from 'react-spring/hooks';
 
 const Navigation = props => {
    const [active, setActive] = useState(false);
@@ -14,6 +14,12 @@ const Navigation = props => {
       setActive(!active);
    };
 
+
+   const { transform } = useSpring({
+      transform: `scale(${active ? '80' : '0'})`,
+      config: { mass: 5, tension: 600, friction: 100 }
+   });
+
    return (
       <React.Fragment>
          <Nav.Container>
@@ -21,7 +27,8 @@ const Navigation = props => {
             <NavigationButton {...props} active={active} toggle={toggle}/>
          </Nav.Container>
          <NavigationList active={active}/>
-         <Nav.Background pose={active ? 'active' : 'inactive'}/>
+         <Nav.Background
+            style={{ transform }}/>
       </React.Fragment>
    );
 };
