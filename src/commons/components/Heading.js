@@ -1,35 +1,20 @@
 import React from 'react';
-import styled from 'styled-components';
-
+import { Heading } from './styles';
 import TextScrambler from './TextScrambler';
+import * as PropTypes from 'prop-types';
+import { THEME } from '../../styles/theme';
 
-const Container = styled.div`
-	width: 100%;
-	height: 100%;
-  	align-items: center;
-	justify-content: center;
-	display: flex;
-	flex-direction: column;
-`;
-
-const TextHeader = styled.h2`
-  text-transform: uppercase;
-  font-weight: lighter;
-  font-size: 3rem;
-  letter-spacing: .33rem;
-  cursor: auto;
-  color: ${props => props.color === 'dark'
-    ? props.theme.primary.light
-    : props.theme.secondary.light }; 
-`;
-
-
-const Heading = ({heading, color}) => (
-    <Container>
-        <TextHeader color={color}>
-            <TextScrambler delay={100} text={heading}/>
-        </TextHeader>
-    </Container>
+const HeadingTitle = ({ heading, color }) => (
+   <Heading.Container>
+      <Heading.Text color={color}>
+         <TextScrambler delay={100} text={heading}/>
+      </Heading.Text>
+   </Heading.Container>
 );
 
-export default Heading;
+HeadingTitle.propTypes = {
+   heading: PropTypes.string.isRequired,
+   color: PropTypes.oneOf([THEME.light, THEME.dark])
+};
+
+export default HeadingTitle;

@@ -1,6 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-
+import * as PropTypes from 'prop-types';
 import NavigationIcon from './NavigationIcon';
 import { BurgerButton } from 'commons/components/Navigation/styles';
 import { THEME } from 'styles/theme';

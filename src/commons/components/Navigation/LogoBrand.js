@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 import React from 'react';
 import { LogoContainer } from './styles';
-import PropTypes from 'prop-types';
+import * as PropTypes from 'prop-types';
 
 const LogoBrand = ({ active, color, size }) => {
    return (
@@ -23,7 +23,8 @@ const LogoBrand = ({ active, color, size }) => {
 
 LogoBrand.propTypes = {
    active: PropTypes.bool.isRequired,
-   color: PropTypes.string.isRequired
+   color: PropTypes.string.isRequired,
+   size: PropTypes.number.isRequired
 };
 
 export default LogoBrand;

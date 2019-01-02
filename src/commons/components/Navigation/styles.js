@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 import { fadeInRotate, fadeInSlowly } from 'commons/animations/keyframes';
 import { AnimatedBackground } from 'commons/components/Navigation/animations';
+import { Link } from 'react-router-dom';
 
 const NavContainer = styled.div`
   display: flex; 
@@ -25,7 +26,7 @@ const LogoContainer = styled.svg`
   width: ${props => `${props.size}rem`}
   fill: ${props => props.color === 'dark'
    ? props.theme.primary.main
-   : props.theme.secondary.main };
+   : props.theme.secondary.main};
   animation: ${fadeInRotate} 2s;
   cursor: pointer;
   
@@ -73,7 +74,7 @@ const BurgerIcon = styled.div`
     ${Bar} {
       background-color: ${props => props.color === 'dark'
    ? props.theme.primary.main
-   : props.theme.secondary.main };;
+   : props.theme.secondary.main};;
     }
     
     ${props => props.active && css`
@@ -96,9 +97,79 @@ const BurgerIcon = styled.div`
   `}
 `;
 
+const NavItemContainer = styled.div`
+    margin: 1rem;
+    position: relative;
+    z-index: 100;
+ `;
+
+const NavLink = styled(Link)`
+    cursor: pointer;
+    font-size: 3rem;
+    font-weight: 500;
+    color: ${props => props.theme.primary.main};
+    padding: 1rem 2.5rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-image: linear-gradient(
+    	120deg,
+    	transparent,
+    	transparent 0%,
+    	transparent 50%,
+    	${props => props.theme.secondary.main} 50%	
+    );
+    background-size: 220%;
+    transition: all 0.4s;
+    display: inline-block;
+    &:hover,
+	&:active {
+	  background-position: 100%;
+	  color: #000;
+	  transform: translateX(1rem);
+	}
+`;
+
+const NavItemName = styled.span`
+  	margin-right: 1.5rem;
+	display: inline-block;
+`;
+
 const Nav = {
    Container: NavContainer,
    Background: NavBackground
 };
 
-export { Nav, LogoContainer, BurgerButton, Bar, BurgerIcon };
+const NavItem = {
+   Container: NavItemContainer,
+   Link: NavLink,
+   Name: NavItemName
+};
+
+const NavListContainer = styled.nav`
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  opacity: 0;
+  display: none;
+  z-index: 9;
+  transition: all 0.4s;
+  
+  ${({ active }) => active && css`
+	opacity: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  `};
+`;
+
+const NavListItems = styled.ul`
+		list-style: none;
+		text-align: center;
+`;
+
+const NavList = {
+   Container: NavListContainer,
+   ItemContainer: NavListItems
+};
+
+export { Nav, LogoContainer, BurgerButton, Bar, BurgerIcon, NavItem, NavList };

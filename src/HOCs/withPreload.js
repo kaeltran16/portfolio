@@ -1,5 +1,5 @@
 import React from 'react';
-import Loading from "../commons/components/Loading";
+import Spinner from "../commons/components/Spinner";
 
 const withPreload = Component =>
     class PreloadComponent extends React.Component {
@@ -11,7 +11,7 @@ const withPreload = Component =>
 
         render() {
             return (
-                this.state.isLoading ? <Loading/> : <Component {...this.props}/>
+                this.state.isLoading ? <Spinner/> : <Component {...this.props}/>
             );
         }
     };
