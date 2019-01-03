@@ -1,59 +1,38 @@
 import { DataType, withDataContext } from 'appContext';
-import { fadeInSlowly } from 'commons/animations/keyframes';
 import React from 'react';
-import { device } from 'styles/responsive';
-import styled from 'styled-components';
+import * as PropTypes from 'prop-types';
+import { ParagraphStyle } from './styles';
+import { config, useTransition } from 'react-spring/hooks';
 
-const Container = styled.div`
-  width: 100%;
-	height: 100%;
-	align-items: center;
-	justify-content: center;
-	align-self: center;
-	backface-visibility: hidden;
-	display: flex;
-	flex-direction: column;
-`;
-
-
-const Text = styled.div`
-    width: 70%;
-    font-size: 2.5rem;
-    font-weight: normal;
-    color: ${props => props.theme.primary.dark}
-    letter-spacing: .2rem;
-    
-    &:not(:first-child) {
-      margin-top: 4rem;
-    }
-    
-    opacity: 0;
-    animation: ${fadeInSlowly} 1.5s ease-in forwards;
-    animation-delay: 1.5s;
-    
-    	  
-  @media ${device.mobileS} {
-      font-size: 2.5rem;
-      width: 90%;
-       &:not(:first-child) {
-      margin-top: 2rem;
-    }
-  }
-`;
 
 const Paragraphs = ({ contents }) => {
-   const renderTexts = paragraphs => {
-      return paragraphs.map((paragraph, i) =>
-         <Text key={i}>
-            {paragraph}
-         </Text>
+   const spices = useTransition({
+      config: config.wobbly,
+      from: { opacity: 0, transform: 'scale(0)' },
+      enter: { opacity: 1, transform: 'scale(1)' },
+      leave: { opacity: 0, transform: 'scale(0)' },
+      items: contents,
+      trail: 600,
+      unique: true
+   });
+
+   const renderTexts = () =>
+      spices.map(({ item, key, props }) =>
+         <ParagraphStyle.Text key={key} style={{ ...props }}>
+            {item}
+         </ParagraphStyle.Text>
       );
-   };
+
    return (
-      <Container>
-         {renderTexts(contents)}
-      </Container>
+      <ParagraphStyle.Container>
+         {renderTexts()}
+      </ParagraphStyle.Container>
    );
+};
+
+
+Paragraphs.propTypes = {
+   contents: PropTypes.arrayOf(PropTypes.string).isRequired
 };
 
 export default withDataContext(Paragraphs, DataType.AboutPage);
