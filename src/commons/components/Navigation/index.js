@@ -1,55 +1,41 @@
-import React from 'react';
-import styled from 'styled-components';
-
+import React, { useState } from 'react';
+import * as PropTypes from 'prop-types';
+import { Nav } from './styles';
 import LogoBrand from './LogoBrand';
 import NavigationButton from './NavigationButton';
 import NavigationList from './NavigationList';
+import { THEME } from 'styles/theme';
+import { useSpring } from 'react-spring/hooks';
 
-const Container = styled.div`
-  width: 100%;
-  display: flex; 
-  top: 0;
-  align-items: center;
-  justify-content: space-between;
-`;
+const Navigation = props => {
+   const [active, setActive] = useState(false);
 
-const NavigationBackground = styled.div`
-  height: 6rem;
-  width: 6rem;
-  border-radius: 50%;
-  position: fixed;
-  right: 0;
-  margin: 2rem;
-  z-index: 1;
-  transform: ${props => props.active ? 'scale(80)' : 'scale(0)'};
-  transition: all 0.4s ease-in;
-  background-image:  ${props => props.active ? `radial-gradient(${props.theme.accent.light}, ${props.theme.accent.dark})`
-   : `radial-gradient(${props.theme.accent.light}, ${props.theme.accent.dark})`};
-`;
-
-class Navigation extends React.Component {
-   state = { active: false };
-   toggle = () => {
-      this.setState({ active: !this.state.active });
+   const toggle = () => {
+      setActive(!active);
    };
 
-   render() {
-      const { active } = this.state;
-      return (
-         <React.Fragment>
 
-            <Container>
-               <LogoBrand {...this.props}/>
-               <NavigationButton active={active} {...this.props}
-                                 toggle={this.toggle}/>
-            </Container>
-            <NavigationList active={active}/>
-            <NavigationBackground active={active}/>
+   const { transform } = useSpring({
+      transform: `scale(${active ? '80' : '0'})`,
+      config: { mass: 5, tension: 600, friction: 100 }
+   });
 
-         </React.Fragment>
-      );
-   }
+   return (
+      <React.Fragment>
+         <Nav.Container>
+            <LogoBrand {...props} active={active}/>
+            <NavigationButton {...props} active={active} toggle={toggle}/>
+         </Nav.Container>
+         <NavigationList active={active}/>
+         <Nav.Background
+            style={{ transform }}/>
+      </React.Fragment>
+   );
+};
 
-}
+Navigation.propTypes = {
+   size: PropTypes.number,
+   color: PropTypes.oneOf([THEME.light, THEME.dark])
+};
 
 export default Navigation;

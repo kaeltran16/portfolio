@@ -12,7 +12,7 @@ const store = {
       ]
    },
    Skill: {
-      header: 'what i am capable of',
+      header: 'what i capable of',
       details: [
          {
             iconName: 'code',
@@ -24,7 +24,7 @@ const store = {
             iconName: 'usb',
             heading: 'I started with WPF in Desktop application but now working mostly in Web Development.',
             subHeading: 'Frameworks/libraries I has worked with',
-            skillNames: ['ASP.NET/ASP.NET Core', 'React/React Native', 'Redux', 'Express', 'Angular', 'SQL Server/MongoDB', 'GraphQL']
+            skillNames: ['ASP.NET/ASP.NET Core', 'React/Angular', 'Redux', 'Express', 'React Native', 'SQL Server/MongoDB', 'GraphQL']
          },
          {
             iconName: 'wrench',
@@ -34,36 +34,26 @@ const store = {
          }
       ]
    },
-   Project: {
-      header: 'What i did',
+   Work: {
       details: [
          {
-            name: 'recipello',
-            subHeading: [
-               `A site enables users to search for food recipes or logged in user to post their favorite food recipe and vote for recipes they love. Authorization and authentication via JWT allows only logged in users to post and modify their own recipes.`,
-               `Strengthened my JavaScript full stack skill and put my hand on GraphQL, a powerful query language for API and how to integrate with MongoDB and Nodejs server in the back-end via ApolloServer and integrate with React via ApolloClient.`
-            ],
-            intro: 'JavaScript, React, MongoDB, Express, GraphQL',
-            demoUrl: `http://khangtran.ca/recipello`,
-            srcUrl: `https://github.com/Khang-Tran/recipello`
+            name: 'natours',
+            subHeading: `Portfolio site for an imagine company in tours business. It is the result of 'Advanced CSS course' I took to improve my existing CSS and Sass skill. `,
+            intro: 'HTML/SCSS',
+            demoUrl: `http://khangtran.ca/natours`,
+            srcUrl: `https://github.com/Khang-Tran/natours`
          },
          {
             name: 'devpals',
-            subHeading: [
-               `A social network site for developers to connect, sharing their thought and coding activities. It also allows users to add friends, like and comment on friends's posts. Authorization and authentication via JWT allows only logged in users to post their activities and modify their own post.`,
-               `Strengthened my JavaScript full stack skill and learned how to design a database for social network site, integrated MongoDB into Express and manage global states by Redux and consume those states in React to make a maintainable and predictable application.`
-            ],
-            intro: 'JavaScript, MongoDB, Express, React, Redux',
+            subHeading: `A social network site for developers to connect, sharing their thought and coding activities. It also allows users to add friends and comment on friends's posts.`,
+            intro: 'MongoDB, Express, React, Nodejs, Redux',
             demoUrl: `https://devpals.herokuapp.com`,
             srcUrl: `https://github.com/Khang-Tran/devpals`
          },
          {
             name: 'ishop',
-            subHeading: [
-               'An API for developing online shopping site enables consumers to store and categorize and display their products, enables their users to order products, get shipped and receive invoices. Authorization and authentication via JWT allows only authorized users to add and remove products, the rest just view or order products.',
-               `Strengthened my C# and .NET skills, designed a complex relational database and implemented it by "code first" approach via Entity Framework Core, implemented maintainable and reusable API endpoints and prevent them from common attack methods.`
-            ],
-            intro: 'C#, ASP.NET Core Web API, EF Core, JWT',
+            subHeading: 'API for developing online shopping site. The API provides authentications and authorization, allows managers to add products with categories and users to order and receive invoices.',
+            intro: 'ASP.NET Core Web API, EF Core, JWT',
             demoUrl: `https://ishop-api.azurewebsites.net/api/swagger/index.html`,
             srcUrl: `https://github.com/Khang-Tran/iShop_v.02`
          }

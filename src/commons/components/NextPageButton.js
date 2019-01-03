@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import {withRouter} from 'react-router-dom';
-import {device} from "../../responsive";
-import {moveDown, zoomIn} from "../animations/keyframes";
+import { withRouter } from 'react-router-dom';
+import { device } from '../../styles/responsive';
+import { moveDown, zoomIn } from '../animations/keyframes';
 
 
 const Icon = styled.svg`
@@ -54,8 +54,8 @@ const Container = styled.div`
         height: ${props => `${props.size}rem`}
         width: ${props => `${props.size}rem`}
         fill: ${props => props.color === 'dark'
-    ? props.theme.primary.main
-    : props.theme.secondary.main };
+   ? props.theme.primary.main
+   : props.theme.secondary.main };
     }
     animation: ${zoomIn} 2s;
         
@@ -67,28 +67,29 @@ const Container = styled.div`
 `;
 
 
-const NextPageButton = ({align, color, size, horizontal, nextRoute, history}) => {
-    const gotoNextPage = () => {
-        history.push(nextRoute);
-    };
-    return (
-        <Container align={align} color={color} size={size} horizontal={horizontal} onClick={() => gotoNextPage()}>
-            <Icon viewBox='0 0 20 20'>
-                <path
-                    d='M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z'/>
-            </Icon>
+const NextPageButton = ({ align, color, size, horizontal, nextRoute, history }) => {
+   const gotoNextPage = () => {
+      history.push(nextRoute);
+   };
+   return (
+      <Container align={align} color={color} size={size} horizontal={horizontal}
+                 onClick={() => gotoNextPage()}>
+         <Icon viewBox='0 0 20 20'>
+            <path
+               d='M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z'/>
+         </Icon>
 
-            <Icon viewBox='0 0 20 20'>
-                <path
-                    d='M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z'/>
-            </Icon>
+         <Icon viewBox='0 0 20 20'>
+            <path
+               d='M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z'/>
+         </Icon>
 
-            <Icon viewBox='0 0 20 20'>
-                <path
-                    d='M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z'/>
-            </Icon>
-        </Container>
-    );
-}
+         <Icon viewBox='0 0 20 20'>
+            <path
+               d='M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z'/>
+         </Icon>
+      </Container>
+   );
+};
 
 export default withRouter(NextPageButton);
