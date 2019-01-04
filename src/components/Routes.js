@@ -4,7 +4,7 @@ import LandingPage from 'components/LandingPage';
 import { AboutPage } from 'components/About';
 import { SkillPage } from 'components/Skill';
 import { Projects } from 'components/Project';
-import { ContactPage } from 'components/Contact';
+import ContactPage from 'components/Contact';
 
 
 const Routes = () => (

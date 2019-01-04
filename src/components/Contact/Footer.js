@@ -1,22 +1,42 @@
-import React from 'react';
-import styled from 'styled-components';
-import SocialButton from "./SocialButton";
+import React, { useState } from 'react';
+import { FooterContainer } from './styles';
+import SocialButton from './SocialButton';
+import { useTrail } from 'react-spring/hooks';
+import * as PropTypes from 'prop-types';
 
-const Container = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
+const Footer = ({ socialIcons }) => {
+   const [toggle, set] = useState(false);
 
-`;
-const Footer = ({socialIcons}) => {
-    const renderSocialButtons = () =>
-        socialIcons.map(icon =>
-            <SocialButton key={icon.name} iconName={icon.icon} text={icon.name} url={icon.url}/>);
-    return (
-        <Container>
-            {renderSocialButtons()}
-        </Container>
-    );
-}
+   const socialButtonTrailing = useTrail(socialIcons.length, {
+      opacity: 1,
+      from: { opacity: 0 }
+   });
+
+
+   const renderSocialButtons = () =>
+      socialIcons.map((item, index) =>
+         <SocialButton onClick={() => set(state => !state)} key={index}
+                       iconName={socialIcons[index].icon}
+                       text={socialIcons[index].name}
+                       url={socialIcons[index].url}
+                       style={socialButtonTrailing[index]}/>
+      );
+
+
+   return (
+      <FooterContainer>
+         <button onClick={() => set(!toggle)}>click me</button>
+         {renderSocialButtons()}
+      </FooterContainer>
+   );
+};
+
+Footer.propTypes = {
+   socialIcons: PropTypes.arrayOf(PropTypes.shape({
+      icon: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      url: PropTypes.string.isRequired
+   })).isRequired
+};
 
 export default Footer;
