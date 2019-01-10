@@ -1,31 +1,37 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { FooterContainer } from './styles';
-import SocialButton from './SocialButton';
 import { useTrail } from 'react-spring/hooks';
 import * as PropTypes from 'prop-types';
+import SocialButton from './SocialButton';
 
 const Footer = ({ socialIcons }) => {
-   const [toggle, set] = useState(false);
-
    const socialButtonTrailing = useTrail(socialIcons.length, {
       opacity: 1,
-      from: { opacity: 0 }
+      config: { mass: 4, tension: 1000, friction: 200 },
+      x: 0,
+      y: 10,
+      from: { opacity: 0, x: -50, y: 0 }
    });
 
 
    const renderSocialButtons = () =>
-      socialIcons.map((item, index) =>
-         <SocialButton onClick={() => set(state => !state)} key={index}
-                       iconName={socialIcons[index].icon}
-                       text={socialIcons[index].name}
-                       url={socialIcons[index].url}
-                       style={socialButtonTrailing[index]}/>
-      );
-
+      socialButtonTrailing.map(({ x, y, opacity }, index) => {
+         return (
+            <SocialButton
+               key={socialIcons[index]}
+               iconName={socialIcons[index].icon}
+               text={socialIcons[index].name}
+               url={socialIcons[index].url}
+               style={{
+                  opacity,
+                  transform: x.interpolate(x => `translate3d(0,${x}px,0)`)
+               }}>
+            </SocialButton>
+         );
+      });
 
    return (
       <FooterContainer>
-         <button onClick={() => set(!toggle)}>click me</button>
          {renderSocialButtons()}
       </FooterContainer>
    );

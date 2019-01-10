@@ -7,7 +7,7 @@ const AboutPageContainer = styled.div`
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr .75fr 3fr 1fr;
-    justify-content: center;  
+    justify-content: center; 
 `;
 
 export default AboutPageContainer;

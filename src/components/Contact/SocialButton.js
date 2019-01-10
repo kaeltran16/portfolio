@@ -2,9 +2,9 @@ import React from 'react';
 import { SocialButtonStyles as Styles } from './styles';
 import * as PropTypes from 'prop-types';
 
-const SocialButton = ({ text, iconName, url }) => {
+const SocialButton = ({ style, text, iconName, url }) => {
    return (
-      <Styles.Container>
+      <Styles.Container style={style}>
          <Styles.Link href={url}>
             <Styles.Text>{text}</Styles.Text>
             <Styles.Icon>
