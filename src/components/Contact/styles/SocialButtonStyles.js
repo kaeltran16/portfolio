@@ -18,16 +18,10 @@ const Link = styled.a`
   color: ${props => props.theme.secondary.main};
 `;
 
-const Text = styled.p`
+const Text = styled(animated.p)`
   font-size: 2rem;
   text-transform: uppercase;
   letter-spacing: .5rem;
-  opacity: 0;
-  transition: opacity .5s ease-in;
-  
-  ${Link}:hover & {
-    opacity: 1;
-  }
 `;
 
 const Icon = styled.svg`
