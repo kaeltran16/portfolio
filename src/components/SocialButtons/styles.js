@@ -30,11 +30,4 @@ const Icon = styled.svg`
   fill: ${props => props.theme.secondary.main}
 `;
 
-const AboutPageStyle = {
-   Container,
-   Link,
-   Text,
-   Icon
-};
-
-export default AboutPageStyle;
+export { Container, Link, Text, Icon };

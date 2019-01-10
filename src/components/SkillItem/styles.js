@@ -1,6 +1,5 @@
-import React from 'react';
-import styled from "styled-components";
-import {device} from "../../styles/responsive";
+import styled from 'styled-components';
+import { device } from '../../styles/responsive';
 
 const Container = styled.div`
     display: flex;
@@ -9,7 +8,7 @@ const Container = styled.div`
 `;
 
 
-const TextHeading = styled.h4`
+const SubHeading = styled.h4`
   font-size: 1.75rem;
   width: 100%;
   justify-content: center;
@@ -22,7 +21,7 @@ const TextHeading = styled.h4`
   } 
 `;
 
-const SkillItem = styled.div`
+const SkillNameList = styled.div`
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -39,19 +38,5 @@ const SkillName = styled.p`
       font-size: 2.5rem;
     }
 `;
-const SkillDetail = ({subHeading, skillNames, delay}) => {
-    const renderSkillNames = skillNames =>
-        skillNames.map((name, index) => <SkillName delay={delay - 1} key={index}>{name}</SkillName>);
-    return (
-        <Container>
-            <TextHeading>
-                {subHeading}
-            </TextHeading>
-            <SkillItem>
-                {renderSkillNames(skillNames)}
-            </SkillItem>
-        </Container>
-    );
-}
 
-export default SkillDetail;
+export { Container, SkillName, SkillNameList, SubHeading };

@@ -1,7 +1,7 @@
 import React from 'react';
-import { SocialButtonStyles as Styles } from './styles';
 import * as PropTypes from 'prop-types';
 import { useSpring } from 'react-spring/hooks';
+import { Container, Icon, Link, Text } from './styles';
 
 const SocialButton = ({ style, text, iconName, url }) => {
    const [{ scale }, set] = useSpring(() => ({
@@ -10,22 +10,22 @@ const SocialButton = ({ style, text, iconName, url }) => {
    }));
 
    return (
-      <Styles.Container style={style}>
-         <Styles.Link href={url} onMouseMove={() => set({ scale: 1 })}
-                      onMouseLeave={() => set({ scale: 0 })}>
-            <Styles.Text
+      <Container style={style}>
+         <Link href={url} onMouseMove={() => set({ scale: 1 })}
+               onMouseLeave={() => set({ scale: 0 })}>
+            <Text
                style={{
                   transform: scale.interpolate(scale => `scale(${scale})`)
                }}>
                {text}
-            </Styles.Text>
-            <Styles.Icon>
+            </Text>
+            <Icon>
                <use
                   xlinkHref={`${process.env.PUBLIC_URL}
                /assets/sprites.svg#icon-${iconName}`}/>
-            </Styles.Icon>
-         </Styles.Link>
-      </Styles.Container>
+            </Icon>
+         </Link>
+      </Container>
    );
 };
 

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { device } from '../../../styles/responsive';
+import { device } from '../../styles/responsive';
 
 const Container = styled.div`
   display: flex;
@@ -55,14 +55,9 @@ const PhoneNumber = styled.a`
      color: ${props => props.theme.secondary.main}
 `;
 
-const ContactDetailStyles = {
-   Container,
-   Header: {
-      Primary: PrimaryHeader,
-      Secondary: SubHeader
-   },
-   Text,
-   PhoneNumber
+const Header = {
+   Primary: PrimaryHeader,
+   Secondary: SubHeader
 };
 
-export default ContactDetailStyles;
+export { Container, Header, Text, PhoneNumber };

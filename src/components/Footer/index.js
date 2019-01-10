@@ -1,8 +1,8 @@
 import React from 'react';
-import { FooterContainer } from './styles';
+import { Container } from './styles';
 import { useTrail } from 'react-spring/hooks';
 import * as PropTypes from 'prop-types';
-import SocialButton from './SocialButton';
+import SocialButton from 'components/SocialButtons';
 
 const Footer = ({ socialIcons }) => {
    const socialButtonTrailing = useTrail(socialIcons.length, {
@@ -18,7 +18,7 @@ const Footer = ({ socialIcons }) => {
       socialButtonTrailing.map(({ x, y, opacity }, index) => {
          return (
             <SocialButton
-               key={socialIcons[index]}
+               key={socialIcons[index].icon}
                iconName={socialIcons[index].icon}
                text={socialIcons[index].name}
                url={socialIcons[index].url}
@@ -31,9 +31,9 @@ const Footer = ({ socialIcons }) => {
       });
 
    return (
-      <FooterContainer>
+      <Container>
          {renderSocialButtons()}
-      </FooterContainer>
+      </Container>
    );
 };
 

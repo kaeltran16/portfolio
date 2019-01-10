@@ -1,10 +1,12 @@
 import React from 'react';
 import { HashRouter, Route, Switch } from 'react-router-dom';
-import LandingPage from 'components/LandingPage';
-import { AboutPage } from 'components/About';
-import { SkillPage } from 'components/Skill';
-import { Projects } from 'components/Project';
-import ContactPage from 'components/Contact';
+import {
+   AboutPage,
+   ContactPage,
+   LandingPage,
+   SkillPage,
+   WorkPage
+} from '../pages';
 
 
 const Routes = () => (
@@ -13,7 +15,7 @@ const Routes = () => (
          <Route exact path='/' component={LandingPage}/>
          <Route exact path='/about' component={AboutPage}/>
          <Route exact path='/skill' component={SkillPage}/>
-         <Route path='/work' component={Projects}/>
+         <Route path='/work' component={WorkPage}/>
          <Route exact path='/contact' component={ContactPage}/>
       </Switch>
    </HashRouter>

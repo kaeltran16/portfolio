@@ -1,17 +1,17 @@
 import React from 'react';
-import { DataType, withDataContext } from '../../appContext';
-import Navigation from '../../commons/components/Navigation/index';
-import Heading from '../../commons/components/Heading';
-import Footer from './Footer';
-import ContactDetail from './ContactDetail';
+import { DataType, withDataContext } from '../appContext';
+import Navigation from '../commons/components/Navigation';
+import Heading from '../commons/components/Heading';
+import Footer from 'components/Footer';
 import { ContactPageContainer } from './styles';
 import * as PropTypes from 'prop-types';
+import ContactInfo from 'components/ContactInfo';
 
-const Contact = ({ header, socialIcons, contactDetails }) => (
+const Contact = ({ header, socialIcons, contactDetail }) => (
    <ContactPageContainer>
       <Navigation color='light' size={5}/>
       <Heading color='light' heading={header}/>
-      <ContactDetail contactDetails={contactDetails}/>
+      <ContactInfo contactDetail={contactDetail}/>
       <Footer socialIcons={socialIcons}/>
    </ContactPageContainer>
 );
@@ -23,7 +23,7 @@ Contact.propTypes = {
       name: PropTypes.string,
       url: PropTypes.string
    })).isRequired,
-   contactDetails: PropTypes.shape({
+   contactDetail: PropTypes.shape({
       email: PropTypes.string,
       tel: PropTypes.string
    }).isRequired
