@@ -1,8 +1,9 @@
-import React from 'react';
 import _ from 'lodash';
+import React from 'react';
 
 
-const links = ['/', '/about', '/skill', '/work/recipello', '/work/devpals', '/work/ishop', '/contact'];
+const links = ['/', '/about', '/skill', '/work/natours',
+   '/work/devpals', '/work/ishop', '/contact'];
 
 const withScroll = (Component) =>
    class ScrollableComponent extends React.Component {

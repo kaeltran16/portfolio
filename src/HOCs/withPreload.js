@@ -1,19 +1,19 @@
 import React from 'react';
-import Loading from '../commons/components/Loading';
+import Spinner from "../commons/components/Spinner";
 
 const withPreload = Component =>
-   class PreloadComponent extends React.Component {
-      state = { isLoading: true };
+    class PreloadComponent extends React.Component {
+        state = {isLoading: true};
 
-      componentDidMount() {
-         setTimeout(() => this.setState({ isLoading: false }), 200);
-      };
+        componentDidMount() {
+            setTimeout(() => this.setState({isLoading: false}), 1000);
+        };
 
-      render() {
-         return (
-            this.state.isLoading ? <Loading/> : <Component {...this.props}/>
-         );
-      }
-   };
+        render() {
+            return (
+                this.state.isLoading ? <Spinner/> : <Component {...this.props}/>
+            );
+        }
+    };
 
 export default withPreload;
