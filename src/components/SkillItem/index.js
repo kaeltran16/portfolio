@@ -3,12 +3,14 @@ import * as PropTypes from 'prop-types';
 
 import { Container, SkillName, SkillNameList, SubHeading } from './styles';
 
-const SkillItem = ({ subHeading, skillNames, delay }) => {
+const SkillItem = ({ subHeading, skillNames, trans }) => {
+   console.log(trans);
    const renderSkillNames = () =>
-      skillNames.map(name =>
-         <SkillName delay={delay - 1}
-                    key={name}>
-            {name}
+      trans.map(({ item, key, props }) =>
+         <SkillName
+            key={key}
+            style={props}>
+            {item}
          </SkillName>
       );
    return (
@@ -25,8 +27,7 @@ const SkillItem = ({ subHeading, skillNames, delay }) => {
 
 SkillItem.propTypes = {
    subHeading: PropTypes.string.isRequired,
-   skillNames: PropTypes.arrayOf(PropTypes.string).isRequired,
-   delay: PropTypes.number.isRequired
+   skillNames: PropTypes.arrayOf(PropTypes.string).isRequired
 };
 
 export default SkillItem;

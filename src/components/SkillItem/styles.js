@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { device } from '../../styles/responsive';
+import { animated } from 'react-spring/hooks';
 
 const Container = styled.div`
     display: flex;
@@ -29,7 +30,7 @@ const SkillNameList = styled.div`
     align-items: center;
 `;
 
-const SkillName = styled.p`
+const SkillName = styled(animated.div)`
     font-size: 2rem;
     font-weight: bolder;
     color: ${props => props.theme.primary.dark};

@@ -2,15 +2,12 @@ import React from 'react';
 import * as PropTypes from 'prop-types';
 
 import { Container } from './styles';
-import { DataType, withDataContext } from '../../appContext';
 import SkillCard from '../SkillCard';
 
 const SkillList = ({ skills }) => {
    const renderSkillItems = () => {
-      return skills.map((skill, index) =>
-         <SkillCard delay={index + .5}
-                    skill={skill}
-                    key={skill.iconName}/>
+      return skills.map(skill =>
+         <SkillCard key={skill.iconName} skill={skill}/>
       );
    };
    return (
@@ -29,5 +26,5 @@ SkillList.propTypes = {
    })).isRequired
 };
 
-export default withDataContext(SkillList, DataType.SkillPage);
+export default SkillList;
 
