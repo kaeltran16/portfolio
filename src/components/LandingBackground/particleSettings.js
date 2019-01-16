@@ -1,20 +1,3 @@
-import React from 'react';
-import Particles from 'react-particles-js';
-
-import useWindowSize from 'components/LandingPage/useWindowSize';
-import { BackgroundContainer } from 'components/LandingPage/styles';
-
-const Background = () => {
-   const { width, height } = useWindowSize();
-   return (
-      <BackgroundContainer>
-         <Particles height={height} width={width} params={particleSettings}/>
-      </BackgroundContainer>
-   );
-};
-
-export default Background;
-
 const particleSettings = {
    'particles': {
       'number': {
@@ -126,3 +109,4 @@ const particleSettings = {
    'retina_detect': true
 };
 
+export default particleSettings;

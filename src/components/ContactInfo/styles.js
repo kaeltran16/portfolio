@@ -1,7 +1,5 @@
-import React from 'react';
 import styled from 'styled-components';
-import TextScrambler from "../../commons/components/TextScrambler";
-import {device} from "../../styles/responsive";
+import { device } from '../../styles/responsive';
 
 const Container = styled.div`
   display: flex;
@@ -55,20 +53,11 @@ const Text = styled.h4`
 const PhoneNumber = styled.a`
    text-decoration: none;
      color: ${props => props.theme.secondary.main}
- 
 `;
-const ContactDetail = ({contactDetails}) => (
-    <Container>
-        <PrimaryHeader href={`mailto:${contactDetails.email}`}>
-            <TextScrambler delay={1000} text={contactDetails.email}/>
-        </PrimaryHeader>
-        <SubHeader>
-            <Text><TextScrambler text={'Phone Number'} delay={1500}/></Text>
-            <PhoneNumber href={`tel:1-${contactDetails.tel}`}>
-                <TextScrambler text={`(+1) ${contactDetails.tel}`} delay={1700}/>
-            </PhoneNumber>
-        </SubHeader>
-    </Container>
-);
 
-export default ContactDetail;
+const Header = {
+   Primary: PrimaryHeader,
+   Secondary: SubHeader
+};
+
+export { Container, Header, Text, PhoneNumber };

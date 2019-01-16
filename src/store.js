@@ -13,7 +13,7 @@ const store = {
    },
    Skill: {
       header: 'what i capable of',
-      details: [
+      skills: [
          {
             iconName: 'code',
             heading: 'I started with C and C++, migrated to C# soon later and now really interested in JavaScript.',
@@ -61,7 +61,7 @@ const store = {
    },
    Contact: {
       header: 'get in touch',
-      contactDetails: {
+      contactDetail: {
          email: 'cktran16x2@gmail.com',
          tel: '4169987489'
       },
