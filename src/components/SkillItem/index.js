@@ -4,7 +4,6 @@ import * as PropTypes from 'prop-types';
 import { Container, SkillName, SkillNameList, SubHeading } from './styles';
 
 const SkillItem = ({ subHeading, skillNames, trans }) => {
-   console.log(trans);
    const renderSkillNames = () =>
       trans.map(({ item, key, props }) =>
          <SkillName

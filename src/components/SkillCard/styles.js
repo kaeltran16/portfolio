@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { fadeInUp } from '../../commons/animations/keyframes';
 import { device } from '../../styles/responsive';
 import { animated } from 'react-spring/hooks';
 
@@ -8,13 +7,6 @@ const Container = styled(animated.div)`
   grid-template-rows: 1fr 1fr 4fr;
   grid-template-columns: 1fr;
   width: 90%;
-  opacity: 0;
-  animation: ${fadeInUp} .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
-  &:hover {
-    transform: translateY(5rem);
-  },
-
-  
   @media ${device.mobileS} {
     margin-top: 5rem;
   } 

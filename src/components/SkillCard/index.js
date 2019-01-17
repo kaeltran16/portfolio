@@ -1,18 +1,12 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import * as PropTypes from 'prop-types';
 import { Container, Icon, SkillHeading } from './styles';
 import SkillItem from '../SkillItem';
-import { config, useChain, useSpring, useTransition } from 'react-spring/hooks';
+import { config, useTransition } from 'react-spring/hooks';
 
 const SkillCard = ({ skill }) => {
    const [open, setOpen] = useState(false);
    const springRef = useRef();
-
-   const spring = useSpring({
-      config: config.stiff,
-      width: `${open ? 90 : 60}%`,
-      ref: springRef
-   });
 
    const transRef = useRef();
    const spices = useTransition({
@@ -21,16 +15,18 @@ const SkillCard = ({ skill }) => {
       enter: { opacity: 1, transform: 'translateY(0) scale(1)' },
       leave: { opacity: 0, transform: 'translateY(30px) scale(0)' },
       items: open ? skill.skillNames : [],
-      trail: 500 / skill.length,
-      unique: true,
-      ref: transRef
+      trail: 500 / skill.skillNames.length,
+      unique: true
    });
-   useChain(
-      open ? [springRef, transRef] : [transRef, springRef]
-   );
+
+   useEffect(() => {
+      setTimeout(() => setOpen(true), 500);
+   });
+
    const { iconName, heading, subHeading, skillNames } = skill;
+
    return (
-      <Container style={spring} onClick={() => setOpen(true)}>
+      <Container onClick={() => setOpen(true)}>
          <Icon>
             <use
                xlinkHref={`${process.env.PUBLIC_URL}/assets/sprites.svg#icon-${iconName}`}/>

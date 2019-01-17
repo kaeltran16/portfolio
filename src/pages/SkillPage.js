@@ -2,7 +2,6 @@ import React from 'react';
 import * as PropTypes from 'prop-types';
 
 import { DataType, withDataContext } from '../appContext';
-import Heading from '../commons/components/Heading';
 import Navigation from '../commons/components/Navigation';
 import NextPageButton from '../commons/components/NextPageButton';
 import SkillList from '../components/SkillList';
@@ -15,7 +14,6 @@ const SkillPage = ({ header, skills }) => {
    return (
       <SkillPageContainer>
          <Navigation color={THEME.dark} size={5}/>
-         <Heading color={THEME.dark} heading={header}/>
          <SkillList skills={skills}/>
          <NextPageButton align='flex-end' color={THEME.dark} size={2}/>
       </SkillPageContainer>

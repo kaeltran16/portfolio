@@ -38,7 +38,7 @@ const SkillPageContainer = styled.div`
   height: 100vh;
   width: 100vw;
   display: grid;
-  grid-template-rows: 1fr .75fr 3.75fr 1.5fr;
+  grid-template-rows: 1fr 5fr 1fr;
   grid-template-columns: 1fr;
 `;
 
