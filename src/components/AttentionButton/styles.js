@@ -1,8 +1,11 @@
-import React from 'react';
-import styled from "styled-components";
-import {device} from "../../styles/responsive";
-import {jackInTheBox, moveAround, moveUpAndDown, zoomIn} from "../../commons/animations/keyframes";
-
+import styled from 'styled-components';
+import {
+   jackInTheBox,
+   moveAround,
+   moveUpAndDown,
+   zoomIn
+} from '../../commons/animations/keyframes';
+import { device } from '../../styles/responsive';
 
 const Container = styled.div`
   cursor: pointer;
@@ -115,14 +118,6 @@ const Button = styled.a`
 				top: 0.5rem;
 				left: 0.35rem;
 			}
-		
-		
-	
 `;
-const AttentionButton = ({url, children, position, delay}) => (
-    <Container delay={delay}>
-        <Button href={url} target='_blank' position={position}>{children}</Button>
-    </Container>
-);
 
-export default AttentionButton;
+export { Container, Button };

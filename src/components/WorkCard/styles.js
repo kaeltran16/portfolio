@@ -1,13 +1,9 @@
-import React from 'react';
 import styled from 'styled-components';
-import ProjectDetail from "./Detail";
-import AttentionButton from "./AttentionButton";
-import {device} from "../../styles/responsive";
-import {bounceInUp} from "../../commons/animations/keyframes";
-
+import { bounceInUp } from '../../commons/animations/keyframes';
+import { device } from '../../styles/responsive';
 
 const Container = styled.div`
-  width: 90%;
+  width: 30%;
   height: 80%;
   display: flex;
   justify-self: center;
@@ -63,18 +59,4 @@ const DetailContainer = styled.div`
   }
 `;
 
-
-const ProjectCard = ({detail}) => (
-    <Container>
-        <CardContainer>
-            <DetailContainer>
-                <ProjectDetail detail={detail}/>
-                <AttentionButton delay={0} url={detail.demoUrl} position='left'>Live demo</AttentionButton>
-                <AttentionButton delay={1} url={detail.srcUrl} position='right'>View source</AttentionButton>
-            </DetailContainer>
-            <Image src={`${process.env.PUBLIC_URL}/assets/img/${detail.name}.png`}/>
-        </CardContainer>
-    </Container>
-);
-
-export default ProjectCard;
+export { Container, CardContainer, Image, DetailContainer };

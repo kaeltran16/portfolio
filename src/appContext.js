@@ -22,7 +22,7 @@ const withDataContext = (Component, dataType) => {
                case DataType.SkillPage:
                   return <Component {...props} {...value.Skill} />;
                case DataType.WorkPage:
-                  return <Component {...props} {...value.Project} />;
+                  return <Component {...props} {...value.Work} />;
                case DataType.ContactPage:
                   return <Component {...props} {...value.Contact} />;
                default:

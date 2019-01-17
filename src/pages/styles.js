@@ -42,10 +42,19 @@ const SkillPageContainer = styled.div`
   grid-template-columns: 1fr;
 `;
 
+const WorkContainer = styled.div`
+    height: 100vh;
+    width: 100vw;
+    background-color: ${props => props.theme.secondary.main};
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 5fr .5fr;
+`;
 
 export {
    LandingPageContainer,
    ContactPageContainer,
    AboutPageContainer,
-   SkillPageContainer
+   SkillPageContainer,
+   WorkContainer
 };

@@ -35,9 +35,9 @@ const store = {
       ]
    },
    Work: {
-      details: [
+      projects: [
          {
-            name: 'natours',
+            name: 'recipello',
             subHeading: `Portfolio site for an imagine company in tours business. It is the result of 'Advanced CSS course' I took to improve my existing CSS and Sass skill. `,
             intro: 'HTML/SCSS',
             demoUrl: `http://khangtran.ca/natours`,
