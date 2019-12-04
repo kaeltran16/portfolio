@@ -1,7 +1,7 @@
 {
   "name": "portfolio",
   "version": "0.1.0",
-  "homepage": "http://Khang-Tran.github.io/portfolio",
+  "homepage": ".",
   "private": true,
   "dependencies": {
     "lodash": "^4.17.10",
