@@ -51,18 +51,15 @@ const ToolText = styled.span`
 `;
 
 const ProjectDetail = ({ detail }) => (
-   <Container>
-      <Heading>{detail.name}</Heading>
-      <SubHeading>
-         {detail.subHeading[0]}
-      </SubHeading>
-      <SubHeading>
-         {detail.subHeading[1]}
-      </SubHeading>
-      <IntroText>
-         <ToolText>Build tools: </ToolText>
-         {detail.intro}
-      </IntroText>
-   </Container>
+  <Container>
+    <Heading>{detail.name}</Heading>
+    <SubHeading>
+      {detail.subHeading[0]}
+    </SubHeading>
+    <IntroText>
+      <ToolText>Build tools: </ToolText>
+      {detail.intro}
+    </IntroText>
+  </Container>
 );
 export default ProjectDetail;

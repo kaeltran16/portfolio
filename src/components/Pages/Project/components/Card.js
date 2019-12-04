@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import ProjectDetail from "./Detail";
-import AttentionButton from "./AttentionButton";
-import {device} from "../../../../responsive";
-import {bounceInUp} from "../../../../commons/animations/keyframes";
+import ProjectDetail from './Detail';
+import AttentionButton from './AttentionButton';
+import { device } from '../../../../responsive';
+import { bounceInUp } from '../../../../commons/animations/keyframes';
 
 
 const Container = styled.div`
@@ -64,17 +64,19 @@ const DetailContainer = styled.div`
 `;
 
 
-const ProjectCard = ({detail}) => (
-    <Container>
-        <CardContainer>
-            <DetailContainer>
-                <ProjectDetail detail={detail}/>
-                <AttentionButton delay={0} url={detail.demoUrl} position='left'>Live demo</AttentionButton>
-                <AttentionButton delay={1} url={detail.srcUrl} position='right'>View source</AttentionButton>
-            </DetailContainer>
-            <Image src={`${process.env.PUBLIC_URL}/assets/img/${detail.name}.png`}/>
-        </CardContainer>
-    </Container>
+const ProjectCard = ({ detail }) => (
+  <Container>
+    <CardContainer>
+      <DetailContainer>
+        <ProjectDetail detail={detail}/>
+        <AttentionButton delay={0} url={detail.demoUrl} position='left'>Live
+          demo</AttentionButton>
+        <AttentionButton delay={1} url={detail.srcUrl} position='right'>View
+          source</AttentionButton>
+      </DetailContainer>
+      <Image src={detail.imageUrl} alt={`${detail.name}-image`}/>
+    </CardContainer>
+  </Container>
 );
 
 export default ProjectCard;

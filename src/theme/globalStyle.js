@@ -1,5 +1,5 @@
-import {injectGlobal} from 'styled-components';
-import {device} from "../responsive";
+import { injectGlobal } from 'styled-components';
+import { device } from '../responsive';
 
 injectGlobal`
   html {
@@ -42,20 +42,20 @@ injectGlobal`
 `;
 
 export const theme = {
-    primary: {
-        main: '#131116',
-        light: '#353535',
-        dark: '#0F0F0F'
+  primary: {
+    main: '#131116',
+    light: '#353535',
+    dark: '#0F0F0F'
 
-    },
-    secondary: {
-        main: '#F9F9F9',
-        light: '#FFFFFA',
-        dark: '#E0E0E0'
-    },
-    accent: {
-        main: '#3FCFFF',
-        light: '#99E5FF',
-        dark: '#30c2ff'
-    }
+  },
+  secondary: {
+    main: '#F9F9F9',
+    light: '#FFFFFA',
+    dark: '#E0E0E0'
+  },
+  accent: {
+    main: '#ea4235',
+    light: '#ea4235',
+    dark: '#ea4235'
+  }
 };
