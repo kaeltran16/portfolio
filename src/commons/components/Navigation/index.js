@@ -24,31 +24,32 @@ const NavigationBackground = styled.div`
   transform: ${props => props.active ? 'scale(80)' : 'scale(0)'};
   transition: all 0.4s ease-in;
   background-image:  ${props => props.active ? `radial-gradient(${props.theme.accent.light}, ${props.theme.accent.dark})`
-   : `radial-gradient(${props.theme.accent.light}, ${props.theme.accent.dark})`};
+  : `radial-gradient(${props.theme.accent.light}, ${props.theme.accent.dark})`};
 `;
 
 class Navigation extends React.Component {
-   state = { active: false };
-   toggle = () => {
-      this.setState({ active: !this.state.active });
-   };
+  state = { active: false };
+  toggle = () => {
+    this.setState({ active: !this.state.active });
+  };
 
-   render() {
-      const { active } = this.state;
-      return (
-         <React.Fragment>
+  render() {
+    const { active } = this.state;
+    const { color, ...rest } = this.props;
+    const navColor = active ? 'light' : color;
+    return (
+      <React.Fragment>
+        <Container>
+          <LogoBrand {...rest} color={navColor}/>
+          <NavigationButton active={active} {...rest} color={navColor}
+                            toggle={this.toggle}/>
+        </Container>
+        <NavigationList active={active}/>
+        <NavigationBackground active={active}/>
 
-            <Container>
-               <LogoBrand {...this.props}/>
-               <NavigationButton active={active} {...this.props}
-                                 toggle={this.toggle}/>
-            </Container>
-            <NavigationList active={active}/>
-            <NavigationBackground active={active}/>
-
-         </React.Fragment>
-      );
-   }
+      </React.Fragment>
+    );
+  }
 
 }
 

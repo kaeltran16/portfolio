@@ -4,7 +4,7 @@ import { Provider as AppDataProvider } from 'appContext';
 import { theme } from 'theme/globalStyle';
 import store from 'store';
 
-import { HashRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import {
   AboutPage,
   ContactPage,
@@ -17,7 +17,7 @@ import NotFound from '../../commons/components/NotFound';
 const MainContainer = () => (
   <AppDataProvider value={store}>
     <ThemeProvider theme={theme}>
-      <HashRouter>
+      <BrowserRouter>
         <Switch>
           <Route exact path='/' component={LandingPage}/>
           <Route exact path='/about' component={AboutPage}/>
@@ -26,7 +26,7 @@ const MainContainer = () => (
           <Route exact path='/contact' component={ContactPage}/>
           <Route path='*' component={NotFound}/>
         </Switch>
-      </HashRouter>
+      </BrowserRouter>
     </ThemeProvider>
   </AppDataProvider>
 );

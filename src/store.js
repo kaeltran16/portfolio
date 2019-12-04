@@ -35,7 +35,7 @@ const store = {
     ]
   },
   Project: {
-    header: 'What i did',
+    header: 'What i have done',
     details: [
       {
         name: 'recipello',

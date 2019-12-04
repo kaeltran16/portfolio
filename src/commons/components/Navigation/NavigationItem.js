@@ -1,6 +1,6 @@
 import React from 'react';
-import styled from "styled-components";
-import {Link} from 'react-router-dom';
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const Container = styled.div`
     margin: 1rem;
@@ -11,8 +11,8 @@ const Container = styled.div`
 const NavLink = styled(Link)`
     cursor: pointer;
     font-size: 3rem;
-    font-weight: 500;
-    color: ${props => props.theme.primary.main};
+    font-weight: bold;
+    color: ${props => props.theme.secondary.main};
     padding: 1rem 2.5rem;
     text-decoration: none;
     text-transform: uppercase;
@@ -37,15 +37,15 @@ const ItemName = styled.span`
   	margin-right: 1.5rem;
 	display: inline-block;
 `;
-const NavigationItem = ({itemNo, itemName, url}) => (
-    <Container>
-        <NavLink to={url}>
-            <ItemName>
-                {itemNo}.
-            </ItemName>
-            {itemName}
-        </NavLink>
-    </Container>
+const NavigationItem = ({ itemNo, itemName, url }) => (
+  <Container>
+    <NavLink to={url}>
+      <ItemName>
+        {itemNo}.
+      </ItemName>
+      {itemName}
+    </NavLink>
+  </Container>
 );
 
 export default NavigationItem;
