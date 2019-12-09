@@ -1,12 +1,19 @@
-import React from 'react';
-import _ from 'lodash';
+import React from "react";
+import _ from "lodash";
 
+const links = [
+  "/",
+  "/about",
+  "/skill",
+  "/work/crwn-clothing",
+  "/work/recipello",
+  "/work/devchat",
+  "/contact"
+];
 
-const links = ['/', '/about', '/skill', '/work/recipello', '/work/crwn-clothing', '/work/devchat', '/contact'];
-
-const withScroll = (Component) =>
+const withScroll = Component =>
   class ScrollableComponent extends React.Component {
-    state = { nextRoute: '', prevRoute: '' };
+    state = { nextRoute: "", prevRoute: "" };
     scrollUp = () => {
       const { history, match } = this.props;
 
@@ -45,24 +52,24 @@ const withScroll = (Component) =>
     }
 
     componentDidMount() {
-
-      window.addEventListener('wheel', this.handleScroll, false);
-      window.addEventListener('scroll', this.handleScroll, false);
-    };
+      window.addEventListener("wheel", this.handleScroll, false);
+      window.addEventListener("scroll", this.handleScroll, false);
+    }
 
     componentWillUnmount() {
-      window.removeEventListener('wheel', this.handleScroll, false);
-      window.removeEventListener('scroll', this.handleScroll, false);
-    };
+      window.removeEventListener("wheel", this.handleScroll, false);
+      window.removeEventListener("scroll", this.handleScroll, false);
+    }
 
     render() {
       const { nextRoute, prevRoute } = this.state;
       return (
-        <Component {...this.props} nextRoute={nextRoute}
-                   prevRoute={prevRoute}/>
+        <Component
+          {...this.props}
+          nextRoute={nextRoute}
+          prevRoute={prevRoute}
+        />
       );
     }
-  }
-;
+  };
 export default withScroll;
-
