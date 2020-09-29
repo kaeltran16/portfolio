@@ -60,7 +60,7 @@ const store = {
           `An online shopping store allowing users to purchase clothing products.`,
         ],
         intro: "React, Redux, Firebase, Stripe API",
-        demoUrl: `crwn-clothing.kaelpg.dev`,
+        demoUrl: `https://crwn-clothing.kaelpg.dev`,
         srcUrl: `https://github.com/kaeltran16/crwn-clothing`,
         imageUrl:
           "https://res.cloudinary.com/medium-cloned/image/upload/q_auto/v1575321964/crwn-clothing.png",

@@ -3,21 +3,21 @@ import _ from "lodash";
 
 const links = [
   "/",
-  "/about",
-  "/skill",
   "/work/crwn-clothing",
   "/work/recipello",
   "/work/devchat",
-  "/contact"
+  "/skill",
+  "/about",
+  "/contact",
 ];
 
-const withScroll = Component =>
+const withScroll = (Component) =>
   class ScrollableComponent extends React.Component {
     state = { nextRoute: "", prevRoute: "" };
     scrollUp = () => {
       const { history, match } = this.props;
 
-      const currentPageIndex = links.findIndex(i => i === match.url);
+      const currentPageIndex = links.findIndex((i) => i === match.url);
       if (currentPageIndex !== 0) {
         this.setState({ prevRoute: links[currentPageIndex - 1] });
         if (history.location.pathname !== this.state.prevRoute) {
@@ -27,7 +27,7 @@ const withScroll = Component =>
     };
     scrollDown = () => {
       const { history, match } = this.props;
-      const currentPageIndex = links.findIndex(i => i === match.url);
+      const currentPageIndex = links.findIndex((i) => i === match.url);
       if (currentPageIndex === links.length - 1) {
         this.setState({ nextRoute: links[0] });
       } else {
@@ -37,7 +37,7 @@ const withScroll = Component =>
         history.push(this.state.nextRoute);
       }
     };
-    handleScroll = event => {
+    handleScroll = (event) => {
       event.preventDefault();
       if (event.deltaY < 0) {
         this.scrollUp();
