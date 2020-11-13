@@ -74,7 +74,7 @@ const store = {
         demoUrl: `https://cat-wiki.netlify.app/`,
         imageUrl:
           "https://res.cloudinary.com/medium-cloned/image/upload/v1605090423/Screen_Shot_2020-11-11_at_5.24.51_PM.png",
-        srcUrl: `https://github.com/kaeltran16/cat-wiki`,
+        srcUrl: `https://github.com/kaeltran16/cat_wiki`,
       },
       {
         name: "devchat",
