@@ -4,7 +4,7 @@ import _ from "lodash";
 const links = [
   "/",
   "/work/crwn-clothing",
-  "/work/recipello",
+  "/work/cat-wiki",
   "/work/devchat",
   "/skill",
   "/about",

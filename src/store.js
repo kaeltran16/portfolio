@@ -66,15 +66,15 @@ const store = {
           "https://res.cloudinary.com/medium-cloned/image/upload/q_auto/v1575321964/crwn-clothing.png",
       },
       {
-        name: "recipello",
+        name: "cat-wiki",
         subHeading: [
-          `A site enables users to search for food recipes or logged in user to post their favorite food recipe and vote for recipes they love.`,
+          `A site for cat lovers to search for their favorite cats and see their detail and images!`,
         ],
-        intro: "React, MongoDB, Express, Apollo",
-        demoUrl: `https://kaeltran16.github.io/recipello`,
+        intro: "React, Express",
+        demoUrl: `https://cat-wiki.netlify.app/`,
         imageUrl:
-          "https://res.cloudinary.com/medium-cloned/image/upload/q_auto/v1575321964/recipello.png",
-        srcUrl: `https://github.com/kaeltran16/recipello`,
+          "https://res.cloudinary.com/medium-cloned/image/upload/v1605090423/Screen_Shot_2020-11-11_at_5.24.51_PM.png",
+        srcUrl: `https://github.com/kaeltran16/cat-wiki`,
       },
       {
         name: "devchat",
