@@ -66,15 +66,15 @@ const store = {
           "https://res.cloudinary.com/medium-cloned/image/upload/q_auto/v1575321964/crwn-clothing.png",
       },
       {
-        name: "cat-wiki",
+        name: "ishop",
         subHeading: [
-          `A site for cat lovers to search for their favorite cats and see their detail and images!`,
+          `An API for developing online shopping application.`,
         ],
-        intro: "React, Express",
-        demoUrl: `https://cat-wiki.netlify.app/`,
+        intro: ".NET Core 2.0",
+        demoUrl: `https://ishop-api.azurewebsites.net/api/swagger/index.html`,
         imageUrl:
-          "https://res.cloudinary.com/medium-cloned/image/upload/v1605090423/Screen_Shot_2020-11-11_at_5.24.51_PM.png",
-        srcUrl: `https://github.com/kaeltran16/cat_wiki`,
+          "https://res.cloudinary.com/medium-cloned/image/upload/v1623091809/iShop.jpg",
+        srcUrl: `https://github.com/kaeltran16/iShop_v.02`,
       },
       {
         name: "devchat",
