@@ -60,7 +60,7 @@ const store = {
           `An online shopping store allowing users to purchase clothing products.`,
         ],
         intro: "React, Redux, Firebase, Stripe API",
-        demoUrl: `https://crwn-clothing.kaelpg.dev`,
+        demoUrl: `https://crwn-clothing-store.netlify.app/`,
         srcUrl: `https://github.com/kaeltran16/crwn-clothing`,
         imageUrl:
           "https://res.cloudinary.com/medium-cloned/image/upload/q_auto/v1575321964/crwn-clothing.png",
@@ -82,7 +82,7 @@ const store = {
           `A Slack clone allowing logged in user to chat privately or together in various channel.`,
         ],
         intro: "React, Redux, Firebase",
-        demoUrl: `https://devchat.kaelpg.dev`,
+        demoUrl: `https://dev-chat1.netlify.app/`,
         srcUrl: `https://github.com/kaeltran16/slack-clone`,
         imageUrl: `https://res.cloudinary.com/medium-cloned/image/upload/q_auto/v1575321964/devchat.png`,
       },
