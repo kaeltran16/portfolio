@@ -74,7 +74,7 @@ const store = {
         demoUrl: `https://ishop-api.azurewebsites.net/api/swagger/index.html`,
         imageUrl:
           "https://res.cloudinary.com/medium-cloned/image/upload/v1623091809/iShop.jpg",
-        srcUrl: `https://github.com/kaeltran16/iShop_v.02`,
+        srcUrl: `https://github.com/kaeltran16/iShop`,
       },
       {
         name: "devchat",
